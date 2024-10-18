@@ -1,0 +1,54 @@
+body{
+
+    font-family:poppins, arial;
+    background-color: lightsalmon;
+    padding:0;
+    margin:0;
+}
+
+section{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.buttons-div{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin-bottom:25px;
+    
+}
+.title{
+    font-size:3.5em;
+    color:black;
+    font-weight:800;
+}
+button{
+    background-color:aqua;
+    font-size:18px;
+    padding:15px 20px;
+    border:none;
+    margin-right:15px ;
+    cursor:pointer;
+    border-radius:50px;
+    transition: opacity 0.25s;
+    box-shadow: 1px 2x 3px rgba(0,0,0,0.3);
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+.display-cart-quantity{
+    font-size:1.5em;
+    color:rgb(84, 83, 83);
+    font-weight:600;
+    margin-top:25px;
+}
+
+.display-error-message{
+    color:darkred;
+    font-size:1.5em;
+    font-weight:600;
+}

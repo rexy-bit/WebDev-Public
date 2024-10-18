@@ -1,0 +1,82 @@
+body{
+    background-color:lightblue;
+    padding:0;
+    margin: 0;
+    font-family:poppins,arial;
+}
+section{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.title{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    color:white;
+    text-decoration:underline;
+    font-size:3.5em;
+    font-weight:900;
+
+}
+.input-div{
+    display:grid;
+    grid-template-columns:200px 150px 100px;
+    align-items:center;
+    padding-bottom:40px;
+    column-gap:20px;
+}
+.input-bar{
+    padding:10px;
+    border-radius:5px;
+    border:1px solid gray;
+}
+.input-date{
+    padding:10px;
+    border-radius:5px;
+    border:1px solid gray;
+}
+.add-button{
+    padding:10px 15px;
+    background-color:green;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:1.1em;
+    font-weight:600;
+    transition: color 0.35,
+               background-color 0.35;
+}
+.add-button:hover{
+    color:green;
+    background-color:white;
+}
+.display-todo{
+    display:grid;
+    grid-template-columns:200px 150px 100px;
+    row-gap:20px;
+    column-gap:20px;
+    align-items:center;
+}
+.name,
+ .dueDate{
+    color:black;
+    font-size:1.2em;
+
+ }
+ .delete-button{
+    background-color:darkred;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    padding:10px;
+    font-size:1.1em;
+    font-weight:600;
+    transition: opacity 0.35s
+ }
+ .delete-button:hover{
+    opacity:0.6;
+ }
