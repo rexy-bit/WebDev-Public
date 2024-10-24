@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+        <link rel="stylesheet" href="dom.css">
+    </head>
+    <body>
+        <div>
+        <p class="Amazon Shipping calculator"></p>
+
+        <p class="free">Orders under 40&#36;  + 10$ shipping</p>
+
+        <p>Orders over 40$ free shipping</p>
+
+        <input type="text" class="input-cost" placeholder="Enter cost">
+
+        <button onclick="
+            calculateTotal();
+            pressOkay();
+        ">
+            Calculate
+        </button>
+
+        <p class="display-total-cost"></p>
+
+        <p class="display-error-message"></p>
+
+    </div>
+
+
+    <button class="js-button" onclick="
+       subscribe();
+    ">
+        Subscribe
+    </button>
+        <script src="dom.js"></script>
+    </body>
+</html>

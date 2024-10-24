@@ -1,0 +1,14 @@
+.js-button{
+    background-color:black;
+    color:white;
+    padding:10px 15px;
+    font-size:17px;
+    cursor:pointer;
+    font-weight: 700;
+    border:none;
+    border-radius:30px;
+}
+.is-subscribed{
+    background-color:lightgray;
+    color:black;
+}
