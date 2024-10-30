@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="rock4.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+    <section>
+        <h1>
+            Rock Paper Scissors Game
+        </h1>
+
+
+         <div class="game">
+        <button class="emoji-button" onclick="
+           playGame('rock');
+        ">
+            <img src="emojis/rock-emoji.png" class="emoji">
+        </button>
+
+        <button class="emoji-button" onclick="
+           playGame('paper');
+        ">
+            <img src="emojis/paper-emoji.png" class="emoji">
+        </button>
+
+        <button class="emoji-button" onclick="
+            playGame('scissors');
+        ">
+            <img src="emojis/scissors-emoji.png" class="emoji">
+        </button>
+
+
+    </div>
+      
+
+    
+   <div class="results">
+
+        <p class="display-result"></p>
+        <p class="display-moves"></p>
+        <p class="display-score" onclick="
+        
+        ">
+
+
+        </p>
+
+    </div>
+
+
+        <button class="reset-button"    onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScore();
+    ">
+        Reset Score
+    </button>
+
+
+</section>
+        
+        <script src="rock4.js">
+
+        </script>
+    </body>
+</html>
