@@ -1,33 +1,15 @@
-const todoList = JSON.parse(localStorage.getItem('todoList')) || [{
+todoList = [{
     name : 'Make dinner',
-    dueDate : '2024/10/4'
+    dueDate : '2024/12/12'
+}, {
+    name : 'Watch youtube',
+    dueDate : '2024/11/1'
 }];
 
-
-function addTodo(){
-    const nameInput = document.querySelector('.input-bar');
-    const dueDateInput = document.querySelector('.input-date');
-
-    const name = nameInput.value;
-    const dueDate = dueDateInput.value;
-
-    todoList.push({
-
-        //name : name,
-        //dueDate : dueDate
-
-        name,
-        dueDate
-    });
-
-    renderTodoList();
-}
-
 function renderTodoList(){
-
     let todoListHtml = '';
 
-    for(let i = 0; i < todoList.length; i++){
+    for(let i = 0; i<= todoList.length; i++){
         const todoObject = todoList[i];
 
         //const name = todoObject.name;
@@ -36,29 +18,44 @@ function renderTodoList(){
         const {name, dueDate} = todoObject;
 
         let html = `
-        
-        <div class="name">${name}</div>
-        <div class="dueDate">${dueDate}</div>
+           <div class = "name">
+              ${name}
+           </div>
+           <div class="dueDate">
+             ${dueDate}
+           </div>
 
-        <button class="delete-button" onclick="
-           
-            todoList.splice(${i}, 1);
-            renderTodoList();
+           <button class="delete-button" onclick="
+               todoList.splice(${i}, 1);
+               renderTodoList();
+           ">
+             Delete
+           </button>
+        `
 
-        ">
-        
-           Delete
-        </button>
-    
-    `
-
-    todoListHtml += html;
-
+        todoListHtml += html;
     }
 
-    document.querySelector('.display-todo').innerHTML = todoListHtml;
 
-    localStorage.setItem('todoList', JSON.stringify(todoList));
+    document.querySelector('.display-todo').innerHTML = html;
+}
 
-    
+
+function addTodo(){
+
+    const nameInput = document.querySelector('.input-todo');
+    const dateInput = document.querySelector('.input-date');
+
+    const name = nameInput.value;
+    const dueDate = dateInput.value;
+
+    todoList.push({
+        //name : name,
+        //dueDate : dueDate,
+
+        name,
+        dueDate
+    });
+
+    renderTodoList();
 }
