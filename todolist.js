@@ -1,9 +1,9 @@
-todoList = [{
-    name : 'Make dinner',
-    dueDate : '2024/12/12'
-}, {
-    name : 'Watch youtube',
-    dueDate : '2024/11/1'
+let todoList = [{
+    name : 'Go to school',
+    date :'20/3/2024',
+},{
+    name:'Go to bed',
+    date : '5/11/2024'
 }];
 
 function renderTodoList(){
@@ -12,42 +12,43 @@ function renderTodoList(){
     for(let i = 0; i<= todoList.length; i++){
         const todoObject = todoList[i];
 
-        //const name = todoObject.name;
-        //const dueDate = todoObject.dueDate;
+        ///const dueDate = todoObject.dueDate;
+        ///const name = todoObject.name;
 
-        const {name, dueDate} = todoObject;
+        const {name ,dueDate} = todoObject;
 
         let html = `
-           <div class = "name">
-              ${name}
+           <div class="name">
+             ${name}
            </div>
-           <div class="dueDate">
-             ${dueDate}
+
+           <div  class="dueDate">
+              ${dueDate}
            </div>
 
            <button class="delete-button" onclick="
-               todoList.splice(${i}, 1);
-               renderTodoList();
-           ">
+                todoList.splice(${i}, 1);
+                renderTodoList();
+           "> 
              Delete
            </button>
+        
         `
 
         todoListHtml += html;
     }
 
 
-    document.querySelector('.display-todo').innerHTML = html;
+    document.querySelector('.display-todo').innerHtml = todoListHtml;
 }
-
 
 function addTodo(){
 
-    const nameInput = document.querySelector('.input-todo');
-    const dateInput = document.querySelector('.input-date');
+    const inputName = document.querySelector('.input-todo');
+    const inputDate = document.querySelector('.input-date');
 
-    const name = nameInput.value;
-    const dueDate = dateInput.value;
+    const name = inputName.value;
+    const dueDate = inputDate.value;
 
     todoList.push({
         //name : name,
@@ -55,7 +56,7 @@ function addTodo(){
 
         name,
         dueDate
-    });
+    })
 
     renderTodoList();
 }
