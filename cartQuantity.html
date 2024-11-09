@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="cartQuantity.css">
+
+    </head>
+    <body>
+
+         <section>
+             <h1>Cart quantity project</h1>
+
+             <div>
+
+                <button onclick="
+                    document.querySelector('.display-cart').innerHTML = `Cart quantity is : ${cartQuantity}`;
+                    ">
+                   Show Cart Quantity
+                </button>
+
+                <button onclick="
+                    addToCart(1);
+                ">
+                    +1
+                </button>
+
+                <button  onclick="
+                addToCart(2);
+            ">
+                    +2
+                </button>
+
+                <button  onclick="
+                addToCart(3);
+            ">
+                    +3
+                </button>
+
+                <button  onclick="
+                addToCart(4);
+            ">
+                    +4
+                </button>
+
+                <button  onclick="
+                addToCart(5);
+            ">
+                    +5
+                </button>
+
+                <button onclick="
+                   removeFromCart(-1);
+                
+                ">
+                    -1
+                </button>
+
+                <button onclick="
+                removeFromCart(-2);
+                ">
+                    -2
+                </button>
+
+                <button onclick="
+                removeFromCart(-3);
+                ">
+                    -3
+                </button>
+
+                <button onclick="
+                  cartQuantity = 0;
+                  document.querySelector('.display-cart').innerHTML = `Cart quantity is : ${cartQuantity}`;
+                  document.querySelector('.display-error-message').innerHTML = 'The  cart was reset';
+                ">
+                    Reset Cart
+                </button>
+
+
+                <p class="display-cart"></p>
+
+                <p class="display-error-message"></p>
+
+                
+
+         
+             </div>
+         </section>
+
+
+        
+        <script src="cartQuantity.js">
+
+
+        </script>
+    </body>
+</html>
