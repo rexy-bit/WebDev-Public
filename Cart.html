@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+   <link rel="stylesheet" href="Cart.css">
+
+  </head>
+
+  <body>
+
+    <section>
+        <h1>
+            Cart Quantity of an item
+        </h1>
+
+        <div class="Cart">
+
+            <img src="baskettes.jpg" alt="">
+
+            <button class="add" onclick="
+               addToCart(1);
+            ">
+                Add to cart
+            </button>
+
+            <button class="remove" onclick="
+              removeFromCart(-1);
+            ">
+                Remove from cart
+            </button>
+
+            <button class="show" onclick="
+            
+               document.querySelector('.display-cart').innerHTML = `Cart quantity is : ${cartQuantity}`;
+            ">
+                 Show cart Quantity
+            </button>
+
+            <button onclick="
+              cartQuantity = 0;
+              document.querySelector('.display-cart').innerHTML = `Cart quantity is : ${cartQuantity}`;
+
+              save();
+              
+
+            ">
+                Reset Cart
+            </button>
+
+            <p class="display-cart">
+                
+            </p>
+            <p class="display-error-message"></p>
+
+
+        </div>
+    </section>
+    
+    <script src="Cart.js">
+
+
+    </script>
+  </body>
+</html>
