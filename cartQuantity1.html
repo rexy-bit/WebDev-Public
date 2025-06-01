@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+</head>
+<body>
+
+    <p class="title"> cart cartQuantity1</p>
+
+
+    <button onclick="
+       displayCart();
+    ">
+        Show cart quantity
+    </button>
+
+    <button onclick="
+       addToCart(1);
+    ">
+        Add to cart
+    </button>
+
+    <button onclick="
+       addToCart(2);
+    ">
+        +2
+    </button>
+
+    <button onclick="
+       addToCart(3);
+    ">
+        +3
+    </button>
+
+    <button onclick="
+       addToCart(4);
+    ">
+        +4
+    </button>
+
+    <button onclick="
+       addToCart(5);
+    ">
+        +5
+    </button>
+
+    <button onclick="
+       removeFromCart(1);
+    ">
+        Remove from cart
+    </button>
+
+    <button onclick="
+       removeFromCart(2);
+    ">
+        -2
+    </button>
+
+    <button onclick="
+       removeFromCart(3);
+    ">
+        -3
+    </button>
+
+    <button onclick="
+      cartQuantity = 0;
+      displayCart();
+      localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity));
+    ">
+        
+        Reset cart
+
+    </button>
+
+    <p class="display-cart">
+
+    </p>
+
+    <p class="display-error-message">
+
+    </p>
+    
+    <script src="cartQuantity1.js">
+
+
+    </script>
+</body>
+</html>
