@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <link rel="stylesheet" href="rock3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+
+</head>
+
+<body>
+
+    <div class="main-div">
+
+    <p class="title">Rock-Paper-Scissors3</p>  
+    
+    <div class="play-games">
+
+    <button class="button-game" onclick="
+      playGame('rock');
+    ">
+        <img src="emojis/rock-emoji.png" class="emoji">
+    </button>
+
+    <button class="button-game" onclick="
+      playGame('paper');
+    ">
+        <img src="emojis/paper-emoji.png" class="emoji">
+    </button>
+
+    <button class="button-game" onclick="
+      playGame('scissors');
+
+    ">
+        <img src="emojis/scissors-emoji.png" class="emoji">
+    </button>
+</div>
+
+  <div class="displays">
+    <p class="display-result">
+
+    </p>
+
+    <p class="display-moves"> 
+
+    </p>
+    <p class="display-score"></p>
+</div>
+
+    <div class="buttons">
+        <button class="show-score" onclick="
+           displayScore();
+        ">
+            Show Score
+        </button>
+        <button class="reset-score" onclick="
+          resetScore();
+        ">
+            Reset Score
+        </button>
+    
+    </div>
+
+</div>
+
+
+    <script src="rock3.js">
+
+
+    </script>
+</body>
+</html>
