@@ -1,0 +1,84 @@
+body{
+    font-family : poppins,arial;
+    margin : 0;
+    padding : 0;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    background-color : #ECEFCA;
+}
+
+h1{
+    font-size : 3em;
+    font-weight : 900;
+    text-decoration : underline;
+    color:#213448;
+}
+
+.inputs,.book{
+    display : grid;
+    grid-template-columns : 250px 250px 200px 100px;
+    column-gap : 30px;
+}
+.display-bib{
+    display : flex;
+    flex-direction : column;
+    gap : 20px;
+}
+
+.input-titre,.input-auteur,.input-date{
+   padding : 10px;
+   font-size : 14px;
+   border : 1px solid gray;
+   border-radius : 3px;
+}
+
+
+.add-button{
+    border : 1px solid gray;
+    background-color : rgba(69, 213, 69, 0.875);
+    color : white;
+    font-size : 15px;
+    font-weight: 600;
+    border-radius : 3px;
+    cursor : pointer;
+}
+
+.add-button:hover{
+    opacity : 0.8;
+}
+
+.add-button:hover{
+    opacity : 0.6;
+}
+
+.delete-button{
+    height : 40px;
+    background-color : red;
+    color : white;
+    font-weight: bold;
+    font-size : 15px;
+    border : 1px solid gray;
+    border-radius : 3px;
+    cursor : pointer;
+}
+
+.book{
+    align-items : center;
+}
+
+.delete-button:hover{
+    opacity : 0.8;
+
+}
+
+.delete-button:active{
+    opacity : 0.6;
+}
+
+.display-error-message{
+    color: red;
+    font-weight : bold;
+    font-size : 17px;
+}
