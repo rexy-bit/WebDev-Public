@@ -1,24 +1,28 @@
-let calculation = JSON.parse(localStorage.getItem('calculation')) ||  "";
+
+
+
+let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
 
 displayCalculation();
 
 function updateCalculation(value){
-
-     calculation += value;
-     document.querySelector(".display").innerHTML = calculation;
-
-     localStorage.setItem("calculation", JSON.stringify(calculation));
-
-}
-
-function clearCalculation(){
-
-    calculation = 0;
-    localStorage.setItem("calculation", JSON.stringify(calculation));
-    document.querySelector(".display").innerHTML = "cleared";
-
+   calculation += value;
+   displayCalculation();
+   saveCalculation();
+   
+    
 }
 
 function displayCalculation(){
-    document.querySelector(".display").innerHTML = calculation;
+    document.querySelector('.display').innerHTML = calculation;
+}
+
+function saveCalculation(){
+    localStorage.setItem('calculation', JSON.stringify(calculation));
+}
+
+function clearCalculation(){
+    calculation = '';
+    displayCalculation();
+    saveCalculation();
 }
