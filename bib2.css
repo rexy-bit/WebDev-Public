@@ -1,0 +1,86 @@
+body{
+    font-family: roboto, arial;
+    margin : 0;
+    padding : 0;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    background-color: #EAEFEF;
+}
+
+h1{
+    font-size : 3em;
+    font-weight : 900;
+    text-decoration: underline;
+    color : #333446;
+
+}
+
+.inputs,.display-book{
+    display : flex;
+    flex-direction : row;
+    flex : 100px 300px 200px 100px;
+    gap : 30px;
+    align-items : center;
+} 
+.input-code{
+    width : 100px;
+    padding : 10px;
+    font-size: 15px;
+    border : 1px solid gray;
+    border-radius : 3px;
+}
+.input-title{
+    width : 300px;
+        padding : 10px;
+    font-size: 15px;
+    border : 1px solid gray;
+    border-radius : 3px;
+}
+.input-author{
+    width : 200px;
+        padding : 10px;
+    font-size: 15px;
+    border : 1px solid gray;
+    border-radius : 3px;
+}
+.input-price{
+    width : 100px;
+        padding : 10px;
+    font-size: 15px;
+    border : 1px solid gray;
+    border-radius : 3px;
+}
+
+.add-button,.delete-button{
+    width : 80px;
+        padding : 10px;
+    font-size: 15px;
+    border : 1px solid gray;
+    border-radius : 3px;
+    background-color : #B8CFCE;
+    color : black;
+    font-weight : 600;
+    cursor : pointer;
+    transition : opacity 0.5s;
+}
+
+.add-button:hover,.delete-button:hover{
+    opacity : 0.8;
+
+}
+.add-button:active.delete-button:active{
+    opacity : 0.6;
+    
+}
+.display-error-message{
+    color : red;
+    font-size : 18px;
+    font-weight : 600;
+}
+.delete-button{
+    background-color: #7F8CAA;
+}
+
+
