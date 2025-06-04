@@ -1,0 +1,225 @@
+body{
+    padding: 0;
+    margin : 0;
+    font-family: poppins,arial;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+}
+
+.title-section{
+    display : flex;
+    flex : 100%;
+    width  : 100%;
+    background-color : #DDA853;
+    flex-direction : row;
+    height: 50px;
+    align-items : center;
+    justify-content: center;
+    font-size : 2.5em;
+    text-decoration : underline;
+    font-weight : 900;
+
+}
+
+.library-section{
+    display  : flex;
+    flex-direction: column;
+    justify-content  : center;
+    align-items : center;
+    background-color: #F3F3E0;
+    width : 100%;
+
+}
+
+.inputs,.display-book{
+    margin-top : 30px;
+    display  : grid;
+    grid-template-columns: 80px 300px 250px 100px 100px;
+    column-gap : 30px;
+    font-size : 20px;
+    font-weight : 550;
+}
+.input-code,.input-title,.input-author,.input-price{
+    font-size : 15px;
+    padding : 10px;
+    border : 1px solid gray;
+    border-radius : 3px;
+
+}
+.add-button{
+    background-color: #27548A;
+    color : white;
+    font-size : 15px;
+    font-weight : 600;
+    cursor : pointer;
+    border : 1px solid gray;
+    border-radius : 3px;
+    transition : opacity 0.5s;
+}
+
+.add-button:hover{
+    opacity : 0.8;
+}
+.add-button:active{
+    opacity : 0.6;
+}
+.display-content{
+    padding-bottom : 50px;
+}
+
+.display-book{
+    align-items : center;
+}
+.delete-button{
+    height : 40px;
+    font-size : 15px;
+    font-weight : 700;
+    background-color: rgb(248, 27, 27);
+    color : white;
+    border : 1px solid gray;
+    border-radius : 3px;
+    cursor : pointer;
+    transition : opacity 0.5s;
+}
+
+.delete-button:hover{
+    opacity  : 0.8;
+
+}
+.delete-button:active{
+    opacity  : 0.6;
+}
+
+.display-error-message{
+    color: red;
+    font-size : 18px;
+    font-weight : 600;
+}
+.display-success-message{
+    color : rgb(10, 168, 10);
+}
+
+.moy-section{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items : center;
+    width : 100%;
+    background-color: #5C88C4;
+}
+
+.moy{
+    padding : 30px;
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items : center;
+    gap : 30px;
+}
+
+.display-moy{
+    width : 120px;
+    height : 40px;
+    background-color: white;
+    border-radius : 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size : 18px;
+    
+}
+.display-moy-button{
+    height : 40px;
+    border-radius : 5px;
+    width : 100px;
+    border : 1px solid gray;
+    font-size : 15px;
+    font-weight : 600;
+    background-color: rgb(8, 199, 8) ;
+    color : black;
+    transition : opacity 0.25s;
+    cursor : pointer;
+}
+
+.display-moy-button:hover{
+   opacity : 0.8;
+}
+.display-moy-button:active{
+   opacity : 0.6;
+}
+.title-moy{
+    padding-top : 20px;
+    font-size : 1.7em;
+    font-weight : 900;
+    text-decoration: underline;
+    color : rgb(4, 4, 116);
+    
+}
+
+.display-min-max{
+    display : flex;
+    flex-direction : column;
+    justify-content  : center;
+    align-items : center;
+   background-color: #D7E9F7;
+   width : 100%;
+}
+.title-min-max{
+    margin-top : 30px;
+    font-size : 1.7em;
+    color : #344FA1;
+    font-weight : 900;
+    text-decoration: underline;
+
+}
+
+.max,.min{
+    display : grid;
+     grid-template-columns: 80px 300px 250px 100px 100px;
+     column-gap: 20px;
+    margin-top : 20px;
+}
+
+.display-max-code,
+  .display-max-title,
+    .display-max-author,
+    .display-max-price,
+    .display-min-code,
+    .display-min-title,
+     .display-min-author,
+     .display-min-price{
+        height : 40px;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items : center;
+     }
+
+.min{
+    padding-bottom: 40px;
+}
+
+.display-max-button,
+  .display-min-button{
+   font-size : 16px;
+   border : 1px solid gray;
+   border-radius : 3Px;
+   background-color : #344FA1;
+   color : white;
+   font-weight : 600;
+   transition: opacity 0.25s;
+   cursor : pointer;
+}
+
+.display-max-button:hover,
+  .display-min-button:hover{
+    opacity: 0.8;
+  }
+
+.display-max-button:active,
+  .display-min-button:active{
+    opacity: 0.6;
+  }
