@@ -1,0 +1,52 @@
+.max-min{
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    background-color: #A1E3F9;
+    width : 100%;
+}
+
+.max-min-title{
+    font-size: 2.5em;
+    padding-top : 30px;
+    font-weight : 900;
+    color: #09122C;
+    text-decoration: underline;
+
+}
+
+.display-max-min{
+     display : grid;
+    grid-template-columns: 100px 200px 200px 100px 100px 100px;
+    column-gap: 30px;
+    padding-bottom: 40px;
+}
+.dd{
+    height : 40px;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size : 20px;
+    font-weight : 600;
+}
+.d-button{
+    color :white;
+    font-size : 17px;
+    background-color: green;
+    border :none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.d-button:hover{
+    opacity: 0.8;
+}
+
+.d-button:active{
+    opacity: 0.6;
+}
