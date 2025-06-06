@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>general.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="rock.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-title">
+            General Project
+        </div>
+
+        <div class="functions">
+            <a href="" class="ff">Todo List</a>
+            <a href="" class="ff">Rock Paper Scissors</a>
+            <a href="" class="ff">Head Tails</a>
+        </div>
+    </header>
+
+    <section class="todo-section">
+
+        <h1 class="todo-title">
+            Todo List
+        </h1>
+
+        <div class="inputs">
+            <input type="text" class="input-todo-name in" placeholder="Todo name">
+            <input type="date" class="input-date in">
+            
+            <button class="add-button">
+                Add
+            </button>
+        </div>
+
+        <p class="display-error-message"></p>
+        <p class="display-success-message"></p>
+
+        <div class="display-content">
+
+        </div>
+    </section>
+
+
+    <section class="rock-section">
+
+        <h1 class="rock-title">Rock-Paper-Scissors</h1>
+        <div class="play">
+            <button class="rock-button">
+                rock
+            </button>
+
+            <button class="paper-button">
+                paper
+            </button>
+            <button class="scissors-button">
+                scissors
+            </button>
+        </div>
+
+        <div class="displays">
+            <div class="display-result">
+
+            </div>
+
+            <div class="display-moves"></div>
+            <div class="display-score"></div>
+        </div>
+    </section>
+
+
+    <script src="todo.js"></script>
+</body>
+</html>
