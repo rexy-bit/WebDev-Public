@@ -1,0 +1,91 @@
+.affichage-etud{
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    background-color: #F3F3E0;
+    width : 100%;
+    align-items : center;
+    padding-top : 50px;
+}
+
+.title-aff-etud{
+    font-size : 3em;
+    font-weight : 900;
+    text-decoration: underline;
+    color : #183B4E;
+
+
+}
+.inputs{
+    display : grid;
+    grid-template-columns: 100px 200px 200px 100px 100px 100px;
+    column-gap: 30px;
+    padding-bottom: 30px;
+}
+.etudiant{
+      display : grid;
+    grid-template-columns: 100px 200px 200px 100px 100px 100px;
+    column-gap: 30px;
+    margin-bottom : 20px;
+    align-items: center;
+    font-size : 20px;
+    font-weight: 550;
+}
+
+.in{
+    padding : 10px;
+    font-size : 15px;
+    border : 1px solid gray;
+    border-radius: 4px;
+}
+.add-button{
+    border : 1px solid gray;
+    font-size : 15px;
+    color: white;
+    font-weight : bold;
+    background-color : #183B4E;
+    cursor : pointer;
+    border-radius: 4px;
+}
+.add-button:hover{
+    opacity : 0.8;
+}
+.add-button:active{
+    opacity : 0.8;
+}
+
+.display-content{
+    padding-bottom : 50px;
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+}
+.delete-button{
+    height: 40px;
+    background-color: rgb(217, 36, 36);
+    color : white;
+    font-size : 16px;
+    font-weight: 650;
+    border : 1px solid gray;
+    border-radius : 4px;
+    cursor : pointer;
+}
+
+.delete-button:hover{
+    opacity: 0.8;
+}
+.delete-button:active{
+    opacity: 0.8;
+}
+
+.display-error-message{
+    font-size : 20px;
+    color :red;
+    font-weight: 600;
+}
+.display-success-message{
+    color : green;
+       font-size : 20px;
+       font-weight: 600;
+}
