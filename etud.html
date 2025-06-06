@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="etud-header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="etud-aff.css">
+<link rel="stylesheet" href="etud-moy.css">
+<link rel="stylesheet" href="etud-min-max.css">
+<link rel="stylesheet" href="tri.css">
+
+<style>
+    html{
+        scroll-behavior: smooth;
+    }
+
+</style>
+
+<title>etud.com</title>
+</head>
+<body>
+    
+    <section class="header" id="Header">
+        <div class="header-title">Project Etud</div>
+        <div class="functions">
+            <a href="#disp-etud" class="f-disp f-f">Les etudiants</a>
+            <a href="#Moy" class="f-moy f-f">Moyenne</a>
+            <a href="#Max" class="f-max-min f-f">Max-Min</a>
+            <a href="#Tri" class="f-sort f-f">Tri</a>
+        </div>
+    </section>
+
+
+    <section class="affichage-etud" id="disp-etud">
+        <h1 class="title-aff-etud">Affichage des etudiants</h1>
+        <div class="inputs">
+            <input type="text" class="input-code in" placeholder="Code">
+            <input type="text" class="input-nom in" placeholder="Nom">
+            <input type="text" class="input-prenom in" placeholder="Prenom">
+            <input type="text" class="input-annee in" placeholder="Annee">
+            <input type="text" class="input-moy in" placeholder="Moyenne">
+            <button class="add-button">Add</button>
+        </div>
+
+        <p class="display-error-message"></p>
+        <p class="display-success-message"></p>
+        <div class="display-content"></div>
+    </section>
+
+    <section class="moy-section" id="Moy">
+        <h1 class="moy-section-title">Affichage de la moyenne des etudiants</h1>
+
+       <p class="display-moy-error"></p>
+        <div class="content-moy">
+            <div class="display-moy"></div>
+            <button class="moy-button">Afficher Moy</button>
+        </div>
+       
+    </section>
+
+    <section class="max-min" id="Max">
+        <h1 class="max-min-title">Max Min</h1>
+
+        <div class="display-max-min">
+            <div class="display-max-code dd"></div>
+            <div class="display-max-nom dd"></div>
+            <div class="display-max-prenom dd"></div>
+            <div class="display-max-annee dd"></div>
+            <div class="display-max-moy dd"></div>
+            
+            <button class="display-max-button d-button">Disp Max</button>
+        </div>
+
+           <div class="display-max-min">
+            <div class="display-min-code dd"></div>
+            <div class="display-min-nom dd"></div>
+            <div class="display-min-prenom dd"></div>
+            <div class="display-min-annee dd"></div>
+            <div class="display-min-moy dd"></div>
+            
+            <button class="display-min-button d-button">Disp Min</button>
+        </div>
+    </section>
+
+
+    <section class="tri-section" id="Tri">
+        <h1 class="tri-section-title">
+            Tri
+        </h1>
+
+        <div class="tri-message">
+            <div class="tri-text">Tapez pour trier</div>
+            <button class="tri-button">Trier</button>
+        </div>
+        <div class="tri-content"></div>
+    </section>
+
+    <script src="etud.js"></script>
+</body>
+</html>
