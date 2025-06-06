@@ -1,0 +1,53 @@
+.tri-section{
+    display : flex;
+    flex-direction : column;
+    width : 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #155E95;
+}
+.tri-section-title{
+    font-size : 3em;
+    text-decoration: underline;
+}
+.tri-message{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  gap : 50px;
+
+}
+.tri-text{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.tri-button{
+    color : white;
+    background-color: green;
+    padding: 10px 20px;
+    height: 45px;
+    border : none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor : pointer;
+    transition: padding 0.3s;
+    opacity: 0.3s;
+}
+
+.tri-button:hover{
+    opacity : 0.8;
+    padding : 15px 26px;
+}
+.tri-button:active{
+    opacity : 0.6;
+    padding : 15px 26px;
+}
+.tri-content{
+    padding-bottom: 50px;
+}
