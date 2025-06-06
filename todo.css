@@ -1,0 +1,80 @@
+.todo-section{
+    display: flex;
+    flex-direction: column;
+    padding-top : 100px;
+    background-color: #4F959D;
+    width : 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-title{
+    font-size: 2.8em;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.inputs,.todo{
+    display : grid;
+    grid-template-columns: 300px 150px 100px;
+    gap : 30px;
+    
+}
+
+.in{
+    padding : 10px;
+    font-size : 15px;
+    border : 1px solid gray;
+    border-radius: 4px;
+}
+
+.add-button{
+    font-size: 15px;
+    background-color: #0C0950;
+    cursor: pointer;
+    border : none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 900;
+    transition: opacity 0.3s;
+}
+.add-button:hover{
+    opacity: 0.8;
+}
+.add-button:active{
+    opacity: 0.6;
+}
+.todo{
+    font-size : 18px;
+    align-items: center;
+}
+.delete-button{
+    height : 40px;
+    border : none;
+    border-radius : 5px;
+    background-color: red;
+    cursor : pointer;
+    color: white;
+    font-weight: 900;
+    font-size: 15px;
+    transition: opacity 0.3s;
+}
+.delete-button:hover{
+    opacity: 0.8;
+}
+.delete-button:active{
+    opacity: 0.6;
+}
+.display-content{
+    padding-bottom: 60px;
+}
+.display-error-message{
+    font-size: 20px;
+    color : red;
+    font-weight: 600;
+}
+.display-success-message{
+     font-size: 20px;
+    color : green;
+    font-weight: 600;
+}
