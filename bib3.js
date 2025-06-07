@@ -221,4 +221,5 @@ function displayMin(){
     document.querySelector(".display-min-author").innerHTML = '';
     document.querySelector(".display-min-price").innerHTML = '';
     }, 5000);
+    
 }
