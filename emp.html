@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emp.com</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            font-family: roboto, arial;
+        }
+    </style>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="liste.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="mean.css">
+</head>
+<body>
+    
+    <header>
+
+       <h1 class="header-title">EMP Project</h1> 
+       <div class="functions">
+           
+           <a class="f-liste ff" href="">Liste</a>
+           <a class="f-search ff" href="">Search</a>
+           <a class="f-moy ff" href="">Salary Mean</a>
+           <a class="f-max ff" href="">Max Min</a>
+           <a class="f-sort ff" href="">Sort Salaries</a>
+
+       </div>
+        
+    </header>
+
+
+    <section class="liste-section">
+
+        <h1 class="liste-section-title">
+            Employes liste
+        </h1>
+
+        <div class="inputs">
+            <input type="text" class="input-code in" placeholder="Code">
+            <input type="text" class="input-nom in" placeholder="Lname">
+            <input type="text" class="input-prenom in" placeholder="Fname">
+            <input type="text" class="input-age in" placeholder="Age">
+            <input type="text" class="input-salaire in" placeholder="Salary">
+
+            <button class="add-button">
+                Add
+            </button>
+        </div>
+
+        <div class="display-error-message"></div>
+        <div class="display-success-message"></div>
+
+        <div class="display-content"></div>
+    </section>
+
+
+    <section class="search-section">
+        <h1 class="search-section-title">
+            Search Employee
+        </h1>
+
+        <div class="search-div">
+            <input type="text" class="input-code-search" placeholder="Enter code to search">
+            <button class="search-button">Search</button>
+
+        </div>
+
+        <p class="display-error-search"></p>
+        <p class="display-success-search"></p>
+
+        <div class="display-search">
+            <div class="search-code se"></div>
+             <div class="search-nom se"></div>
+              <div class="search-prenom se"></div>
+               <div class="search-age se"></div>
+                <div class="search-salaire se"></div>
+        </div>
+
+    </section>
+
+
+    <section class="mean-section">
+
+        <h1 class="mean-section-title">Mean</h1>
+        <div class="mean-content">
+            <div class="mean-text">Press to display the mean</div>
+            <button class="mean-button">Disp Mean</button>
+
+            
+        </div>
+
+        <div class="display-mean"></div>
+    </section>
+
+
+
+
+    <script src="emp.js"></script>
+</body>
+</html>
