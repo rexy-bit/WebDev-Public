@@ -1,62 +1,74 @@
 .search-section{
-    display : flex;
-    flex-direction : column;
-    justify-content : center;
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width : 100%;
-    background-color: #123458;
+    background-color: #71C0BB;
+    width: 100%;
+
 }
+
 .search-section-title{
     font-size : 2.5em;
-    color : white;
-    font-weight: 900;
     text-decoration: underline;
-
 }
-.search{
+
+.search-div{
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: center;
-    gap: 40px;
-}
-.search-button{
-    border : none;
-    border-radius: 8px;
-    padding : 15px;
-    cursor: pointer;
-    font-size: 15px;
-    background-color: green;
-    color: white;
-    font-weight: 800;
-    transition: opacity 0.3s;
-    transition: padding 0.4s;
+    align-items: center;
+    gap : 60px;
+    padding-top: 30px;
 }
 
+.input-code-search{
+    padding : 15px;
+    font-size: 15px;
+    border : 1px solid gray;
+    border-radius: 4px;
+}
+
+.search-button{
+    padding : 15px 25px;
+    font-size: 20px;
+    font-weight: 600;
+    border : none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
 .search-button:hover{
     opacity: 0.8;
-    padding: 30px;
 }
 .search-button:active{
     opacity: 0.6;
-    padding: 30px;
 }
 
-.display-contact{
-    padding-bottom: 60px;
-}
-
-.dd{
-    padding: 25px;
+.se{
+    padding :  25px;
     background-color: white;
-    border-radius : 5px;
-    display : flex;
+    border-radius: 8px;
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.display-found{
     font-size : 20px;
-    color: white;
-    font-weight: 600
+    font-weight: bold;
+}
+.display-search{
+    display: grid;
+    grid-template-columns: 100px 200px 200px 100px 150px;
+    column-gap: 30px;
+    padding-bottom: 50px;
 }
 
+.display-error-search{
+    font-size : 20px;
+    color: red;
+    font-weight: bold;
+}
+.display-success-search{
+    font-size : 20px;
+    color: green;
+    font-weight: bold;
+}
