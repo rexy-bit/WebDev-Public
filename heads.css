@@ -1,0 +1,46 @@
+.head-section{
+
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width : 100%;
+    background-color: #4ED7F1;
+}
+.head-section-title{
+    font-size: 3em;
+    text-decoration : underline;
+    padding-top: 50px;
+    font-weight: 900;
+}
+.buttons-head{
+    display  : flex;
+    flex-direction : row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 50px;
+}
+.b{
+    padding : 10px 20px;
+    font-size: 15px;
+    font-weight: 900;
+    background-color: #FF9F00;
+    border : 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.b:hover{
+    opacity: 0.8;
+}
+
+.b:active{
+    opacity: 0.6;
+}
+
+.display-head{
+    padding-top : 50px;
+    padding-bottom: 50px;
+}
