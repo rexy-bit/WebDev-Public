@@ -1,61 +1,54 @@
 .mean-section{
-    display: flex;
+    display : flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width : 100%;
-    background-color: #E3EEB2;
+    background-color: #AEC8A4;
+    width: 100%;
 }
-.mean-section-title{
+
+.mean-title{
     font-size: 3em;
-    color : black;
     text-decoration: underline;
-    font-weight: 900;
-    padding-top: 50px;
+    padding-top: 40px;
 }
-.mean-content{
-    display : flex;
+.mean-div{
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap : 90px;
-    font-size: 25px;
-    padding-bottom: 50px;
-    
+    gap: 50px;
+    margin-bottom: 60px;
+    margin-top: 40px;
 }
-
-.mean-text{
-    font-weight: bold;
+.display-mean{
+    height : 45px;
+    width : 150px;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .mean-button{
-
-    padding : 10px 30px;
     background-color: green;
+    height: 45px;
+    width : 95px;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
-    border : none;
-    border-radius: 5px;
     transition: opacity 0.3s;
 }
 
 .mean-button:hover{
-    opacity : 0.8;
+    opacity: 0.8;
 }
 
 .mean-button:active{
-    opacity : 0.6;
+    opacity: 0.6;
 }
 
-.display-mean{
-    padding : 25px 90px;
-    background-color: white;
-    margin-bottom: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-weight: bold;
-}
+
