@@ -3,111 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>emp.com</title>
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <style>
+    <title>empGest.com</title>
 
+    <style>
         body{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 0;
-            padding: 0;
-            font-family: roboto, arial;
+            padding : 0;
+            font-family: roboto,arial;
+
+        }
+
+        html{
+            scroll-behavior: smooth;
         }
     </style>
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="liste.css">
     <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="mean.css">
+    <link rel="stylesheet" href="max.css">
+    <link rel="stylesheet" href="sort.css">
 </head>
 <body>
     
+
     <header>
 
-       <h1 class="header-title">EMP Project</h1> 
-       <div class="functions">
-           
-           <a class="f-liste ff" href="">Liste</a>
-           <a class="f-search ff" href="">Search</a>
-           <a class="f-moy ff" href="">Salary Mean</a>
-           <a class="f-max ff" href="">Max Min</a>
-           <a class="f-sort ff" href="">Sort Salaries</a>
+        <h1 class="header-title">EMP Project</h1>
 
-       </div>
-        
+        <div class="functions">
+            <a href="#Liste" class="f-liste in">Liste</a>
+            <a href="#Search" class="f-recherche in">Search</a>
+            <a href="#Moy" class="f-moy in">Mean</a>
+            <a href="#Max" class="f-max in">Max Min</a>
+            <a href="#Sort" class="f-sort in">Sort</a>
+            
+        </div>
     </header>
 
 
-    <section class="liste-section">
+    <section class="liste-section" id="Liste">
 
-        <h1 class="liste-section-title">
-            Employes liste
-        </h1>
+        <h1 class="liste-section-title">Liste</h1>
 
         <div class="inputs">
-            <input type="text" class="input-code in" placeholder="Code">
-            <input type="text" class="input-nom in" placeholder="Lname">
-            <input type="text" class="input-prenom in" placeholder="Fname">
-            <input type="text" class="input-age in" placeholder="Age">
-            <input type="text" class="input-salaire in" placeholder="Salary">
+            <input type="text" class="input-code inp" placeholder="Code">
+             <input type="text" class="input-nom inp" placeholder="Nom">
+              <input type="text" class="input-prenom inp" placeholder="Prenom">
+               <input type="text" class="input-age inp" placeholder="Age">
+                <input type="text" class="input-salaire inp" placeholder="Salaire">
 
-            <button class="add-button">
-                Add
-            </button>
+                <button class="add-button">Add</button>
         </div>
 
-        <div class="display-error-message"></div>
-        <div class="display-success-message"></div>
+        <p class="display-error-message"></p>
+        <p class="display-success-message"></p>
 
         <div class="display-content"></div>
     </section>
 
 
-    <section class="search-section">
-        <h1 class="search-section-title">
-            Search Employee
+    <section class="search-section" id="Search">
+
+        <h1 class="search-section-title">Search</h1>
+
+        <div class="search-inputs">
+            <input type="text" class="search-code" placeholder="Enter Code">
+
+            <button class="search-button">Search</button>
+        </div>
+
+        <div class="search-result"></div>
+
+        <div class="emp-search">
+            <div class="s-code se"></div>
+            <div class="s-nom se"></div>
+            <div class="s-prenom se"></div>
+            <div class="s-age se"></div>
+            <div class="s-salaire se"></div>
+        </div>
+
+    </section>
+
+
+    <section class="mean-section" id="Moy">
+
+        <h1 class="mean-title">Mean</h1>
+
+        <div class="mean-div">
+            <div class="display-mean"></div>
+            <button class="mean-button">Disp Mean</button>
+        </div>
+    </section>
+
+
+
+    <section class="max-section" id="Max">
+
+        <h1 class="max-section-title">
+            Max Min
         </h1>
 
-        <div class="search-div">
-            <input type="text" class="input-code-search" placeholder="Enter code to search">
-            <button class="search-button">Search</button>
+        <div class="max">
+            <div class="max-code mi"></div>
+            <div class="max-nom mi"></div>
+            <div class="max-prenom mi"></div>
+            <div class="max-age mi"></div>
+            <div class="max-salaire mi"></div>
 
+            <button class="max-button mb">Disp Max</button>
         </div>
 
-        <p class="display-error-search"></p>
-        <p class="display-success-search"></p>
+          <div class="max m">
+            <div class="min-code mi"></div>
+            <div class="min-nom mi"></div>
+            <div class="min-prenom mi"></div>
+            <div class="min-age mi"></div>
+            <div class="min-salaire mi"></div>
 
-        <div class="display-search">
-            <div class="search-code se"></div>
-             <div class="search-nom se"></div>
-              <div class="search-prenom se"></div>
-               <div class="search-age se"></div>
-                <div class="search-salaire se"></div>
+            <button class="min-button mb">Disp Min</button>
         </div>
-
     </section>
 
 
-    <section class="mean-section">
+    <section class="sort-section" id="Sort">
 
-        <h1 class="mean-section-title">Mean</h1>
-        <div class="mean-content">
-            <div class="mean-text">Press to display the mean</div>
-            <button class="mean-button">Disp Mean</button>
+        <h1 class="sort-section-title">Sort</h1>
 
-            
+        <div class="inputs-sort">
+            <div class="sort-text">Press to sort in ascending order according to salaries</div>
+            <button class="sort-button">Sort</button>
         </div>
+        <div class="display-sort">
 
-        <div class="display-mean"></div>
+        </div>
     </section>
-
 
 
 
     <script src="emp.js"></script>
+
 </body>
 </html>
