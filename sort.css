@@ -1,0 +1,68 @@
+.sort-section{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width : 100%;
+    background-color: #27548A;
+    color: white;
+}
+
+.sort-section-title{
+    font-size: 3em;
+    margin-top : 70px;
+    text-decoration: underline;
+    
+}
+
+.inputs-sort{
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+
+}
+
+.sort-text{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sort-button{
+    font-size: 15px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding : 10px 25px;
+    cursor: pointer;
+    transition:opacity 0.3s;
+}
+.sort-button:hover{
+    opacity: 0.8;
+}
+
+.sort-button:active{
+    opacity: 0.6;
+}
+
+.display-sort{
+    margin-bottom: 90px;
+}
+
+@media(max-width : 500px){
+    .inputs-sort{
+        gap : 20px;
+
+    }
+
+    .sort-text{
+        width : 220px;
+        font-size : 15px;
+    }
+}
