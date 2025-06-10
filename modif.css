@@ -1,0 +1,51 @@
+.modif-section{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #547792;
+}
+
+.modif-section-title{
+
+    font-size : 3em;
+    text-decoration: underline;
+    margin-top : 70px;
+    
+}
+
+.modif-button{
+    background-color: green;
+    color : white;
+    border : none;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.modif-button:hover{
+    opacity: 0.8;
+}
+
+.modif-button:active{
+    opacity: 0.6;
+}
+
+.modif-result{
+    margin-top : 20px;
+    margin-bottom: 70px;
+    width: 300px;
+    font-size : 20px;
+    font-weight: 550;
+}
+
+
+@media(max-width : 1023px){
+    .modif-button{
+        height : 45px;
+        width: 100px;
+    }
+}
