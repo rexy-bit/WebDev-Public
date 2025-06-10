@@ -1,69 +1,98 @@
 header{
+
     display : flex;
-    flex-direction : row;
+    flex-direction: row;
     justify-content: space-between;
-    background-color: #0B1D51;
     align-items: center;
-    color : white;
-    width : 100%;
-    height : 60px;
-    top : 0;
-    position: fixed;
+    width: 100%;
+    position : fixed;
+        top : 0;
+    background-color: #131D4F;
+    height: 60px;
+    
 }
 
 .header-title{
-    font-size : 2.3em;
-    padding-left: 20px;
+    font-size: 2.2em;
+    color : white;
+    margin-left : 15px;
 }
 .functions{
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-   color: white;
-   text-decoration: none;
-   gap: 30px;
-   padding-right: 30px;
-   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap : 30px;
+    margin-right: 20px;
 }
 
-.in{
-    color: white;
+.ff{
+    font-size: 20px;
     text-decoration: none;
-    font-size: 19px;
+    color: white;
     font-weight: bold;
-    transition: color 0.25s;
+    transition: opacity 0.3s;
 }
-.in:hover{
-    color: rgb(114, 114, 243);
+
+.ff:hover{
+    color: rgb(99, 99, 255);
 }
-.in:active{
+.ff:active{
     color: blue;
 }
 
-@media(max-width : 1030px){
+@media(max-width : 850px){
     .header-title{
-        font-size : 1.2em;
-        padding-left : 5px;
+        font-size : 1.9em;
+        margin-left : 10px;
+
     }
     .functions{
-        gap : 10px;
-        padding-right: 10px;
+        gap : 15px;
+        margin-right: 10px;
+    }
+    .ff{
+        font-weight : 550;
+        font-size : 15px;
+    }
+}
+@media(max-width : 500px){
+    .header-title{
+        font-size : 1.3em;
+        margin-left : 5px;
         
     }
-    .in{
-        font-size :13px;
+    .functions{
+        gap : 8px;
+        margin-right : 5px;
+        
+    }
+    .ff{
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+@media(max-width : 420px){
+    .header-title{
+        font-size : 1.1em;
+        margin-left : 2px;
+    }
+    .functions{
+        margin-right: 2px;
     }
 }
 
-@media(max-width : 900px){
+@media(max-width : 372px){
+    .header{
+        height : 55px;
+    }
     .header-title{
         font-size : 1em;
     }
-    .in{
-        font-size : 11px;
-    }
-    .function{
+    .functions{
         gap : 5px;
+    }
+    .ff{
+        font-size : 10px;
     }
 }
