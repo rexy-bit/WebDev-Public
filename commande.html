@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restau.com</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:  0;
+        padding: 0;
+        font-family: roboto ,arial;
+    }
+</style>
+
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="menu.css">
+<link rel="stylesheet" href="commande.css">
+<link rel="stylesheet" href="total.css">
+</head>
+<body>
+    
+
+    <header>
+
+        <h1 class="header-title">
+            Gestionnaire Restau
+        </h1>
+
+        <div class="functions">
+            <a href="" class="f-menu ff">Menu</a>
+            <a href="" class="f-commander ff">Commandes</a>
+            <a href="" class="f-total ff">Total</a>
+            
+        </div>
+
+    </header>
+
+
+    <section class="menu-section" id="menu">
+
+        <h1 class="menu-section-title">Menu</h1>
+
+        <div class="menu">
+            <div class="plat">
+               1- Steak Frites + salade. - 950 Da  
+            </div>
+
+              <div class="plat">
+               2- Sandwich Poulet. - 350 Da  
+            </div>
+
+              <div class="plat">
+               3- Sandwich Viande. - 350 Da  
+            </div>
+
+              <div class="plat">
+               4- Salade Cesar. - 750 Da  
+            </div>
+
+              <div class="plat">
+               5- Plat Poulet marine + frites + salade. - 850 Da  
+            </div>
+                     
+        </div>
+    </section>
+
+
+    <section class="commande-section">
+
+        <h1 class="commande-section-title">Commande</h1>
+
+        <div class="commande-inputs">
+            <input type="text" class="input-nom in" placeholder="Nom">
+            <input type="text" class="input-prenom in" placeholder="Prenom">
+            <input type="text" class="input-commande in" placeholder="Numero de commande">
+            <input type="text" class="input-quantite in" placeholder="Quantite">
+
+            <button class="commande-button">Commmander</button>
+        
+        </div>
+
+        <p class="display-error-message"></p>
+        <p class="display-success-message"></p>
+
+        <div class="display-content"></div>
+
+    </section>
+
+    
+    <section class="total-section">
+
+        <h1 class="total-section-title">Total</h1>
+
+        <div class="total-inputs">
+            <input type="text" class="total-nom in" placeholder="Nom">
+            <input type="text" class="total-prenom in" placeholder="Prenom">
+            <button class="total-button">Aff total</button>
+
+        </div>
+
+        <div class="display-total-message"></div>
+        <div class="total"></div>
+
+    </section>
+
+    
+
+    
+    <script src="commande.js"></script>
+    <script src="total.js"></script>
+</body>
+</html>
