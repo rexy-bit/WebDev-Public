@@ -3,168 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bib.com</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>billet.com</title>
+         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<style>
+  <style>
     body{
-
         display : flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin : 0;
-        padding : 0;
+        margin: 0;
+        padding: 0;
         font-family: roboto, arial;
-    }
+        
 
-    html{
-        scroll-behavior: smooth;
     }
-</style>
+  </style>
 
-<link rel="stylesheet" href="header.css">
-<link rel="stylesheet" href="liste.css">
-<link rel="stylesheet" href="search.css">
-<link rel="stylesheet" href="moy.css">
-<link rel="stylesheet" href="max.css">
-<link rel="stylesheet" href="modif.css">
-<link rel="stylesheet" href="sort.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="liste.css">
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="modif.css">
 </head>
 <body>
-     
+    
+   
     <header>
-
-        <h1 class="header-title">Book Gestionnary</h1>
+        <h1 class="header-title">Gest Billet</h1>
 
         <div class="functions">
-
-            <a href="#liste" class="f-liste ff">Liste</a>
-            <a href="#search" class="f-recherche ff">Search</a>
-            <a href="#moy" class="f-moy ff">Moy</a>
-             <a href="#max" class="f-max ff">Max</a>
-            <a href="#modif" class="f-modif ff">Modif</a>
-            <a href="#sort" class="f-sort ff">Sort</a>
-
+            <a href="" class="f-liste ff">Liste</a>
+            <a href="" class="f-recherche ff">Recherche</a>
+            <a href="" class="f-moy ff">Moy</a>
+            <a href="" class="f-modif ff">Modif</a>
+            <a href="" class="f-max ff">Max Min</a>
+            <a href="" class="f-sort ff">Sort</a>
         </div>
     </header>
 
 
-    <section class="liste-section" id="liste">
-
+    <section class="liste-section">
+        
         <h1 class="liste-section-title">Liste</h1>
 
         <div class="inputs">
-            <input type="text" class="input-code in" placeholder="Code">
-            <input type="text" class="input-title in" placeholder="Title">
-            <input type="text" class="input-author in" placeholder="Author">
-            <input type="text" class="input-price in" placeholder="Price">
-            
+            <input type="text" class="input-nom in" placeholder="Nom">
+            <input type="text" class="input-prenom in" placeholder="Prenom">
+            <input type="text" class="input-numero in" placeholder="Numero">
+            <input type="text" class="input-prix in" placeholder="prix">
+
             <button class="add-button">
-                Add
+                Ajouter
             </button>
+
         </div>
 
-        <p class="display-error-message"></p>
         <p class="display-success-message"></p>
+        <p class="display-error-message"></p>
 
         <div class="display-content"></div>
+
     </section>
 
 
-    <section class="search-section" id="search">
+    <section class="search-section">
+        
+        <h1 class="search-section-title">Recherche</h1>
 
-        <h1 class="search-section-title">
-            Search
-        </h1>
-
-        <div class="search-input">
-            <input type="text" class="search-code in" placeholder="Code to search">
+        <div class="search-inputs">
+            <input type="text" class="search-numero in" placeholder="Entrez le numero de vol">
             <button class="search-button">Search</button>
+
         </div>
 
-        <div class="search-message"></div>
+        <p class="search-result"></p>
 
-        <div class="search-result">
-            <div class="s-title se"></div>
-            <div class="s-author se"></div>
-            <div class="s-price se"></div>
-        </div>
-    </section>
-
-
-    <section class="moy-section" id="moy">
-
-        <h1 class="moy-section-title">Mean Prices</h1>
-
-        <div class="moy-div">
-            <div class="display-moy"></div>
-            <button class="moy-button">Disp Moy</button>
+        <div class="display-search">
+            <div class="se-nom se"></div>
+            <div class="se-prenom se"></div>
+            <div class="se-numero se"></div>
+            <div class="se-prix se"></div>
         </div>
 
     </section>
 
 
-    <section class="max-section" id="max">
+    <section class="modif-section">
 
-        <h1 class="max-section-title">
-            Max Min
-        </h1>
-
-        <div class="max">
-            <div class="max-code mm"></div>
-            <div class="max-title mm"></div>
-            <div class="max-author mm"></div>
-            <div class="max-price mm"></div>
-            <button class="max-button">
-                Disp Max
-            </button>
-        </div>
-
-        <div class="max">
-            <div class="min-code mm"></div>
-            <div class="min-title mm"></div>
-            <div class="min-author mm"></div>
-            <div class="min-price mm"></div>
-            <button class="min-button">
-                Disp Min
-            </button>
-        </div>
-    </section>
-
-
-    <section class="modif-section" id="modif">
-
-        <h1 class="modif-section-title">Modify Book</h1>
-
+        <h1 class="modif-section-title">Modification</h1>
         <div class="inputs">
-            <input type="text" class="modif-code in" placeholder="Code">
-            <input type="text" class="modif-title in" placeholder="Title">
-            <input type="text" class="modif-author in" placeholder="Author">
-            <input type="text" class="modif-price in" placeholder="Price">
+            <input type="text" class="modif-nom in" placeholder="Nom">
+            <input type="text" class="modif-prenom in" placeholder="Prenom">
+            <input type="text" class="modif-numero in" placeholder="Numero">
+            <input type="text" class="modif-prix in" placeholder="Prix">
 
-            <button class="modif-button">
-                Modify
-            </button>
-            
+            <button class="modif-button">Modifier</button>
         </div>
 
-        <div class="modif-result"></div>
+        <p class="modif-message"></p>
     </section>
 
-
-
-    <section class="sort-section" id="sort">
-
-        <h1 class="sort-section-title">Sort</h1>
-
-        <button class="sort-button">Tap to Sort</button>
-
-        <div class="display-sort"></div>
-    </section>
-    <script src="bib.js"></script>
-
+    <script src="billet.js"></script>
 </body>
 </html>
