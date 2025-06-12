@@ -1,82 +1,72 @@
 header{
-    display : flex;
+
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width : 100%;
     align-items: center;
-    height : 55px;
-    top: 0;
-    position : fixed;
-    background-color: #3F2E56;
+    top : 0;
+    position: fixed;
+    width : 100%;
+    background-color: #B85042;
+    height: 55px;
+
+
 }
 
 .header-title{
-    margin-left : 20px;
     color: white;
     font-weight: 900;
+    margin-left: 10px;
+    font-size: 2.3em;;
 }
+
 .functions{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap : 30px;
-    margin-right : 20px;
+    margin-right: 20px;
 }
-
 .ff{
-    font-size: 20px;
     text-decoration: none;
-    color : white;
-    font-weight: 600;
-    transition: color 0.3s;
+    color: white;
+    font-size : 20px;
+    font-weight: 550;
+    transition: color 0.25s;
 }
 
 .ff:hover{
-    color : rgb(107, 107, 255);
+    color: rgb(107, 107, 252);
 }
 .ff:active{
     color: blue;
 }
 
-@media(max-width : 1000px){
-    .header-title{
-        margin-left : 10px;
-        font-size : 1.8em;
-    }
+@media(max-width : 762px){
     .functions{
-        gap : 20px;
+        gap : 15px;
+        margin-right: 10px;
+        
+    }
+    .header-title{
+        margin-left: 5px;
+        font-size: 2em;
     }
     .ff{
+        font-weight: normal;
         font-size: 15px;
     }
 }
-
 @media(max-width : 600px){
     .header-title{
-        font-size : 1.4em;
-        margin-left: 5px;
-        
-    }
-    .functions{
-         gap : 15px;
-    }
-    .ff{
-        font-weight: 500;
-    }
-
-}
-@media(max-width : 500px){
-    .header-title{
-        font-size : 1.2em;
-        font-weight: 700;
-    }
-    .ff{
-        font-size : 12px;
+       font-size: 1.2em;
     }
     .functions{
         gap : 10px;
-        margin-right: 7px;
+        margin-right: 5px;
+    }
+    .ff{
+        font-size: 12px;
     }
 }
-
