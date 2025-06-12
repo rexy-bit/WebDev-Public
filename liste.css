@@ -3,93 +3,112 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#CADCFC;
     width: 100%;
+    background-color: #E7E8D1;
+    
 }
-
 .liste-section-title{
     font-size: 3em;
+    margin-top: 130px;
+    color : black;
     text-decoration: underline;
-    margin-top : 120px;
-}
 
+}
 .inputs,.billet{
     display : grid;
-    grid-template-columns: 250px 250px 200px 150px 100px;
+    grid-template-columns: 250px 250px 150px 250px 150px 100px;
     column-gap: 20px;
 }
-
 .billet{
     align-items: center;
-    margin-bottom : 30px;
-    font-size :20px;
+    margin-bottom: 30px;
+    font-size: 20px;
 }
 .delete-button{
-    height: 40px;
-    width: 100px;
+    height : 40px;
     background-color: red;
     color: white;
     font-weight: bold;
-    border: none;
-    border-radius: 3px;
     font-size: 15px;
-    transition: opacity 0.25s;
-    cursor: pointer;
+    border : 1px solid gray;
+    border-radius: 3px;
 }
-
 .in{
-    padding : 10px;
+    padding: 10px;
     font-size: 15px;
     border: 1px solid gray;
     border-radius: 3px;
 }
-.add-button,.modif-button{
-    font-size : 15px;
-    color : white;
-    background-color: green;
+.add-button,.modif-button,.max-button,.min-button{
+    font-size: 15px;
     border : none;
-    border-radius: 3px;
-    font-weight: 900;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
     cursor: pointer;
-    transition : opacity 0.25s;
+    transition: opacity 0.25s;
 }
-
-.add-button:hover,.delete-button:hover,.modif-button:hover{
+.add-button:hover,.search-button:hover,.modif-button:hover,.max-button:hover,.min-button:hover{
     opacity : 0.8;
 }
-.add-button:active,.delete-button:active,.modif-button:active{
+.add-button:active,.search-button:active,.modif-button:active,.min-button:active,.max-button:active{
     opacity : 0.6;
 }
 
-.display-content{
-    margin-bottom : 50px;
+.display-error-message{
+    font-size : 20px;
+    width : 300px;
+    color : red;
+    font-weight: 550;
 }
 
-@media(max-width : 1060px){
+.display-success-message{
+    font-size : 20px;
+    width : 300px;
+    color : green;
+    font-weight: 550;
+}
+
+.display-content{
+    margin-bottom : 60px;
+}
+
+@media(max-width : 1280px){
+
     .inputs,.billet{
-        display : flex;
-        flex-direction : column;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap : 20px;
         padding : 20px;
         border : 1px solid black;
+        margin-top: 40px;
+    }
+    .billet{
+        width : 200px;
+    }
+    .in{
+        width : 350px;
+    }
+    .add-button,.delete-button{
+          width : 100px;
+          height : 45px;
+    }
+}
+
+@media(max-width : 520px){
+    .inputs{
+        padding : 10px;
+
     }
     .in{
         width : 300px;
     }
-    .add-button{
-        height : 45px;
-        width: 100px;
-    }
-
 }
-@media(max-width : 420px){
-    .inputs{
-        padding : 15px;
-    }
+@media(max-width : 380px){
     .in{
-        width: 260px;
+        width : 280px;
     }
 }
-
