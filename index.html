@@ -3,106 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>billet.com</title>
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>ticket.com</title>
+
+       <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <style>
+
+<style>
     body{
         display : flex;
-        flex-direction: column;
+        flex-direction : column;
         justify-content: center;
         align-items: center;
         margin: 0;
         padding: 0;
-        font-family: roboto, arial;
-        
+        font-family: roboto, Arial;
 
     }
-  </style>
 
-  <link rel="stylesheet" href="header.css">
-  <link rel="stylesheet" href="liste.css">
-  <link rel="stylesheet" href="search.css">
-  <link rel="stylesheet" href="modif.css">
+    html{
+        scroll-behavior: smooth;
+    }
+</style>
+
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="liste.css">
+<link rel="stylesheet" href="search.css">
+<link rel="stylesheet" href="moy.css">
+<link rel="stylesheet" href="modif.css">
+<link rel="stylesheet" href="max.css">
+<link rel="stylesheet" href="sort.css">
+
 </head>
 <body>
     
-   
+
     <header>
-        <h1 class="header-title">Gest Billet</h1>
+        <h1 class="header-title">Air Tickets</h1>
 
         <div class="functions">
-            <a href="" class="f-liste ff">Liste</a>
-            <a href="" class="f-recherche ff">Recherche</a>
-            <a href="" class="f-moy ff">Moy</a>
-            <a href="" class="f-modif ff">Modif</a>
-            <a href="" class="f-max ff">Max Min</a>
-            <a href="" class="f-sort ff">Sort</a>
+            <a class="f-liste ff" href="#liste">Liste</a>
+            <a class="f-search ff" href="#search">Search</a>
+             <a class="f-moy ff" href="#moy">Moy</a>
+              <a class="f-modif ff" href="#modif">Modify</a>
+              <a class="f-max ff" href="#max">Max Min</a>
+               <a class="f-sort ff" href="#sort">Sort</a>
+
         </div>
     </header>
 
 
-    <section class="liste-section">
-        
-        <h1 class="liste-section-title">Liste</h1>
+    <section class="liste-section" id="liste"> 
+
+        <h1 class="liste-section-title">
+            Liste
+        </h1>
 
         <div class="inputs">
-            <input type="text" class="input-nom in" placeholder="Nom">
-            <input type="text" class="input-prenom in" placeholder="Prenom">
-            <input type="text" class="input-numero in" placeholder="Numero">
-            <input type="text" class="input-prix in" placeholder="prix">
+            <input type="text" class="input-nom in" placeholder="Lnama">
+            <input type="text" class="input-prenom in" placeholder="Fname">
+            <input type="text" class="input-age in" placeholder="Age">
+            <input type="text" class="input-numero in" placeholder="Flight number">
+            <input type="text" class="input-prix in" placeholder="Price">
 
-            <button class="add-button">
-                Ajouter
-            </button>
+            <button class="add-button">Add</button>
 
         </div>
 
-        <p class="display-success-message"></p>
         <p class="display-error-message"></p>
+        <p class="display-success-message"></p>
 
         <div class="display-content"></div>
-
     </section>
 
 
-    <section class="search-section">
-        
-        <h1 class="search-section-title">Recherche</h1>
+    <section class="search-section" id="search">
+
+        <h1 class="search-section-title">
+            Search Ticket
+        </h1>
 
         <div class="search-inputs">
-            <input type="text" class="search-numero in" placeholder="Entrez le numero de vol">
-            <button class="search-button">Search</button>
+            <input type="text" class="search-numero in" placeholder="Enter the flight number">
 
+            <button class="search-button">Search</button>
         </div>
 
-        <p class="search-result"></p>
+        <p class="search-message"></p>
 
         <div class="display-search">
             <div class="se-nom se"></div>
             <div class="se-prenom se"></div>
+            <div class="se-age se"></div>
             <div class="se-numero se"></div>
             <div class="se-prix se"></div>
-        </div>
 
+        </div>
     </section>
 
+    <section class="moy-section" id="moy">
 
-    <section class="modif-section">
+        <h1 class="moy-section-title">Moy</h1>
 
-        <h1 class="modif-section-title">Modification</h1>
+        <div class="moy-div">
+
+     <div class="display-moy"></div>
+     <button class="moy-button">Disp Moy</button>
+
+        </div>
+    </section>
+    
+
+
+    <section class="modify-section" id="modif">
+
+        <h1 class="modify-section-title">Modify Ticket</h1>
+
         <div class="inputs">
-            <input type="text" class="modif-nom in" placeholder="Nom">
-            <input type="text" class="modif-prenom in" placeholder="Prenom">
-            <input type="text" class="modif-numero in" placeholder="Numero">
-            <input type="text" class="modif-prix in" placeholder="Prix">
+                      <input type="text" class="m-nom in" placeholder="Lnama">
+            <input type="text" class="m-prenom in" placeholder="Fname">
+            <input type="text" class="m-age in" placeholder="Age">
+            <input type="text" class="m-numero in" placeholder="Flight number">
+            <input type="text" class="m-prix in" placeholder="Price">
 
-            <button class="modif-button">Modifier</button>
+            <button class="modif-button">Modify</button>
         </div>
 
         <p class="modif-message"></p>
+    </section>
+
+
+    <section class="max-section" id="max">
+
+        <h1 class="max-section-title">Max Min</h1>
+
+        <div class="max">
+            <div class="max-nom m"></div>
+              <div class="max-prenom m"></div>
+                <div class="max-age m"></div>
+                  <div class="max-numero m"></div>
+                    <div class="max-prix m"></div>
+
+            <button class="max-button">Disp Max</button>
+
+        </div>
+
+
+              <div class="max min">
+            <div class="min-nom m"></div>
+              <div class="min-prenom m"></div>
+                <div class="min-age m"></div>
+                  <div class="min-numero m"></div>
+                    <div class="min-prix m"></div>
+
+            <button class="min-button">Disp Min</button>
+
+        </div>
+    </section>
+
+    <section class="sort-section" id="sort">
+
+        <h1 class="sort-section-title">
+            Sort
+        </h1>
+
+        <button class="sort-button">
+            Sort
+        </button>
+
+        <div class="display-sort">
+
+        </div>
     </section>
 
     <script src="billet.js"></script>
