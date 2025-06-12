@@ -1,43 +1,37 @@
 .sort-section{
 
-    display: flex;
+    display : flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #BDDDE4;
-    width: 100%;
+    width : 100%;
+    background-color: #F98866;
 }
 
 .sort-section-title{
-    margin-top: 75px;
+
     font-size: 3em;
     text-decoration: underline;
+    margin-top: 70px;
     margin-bottom: 70px;
 }
-
 .sort-button{
-    height : 45px;
-    width: 120px;
-    background-color: green;
-    color: white;
     font-size: 17px;
     font-weight: bold;
-    border : none;
-    border-radius : 5px;
-    margin-bottom : 50px;
     cursor: pointer;
-    transition: opacity 0.25s;
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 4px;
+    width : 100px;
+    height : 40px;
+    transform: opacity 0.25s;
+    margin-bottom: 40px;
 }
-
 .sort-button:hover{
     opacity: 0.8;
 }
 
 .sort-button:active{
     opacity: 0.6;
-}
-
-
-.display-sort{
-    margin-bottom : 70px;
 }
