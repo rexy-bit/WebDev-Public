@@ -1,38 +1,44 @@
-let todoList = [{
-    name : 'Make Dinner',
-    date : '05/08/2025'
+let todoList = JSON.parse(localStorage.getItem('todoList')) || [{
+    name : 'Make dinner',
+    date : '10/06/2006',
+
 }];
 
-
 displayTodo();
-
-
 function displayTodo(){
 
-    let todoHtml = '';
+    const container = document.querySelector(".display-content");
+    container.innerHTML = '';
 
     for(let i = 0;i<todoList.length;i++){
 
-        let html = `
+        const todoDiv = document.createElement("div");
+        todoDiv.className = "todo"
         
-           <div class="todo">
-               <p class="name">${todoList[i].name}</p>
-               <p class="date">${todoList[i].date}</p>
-               
-               <button class="delete-button" onclick="
-                  todoList.splice(${i}, 1);
-                  displayTodo();
-               ">
-                  Delete
-               </button>
-           </div>
-        
-        `;
 
-        todoHtml += html;
+        const nameP = document.createElement("p");
+        nameP.className = "name";
+        nameP.textContent = todoList[i].name;
+
+        const dateP = document.createElement("p");
+        dateP.className = "date";
+        dateP.textContent = todoList[i].date;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete-button";
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener('click', ()=>{
+            todoList.splice(i, 1);
+            displayTodo();
+        });
+
+        todoDiv.appendChild(nameP);
+        todoDiv.appendChild(dateP);
+        todoDiv.appendChild(deleteButton);
+
+        container.appendChild(todoDiv);
     }
 
-    document.querySelector(".display-content").innerHTML = todoHtml;
     localStorage.setItem('todoList', JSON.stringify(todoList));
 
 }
@@ -46,9 +52,11 @@ function addTodo(){
     let date = dateInput.value;
 
     if(name === '' || date === ''){
-        document.querySelector(".display-error-message").innerHTML = 'Please enter all the information';
+        document.querySelector(".display-error-message").innerHTML = 'Please enter all the necessary information';
     }else{
-        document.querySelector(".display-error-message").innerHTML = '';
+
+         document.querySelector(".display-error-message").innerHTML = '';
+
         todoList.push({
             name,
             date
@@ -56,12 +64,9 @@ function addTodo(){
 
         displayTodo();
 
-        document.querySelector(".display-success-message").innerHTML = 'Todo Added successfuly';
-        
-        setTimeout(()=>{
-             document.querySelector(".display-success-message").innerHTML = '';
-        }, 3000);
+
     }
+
 }
 
 document.querySelector(".add-button").addEventListener('click', ()=>{
