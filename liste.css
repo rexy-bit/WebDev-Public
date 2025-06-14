@@ -1,114 +1,132 @@
 .liste-section{
-    display : flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #caf0f8;
     width: 100%;
-    background-color: #E7E8D1;
-    
 }
+
 .liste-section-title{
     font-size: 3em;
-    margin-top: 130px;
-    color : black;
+    margin-top: 120px;
+    font-weight: 900;
     text-decoration: underline;
-
+    margin-bottom: 90px;
 }
-.inputs,.billet{
+.inputs{
     display : grid;
-    grid-template-columns: 250px 250px 150px 250px 150px 100px;
-    column-gap: 20px;
-}
-.billet{
-    align-items: center;
-    margin-bottom: 30px;
-    font-size: 20px;
-}
-.delete-button{
-    height : 40px;
-    background-color: red;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    border : 1px solid gray;
-    border-radius: 3px;
+    grid-template-columns: 250px 250px 150px 200px 150px 100px;
+    gap : 15px;
 }
 .in{
-    padding: 10px;
-    font-size: 15px;
-    border: 1px solid gray;
+    padding : 10px;
+    border : 1px solid gray;
     border-radius: 3px;
-}
-.add-button,.modif-button,.max-button,.min-button{
     font-size: 15px;
-    border : none;
-    background-color: green;
-    color: white;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: opacity 0.25s;
 }
-.add-button:hover,.search-button:hover,.modif-button:hover,.max-button:hover,.min-button:hover{
-    opacity : 0.8;
-}
-.add-button:active,.search-button:active,.modif-button:active,.min-button:active,.max-button:active{
-    opacity : 0.6;
-}
-
 .display-error-message{
     font-size : 20px;
+    color: red;
+    margin-top : 30px;
     width : 300px;
-    color : red;
-    font-weight: 550;
 }
 
 .display-success-message{
     font-size : 20px;
+    color: green;
+    margin-top : 30px;
     width : 300px;
-    color : green;
-    font-weight: 550;
 }
-
 .display-content{
     margin-bottom : 60px;
 }
 
-@media(max-width : 1280px){
+.movie{
 
-    .inputs,.billet{
-        display: flex;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    border : 2px solid white;
+    padding : 20px;
+    border-radius: 5px;
+    margin-bottom : 30px;
+    align-items: center;
+    width : 500px;
+    background-color: #415a77;
+    color: white;
+    font-size : 20px;
+    line-height: 10px;
+    cursor :all-scroll ;
+}
+.add-button{
+    background-color: green;
+}
+.delete-button,.add-button,.modify-button{
+    width : 100px;
+    height : 45px;
+    background-color: red;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-size: 15px;
+   font-weight: bold;
+   transition : opacity 0.2s;
+   cursor: pointer;
+}
+.add-button,.modify-button{
+    background-color: green;
+}
+.delete-button:hover,.add-button:hover,.modify-button:hover{
+    opacity: 0.8;
+}
+
+.delete-button:active,.add-button:active,.modify-button:active{
+    opacity: 0.6;
+}
+
+@media(max-width : 1240px){
+    .inputs{
+        display : flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap : 20px;
-        padding : 20px;
         border : 1px solid black;
-        margin-top: 40px;
-    }
-    .billet{
-        width : 200px;
-    }
-    .in{
-        width : 350px;
-    }
-    .add-button,.delete-button{
-          width : 100px;
-          height : 45px;
-    }
-}
-
-@media(max-width : 520px){
-    .inputs{
-        padding : 10px;
-
+        padding : 20px;
     }
     .in{
         width : 300px;
     }
+
 }
-@media(max-width : 380px){
+
+@media(max-width : 700px){
+
+    .movie{
+        width : 400px;
+    }
+    
+}
+@media(max-width : 500px){
+
+    .movie{
+        width : 300px;
+    }
+    .inputs{
+        padding : 15px;
+    }
     .in{
         width : 280px;
+    }
+    
+}
+@media(max-width : 376px){
+    .in{
+        width : 250px;
+    }
+    .movie{
+        width : 250px;
+        line-height: 20px;
     }
 }
