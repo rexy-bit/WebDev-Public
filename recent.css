@@ -1,0 +1,45 @@
+.recent-section{
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dad7cd;
+    width: 100%;
+}
+.recent-section-title{
+    font-size : 3em;
+    color: black;
+    font-weight: 900;
+    text-decoration: underline;
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+.max{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom  : 40px;
+}
+
+.display-recent{
+    margin-bottom: 40px;
+}
+.max-button,.min-button{
+    font-size : 15px;
+    width : 120px;
+    height : 45px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius : 5px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.max-button:hover,.min-button:hover{
+    opacity: 0.8;
+}
+.max-button:active,.min-button:active{
+    opacity: 0.6;
+}
