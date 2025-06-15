@@ -3,157 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FILM.com</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>dep.com</title>
+           <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-
 <style>
-
     body{
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0;
-        padding: 0;
         font-family: roboto, arial;
+        margin: 0;
+        padding : 0;
 
     }
 
     html{
+
         scroll-behavior: smooth;
     }
 </style>
 
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="liste.css">
-<link rel="stylesheet" href="search.css">
-<link rel="stylesheet" href="recent.css">
-<link rel="stylesheet" href="modif.css">
-<link rel="stylesheet" href="sort.css">
-
+<link rel="stylesheet" href="revenu.css">
+<link rel="stylesheet" href="depense.css">
+<link rel="stylesheet" href="solde.css">
 </head>
 <body>
-
-    <header>
-        <h1 class="header-title">Movie App</h1>
-
-        <div class="functions">
-            <a href="#liste" class="f-liste ff">Liste</a>
-            <a href="#search" class="f-search ff">Search</a>
-            <a href="#recent" class="f-recent ff">Recenty</a>
-            <a href="#modify" class="f-modif ff">Modify</a>
-            <a href="#sort" class="f-sort ff">Sort</a>
-        </div>
-    </header>
     
 
-    <section class="liste-section" id="liste">
+    <header>
 
-        <h1 class="liste-section-title">
-            Liste
-        </h1>
+        <h1 class="header-title">Gestionnaire de depenses personnelles</h1>
 
-        <div class="inputs">
-            <input type="text" class="input-title in" placeholder="Movie Title">
-            <input type="text" class="input-producer in" placeholder="Producer">
-            <input type="text" class="input-year in" placeholder="Year">
-            <input type="text" class="input-type in" placeholder="Movie Type">
-            <input type="text" class="input-note in" placeholder="rate/10">
-
-            <button class="add-button">Add</button>
-        </div>
-
-        <p class="display-error-message"></p>
-        <p class="display-success-message"></p>
-
-        <div class="display-content"></div>
-
-    </section>
-
-    <section class="search-section" id="search">
-        <h1 class="search-section-title">Search</h1>
-
-        <div class="search-inputs">
-            <input type="text" class="search-title" placeholder="Enter the title">
-            <button class="search-button">
-                Search
-            </button>
-        </div>
-
-        <p class="display-search-result"></p>
-
-
-        <div class="display-search"></div>
-    </section>
-
-    <section class="recent-section" id="recent">
-        <h1 class="recent-section-title">
-            Recent and Oldest movie
-        </h1>
-
-        <div class="max">
-            <button class="max-button">
-                Disp recent
-            </button>
-
-            <div class="display-recent">
-
-            </div>
-        </div>
-
-        <div class="max">
-            <button class="min-button">
-                Disp Old
-            </button>
-
-            <div class="display-old">
-                
-            </div>
-        </div>
-    </section>
-
-
-    <section class="modify-section" id="modify">
-
-        <h1 class="modify-section-title">
-            Modify
-        </h1>
-
-        <div class="inputs">
-
-            <input type="text" class="modif-title in" placeholder="Enter title">
-            <input type="text" class="modif-producer in" placeholder="Enter producer">
-            <input type="text" class="modif-year in" placeholder="Enter year">
-            <input type="text" class="modif-type in" placeholder="Enter type">
-            <input type="text" class="modif-note in" placeholder="rate/10">
-            <button class="modify-button">Modify</button>
+        <div class="functions">
+            <a href="" class="f-liste ff">Liste</a>
+            <a href="" class="f-revenu ff">Revenus</a>
+            <a href="" class="f-depense ff">Depenses</a>
+            <a href="" class="f-solde ff">Soldes</a>
             
         </div>
 
-        <p class="display-modif-message"></p>
+
+    </header>
+
+
+
+    <section class="liste-section">
+
+        <h1 class="liste-section-title">Liste</h1>
+
+           <div class="inputs">
+               <input type="text" class="input-type in" placeholder="Type: 1 pour revenu 2 pour depenses">
+               <input type="text" class="input-description in" placeholder="Description">
+               <input type="text" class="input-montant in" placeholder="Montant">
+               <input type="date" class="input-date in">
+
+                <button class="add-button">Add</button>
+           </div>
+
+
+           <p class="display-error-message"></p>
+           <p class="display-success-message"></p>
+
+
+           <div class="display-content"></div>
+
+
+    </section>
+
+    
+    <section class="revenu-section">
+
+        <h1 class="revenu-section-title">Revenus</h1>
+
+        <button class="revenu-button">Aff Revenus</button>
+        <div class="display-revenu">
+
+        </div>
+    </section>
+    
+        <section class="depense-section">
+
+        <h1 class="depense-section-title">Depenses</h1>
+
+        <button class="depense-button">Aff Depenses</button>
+        <div class="display-depense">
+
+        </div>
     </section>
 
 
+    <section class="solde-section">
 
-    <section class="sort-section" id="sort">
+        <h1 class="solde-section-title">
+            Solde
+        </h1>
 
-        <h1 class="sort-section-title">Sort</h1>
+        <button class="solde-button">Aff solde</button>
 
-      <div class="sort-content">
-
-        <button class="sort-button">Sort</button>
-
-
-        <div class="display-sort"></div>
-
-
-      </div>
+        <div class="display-solde"></div>
     </section>
-
-    <script src="film.js"></script>
+    <script src="dep.js"></script>
 </body>
 </html>
