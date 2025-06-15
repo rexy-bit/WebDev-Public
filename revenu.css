@@ -1,0 +1,46 @@
+.revenu-section{
+
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width : 100%;
+    background-color: #748cab;
+
+}
+.revenu-section-title{
+
+    font-size : 3em;
+    color: white;
+    margin-top: 100px;
+    text-decoration: underline;
+    font-weight: 900;
+}
+.revenu-button{
+    width : 120px;
+    height : 45px;
+    background-color: green;
+    color: white;
+    font-size : 15px;
+    font-weight: 600;
+    border : none;
+    border-radius : 5px;
+    cursor: pointer;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.revenu-button:hover{
+    opacity : 0.8;
+}
+.revenu-button:active{
+    opacity : 0.6;
+}
+
+.display-revenu{
+    display : flex;
+    flex-direction : column;
+    gap : 30px;
+    margin-bottom: 60px;
+
+}
