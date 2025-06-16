@@ -5,73 +5,100 @@ header{
     justify-content: space-between;
     align-items: center;
     width : 100%;
-    background-color: #3e5c76;
+    background-color: #03045e;
     top : 0;
-    position : fixed;
-    height: 55px;
+    position: fixed;
+    height : 55px;
 }
+
 .header-title{
-    font-size : 1.9em;
-    color: white;
-    margin-left : 5px;
+    color : white;
+    margin-left : 10px;
 }
+
 .functions{
-    display : flex;
+
+    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items :center;
     gap : 30px;
-    margin-right : 10px;
+    margin-right : 20px;
 }
 .ff{
     text-decoration: none;
-    color : white;
     font-size: 20px;
-    transition: color 0.2s;
+    color : white;
+    transition: color 0.25s;
 }
 .ff:hover{
-    color: rgb(119, 119, 255);
+    color: rgb(110, 110, 255);
 }
 .ff:active{
     color: blue;
 }
 
-@media(max-width : 1024px){
-    .header-title{
-        font-size : 1.5em;
+@media(max-width : 770px){
+    .functions{
+        gap : 20px;
+        margin-right: 10px;
     }
 }
-@media(max-width : 850px){
-    .header-title{
-        font-size : 1.2em;
-    }
+
+@media(max-width : 650px){
     .functions{
         gap : 15px;
+        margin-right: 10px;
+        font-size : 15px;
     }
     .ff{
         font-size : 15px;
     }
+    .header-title{
+        font-size : 2em;
+        margin-left : 5px;
+    }
 }
-@media(max-width : 650px){
+
+@media(max-width : 500px){
+    .functions{
+        gap : 8px;
+        margin-right: 5px;
+        
+        
+    }
+    .ff{
+        font-size : 15px;
+    }
     .header-title{
         font-size : 1.1em;
     }
-    .functions{
+}
+
+@media(max-width : 450px){
+        .functions{
         gap : 10px;
-        margin-right : 5px;
+        margin-right: 5px;
+        
+        
     }
     .ff{
         font-size : 12px;
     }
-}
-@media(max-width : 550px){
     .header-title{
-        font-size : 1em;
-        font-weight : 600;
+        font-size : 1.1em;
     }
 }
-@media(max-width : 400px){
+
+@media(max-width : 390px){
+    .header-title{
+        font-size : 0.9em;
+    }
+}
+
+@media(max-width : 370px){
     .header-title{
         font-size : 0.8em;
+    }
+    .functions{
+        gap : 8px;
     }
 }
