@@ -1,0 +1,141 @@
+.home-section,.contact-section{
+
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #669bbc;
+    
+    
+}
+
+.home-section-title,.contact-section-title{
+    font-size :3em;
+    margin-top : 100px;
+    text-decoration: underline;
+    font-weight: 900;
+}
+.home-text{
+
+    width : 800px;
+    font-size : 23px;
+    line-height: 38px;
+    color : white;
+    margin-bottom : 70px;
+    margin-top : 50px;
+    padding : 30px;
+    border : 1px solid black;
+    border-radius : 50px;
+    
+}
+
+@media(max-width : 950px){
+    .home-text{
+        width : 700px;
+    }
+}
+
+@media(max-width : 850px){
+    .home-text{
+        width : 600px;
+    }
+}
+
+@media(max-width : 780px){
+    .home-text{
+        width : 550px;
+    }
+}
+@media(max-width : 650px){
+    .home-text{
+        width : 450px;
+        font-size : 20px;
+
+    }
+}
+
+@media(max-width : 550px){
+    .home-text{
+        width : 400px;
+        font-size : 18px;
+        line-height: 29px;
+        padding : 20px;
+        border-radius: 10px;
+    }
+}
+@media(max-width : 470px){
+    .home-text{
+        width : 320px;
+        font-size : 16px;
+        line-height: 29px;
+        padding : 15px;
+        border-radius: 10px;
+    }
+    .home-section-title{
+        font-size : 2.5em;
+       
+    }
+}
+
+@media(max-width : 375px){
+    .home-text{
+        width : 280px;
+        font-size : 17px;
+        line-height: 32px;
+        padding : 15px;
+        border-radius: 10px;
+    }
+}
+
+.contact-section{
+    border-top: 2px solid white;
+}
+.contact-section-title{
+    margin-top : 50px;
+}
+.contact-text{
+    width : 600px;
+    font-size : 20px;
+    color : white;
+    line-height : 30px;
+    margin-top : 30px;
+    margin-bottom : 50px;
+    text-align: center;
+}
+
+.contacts{
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap : 50px;
+    margin-bottom : 50px;
+}
+
+.icon{
+    font-size : 50px;
+    text-decoration: none;
+    color: black;
+}
+.contact{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-type{
+    font-size : 15px;
+}
+
+@media(max-width : 840px){
+    .contact-text{
+        width : 400px;
+    }
+}
+@media(max-width : 500px){
+    .contact-text{
+        width : 300px;
+    }
+}
+
