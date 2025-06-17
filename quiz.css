@@ -1,0 +1,80 @@
+h1{
+
+    font-size: 3em;
+    font-weight: 900;
+    margin-top : 100px;
+    text-decoration: underline;
+    color: white;
+}
+
+.quiz{
+
+    padding : 30px;
+    background-color: #9b2226;
+    border-radius : 5px;
+    margin-bottom: 40px;
+}
+.game-section{
+    display: flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.game-buttons{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap : 30px;
+}
+
+.score-button,.chose-button{
+
+    width : 100px;
+    height : 40px;
+    border : none;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    font-weight : bold;
+    border-radius : 4px;
+    transition: opacity 0.25s;
+    cursor: pointer;
+}
+
+.score-button:hover,.chose-button:hover{
+    opacity: 0.8;
+}
+
+.score-button:active,.chose-button:active{
+    opacity: 0.6;
+}
+
+
+
+.options-div{
+    display : flex;
+    flex-direction : column;
+    justify-content: center ;
+    align-items: center;
+
+    color: white;
+    gap : 15px;
+    margin-top : 20px;
+
+}
+
+.c-button{
+    width : 200px;
+    height : 40px;
+    background-color: transparent;
+    font-size : 15px;
+    border : 1px solid white;
+    cursor : pointer;    
+}
+.selected{
+    background-color: green;
+}
