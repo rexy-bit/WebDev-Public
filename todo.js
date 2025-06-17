@@ -1,28 +1,51 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [{
     name : 'Make dinner',
-    date : '10/06/2006',
-
+    date : '20/06/2025',
+    state : 'Ndone'
 }];
 
 displayTodo();
 function displayTodo(){
 
+
     const container = document.querySelector(".display-content");
     container.innerHTML = '';
 
-    for(let i = 0;i<todoList.length;i++){
+    todoList.forEach((element, i)=>{
 
-        const todoDiv = document.createElement("div");
-        todoDiv.className = "todo"
-        
+        const todoD = document.createElement("div");
+        todoD.className = "todo-div";
 
-        const nameP = document.createElement("p");
-        nameP.className = "name";
-        nameP.textContent = todoList[i].name;
+        const nameD = document.createElement("div");
+        nameD.className = "name";
+        nameD.textContent = element.name;
 
-        const dateP = document.createElement("p");
-        dateP.className = "date";
-        dateP.textContent = todoList[i].date;
+        const dateD = document.createElement("div");
+        dateD.className = "date";
+        dateD.textContent = element.date;
+
+        const statD = document.createElement("button");
+        statD.className ="state-button"
+        if(element.state === 'done'){
+            statD.style.backgroundColor = "green";
+        }else{
+            statD.style.backgroundColor = "transparent";
+        }
+
+        statD.addEventListener('click', ()=>{
+            if(element.state === 'done'){
+                element.state = "Ndone";
+                statD.style.backgroundColor = "transparent";
+                
+            }else{
+                     element.state = "done";
+                statD.style.backgroundColor = "green";
+           
+            }
+
+            localStorage.setItem('todoList', JSON.stringify(todoList));
+        });
+
 
         const deleteButton = document.createElement("button");
         deleteButton.className = "delete-button";
@@ -32,24 +55,29 @@ function displayTodo(){
             displayTodo();
         });
 
-        todoDiv.appendChild(nameP);
-        todoDiv.appendChild(dateP);
-        todoDiv.appendChild(deleteButton);
 
-        container.appendChild(todoDiv);
-    }
+        todoD.appendChild(nameD);
+        todoD.appendChild(dateD);
+        todoD.appendChild(statD);
+        todoD.appendChild(deleteButton);
+
+        container.appendChild(todoD);
+
+    });
+
 
     localStorage.setItem('todoList', JSON.stringify(todoList));
-
 }
+
 
 function addTodo(){
 
-    let nameInput = document.querySelector(".input-name");
-    let dateInput = document.querySelector(".input-date");
 
-    let name = nameInput.value;
-    let date = dateInput.value;
+    let nameIn = document.querySelector(".input-name");
+    let dateIn = document.querySelector(".input-date");
+
+    let name = nameIn.value;
+    let date = dateIn.value;
 
     if(name === '' || date === ''){
         document.querySelector(".display-error-message").innerHTML = 'Please enter all the necessary information';
@@ -57,18 +85,36 @@ function addTodo(){
 
          document.querySelector(".display-error-message").innerHTML = '';
 
-        todoList.push({
+         let state = "Ndone";
+
+         todoList.push({
             name,
-            date
-        });
+            date,
+            state
+         });
 
-        displayTodo();
+         displayTodo();
 
+
+          document.querySelector(".display-success-message").innerHTML = 'Todo added with success';
+
+          setTimeout(()=>{
+             document.querySelector(".display-success-message").innerHTML = '';
+          }, 3000);
 
     }
 
+
 }
+
 
 document.querySelector(".add-button").addEventListener('click', ()=>{
     addTodo();
+})
+
+document.body.addEventListener('keydown', (e)=>{
+ 
+    if(e.key === 'Enter'){
+    addTodo();
+    }
 });
