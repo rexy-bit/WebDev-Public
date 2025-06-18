@@ -3,54 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste</title>
-                   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>liste.com</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <style>
-         body{
-
-            display : flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: roboto, arial;
-            margin : 0;
-            padding : 0;
-       
-            width: 100%;
-            padding-top : 55px;
-        }
-
-        html{
-            scroll-behavior: smooth;
-           
-            width: 100%;
-        }
-        *{
-            box-sizing: border-box;
-        }
-
-        
-    </style>
-
-    <link rel="stylesheet" href="index.html">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="liste.css">
 </head>
+
+<style>
+
+    body{
+
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin : 0;
+        padding: 0;
+        font-family: roboto, arial;
+        padding-top: 55px;
+    }
+
+    html{
+        margin : 0;
+        padding : 0;
+
+    }
+    *{
+        box-sizing: border-box;
+    }
+</style>
+
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="liste.css">
+<link rel="stylesheet" href="add.css">
 <body>
+    
+
 
         <header>
 
-        <h1 class="header-title">EMP Gestionnary</h1>
+        <h1 class="header-title">Etud Gest</h1>
 
         <div class="functions">
             <a href="index.html" class="ff">Home</a>
-            <a href="addEmp.html" class="ff">Add</a>
+            <a href="add.html" class="ff">Add</a>
             <a href="liste.html" class="ff">Liste</a>
-            <a href="stat.html" class="ff">Statistiques</a>
             <a href="search.html" class="ff">Search</a>
+            <a href="modif.html" class="ff">Modify</a>
+            <a href="stat.html" class="ff">Stat</a>
+            <a href="sort.html" class="ff">Sort</a>
         </div>
+
     </header>
 
 
@@ -62,7 +65,6 @@
     </section>
 
 
-    <script src="emp.js"></script>
-    
+    <script src="liste.js"></script>
 </body>
 </html>
