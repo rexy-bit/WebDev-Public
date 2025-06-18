@@ -1,73 +1,80 @@
-function addEmp(){
+let etud = JSON.parse(localStorage.getItem('etud')) || [];
 
+
+function addEtud(){
 
     let codeIn = document.querySelector(".input-code");
-    let nameIn = document.querySelector(".input-nom");
+    let nomIn = document.querySelector(".input-nom");
     let prenomIn = document.querySelector(".input-prenom");
     let ageIn = document.querySelector(".input-age");
-    let salaireIn = document.querySelector(".input-salaire");
-    
+    let moyIn = document.querySelector(".input-moy");
+
     let code = codeIn.value;
-    let nom = nameIn.value;
+    let nom = nomIn.value;
     let prenom = prenomIn.value;
     let age = ageIn.value;
-    let salaire = salaireIn.value;
+    let moy = moyIn.value;
 
 
     let trouve = false;
     let i = 0;
 
-    while(i<emp.length && (!trouve)){
-
-        if(emp[i].code === code){
+    while(i<etud.length && (!trouve)){
+        if(etud[i].code === code){
             trouve = true;
-
         }else{
             i++;
         }
     }
 
     if(trouve){
-        document.querySelector(".display-error-message").innerHTML = 'The code you entered already exists please try another one';
-    }else if(code === '' || nom === ''|| prenom === ''|| age === ''|| salaire ===''){
-        document.querySelector(".display-error-message").innerHTML = 'Please enter all the necessary information';
-    }else if(isNaN(age) || isNaN(salaire)){
-        document.querySelector(".display-error-message").innerHTML = 'Please the age and salary must contain only and only numbers';
-    }else if(Number(age) < 0 || Number(salaire)< 0){
-        document.querySelector(".display-error-message").innerHTML = 'Please the age and salary must be positive';
+        document.querySelector(".display-error-message").innerHTML = 'The code you entered already exists';
+    }else if(code === '' || nom === '' || prenom === '' || age === '' || moy === ''){
+         document.querySelector(".display-error-message").innerHTML = 'Please enter all the necessary inforamtions';
+    }else if(isNaN(age) || isNaN(moy)){
+         document.querySelector(".display-error-message").innerHTML = 'The age and mean must contain only numbers';
+    }else if(Number(age) < 0){
+         document.querySelector(".display-error-message").innerHTML = 'Please the age must be positive';
+    }else if(Number(moy) < 0 || Number(moy)>20){
+         document.querySelector(".display-error-message").innerHTML = 'The mean must be between 0 and 20';
     }else{
 
-        document.querySelector(".display-error-message").innerHTML = '';
+         document.querySelector(".display-error-message").innerHTML = '';
 
-        emp.push({
+         etud.push({
             code,
             nom,
             prenom,
-            age,
-            salaire
-        });
+            age : Number(age),
+            moy : Number(moy)
+         });
 
-         localStorage.setItem('emp', JSON.stringify(emp));
+         localStorage.setItem('etud', JSON.stringify(etud));
 
-        document.querySelector(".display-success-message").innerHTML = 'Employee added succesfully';
+          document.querySelector(".display-success-message").innerHTML = 'Student entered successfuly';
 
-        setTimeout(()=>{
+
+          setTimeout(()=>{
             document.querySelector(".display-success-message").innerHTML = '';
-        }, 3000);
+          }, 3000);
 
-
-     codeIn.value = '';
-      nameIn.value = '';
-     prenomIn.value = '';
-      ageIn.value ='';
-     salaireIn.value='';
-        
+          codeIn.value = '';
+          nomIn.value = '';
+          prenomIn.value = '';
+          ageIn.value = '';
+          moyIn.value = '';
 
     }
-
 }
 
 
 document.querySelector(".add-button").addEventListener('click', ()=>{
-    addEmp();
+    addEtud();
+
+});
+
+document.body.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter'){
+        addEtud();
+    }
 });
