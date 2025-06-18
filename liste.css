@@ -1,67 +1,71 @@
 .liste-section{
-    display : flex;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
-    background-color: #90e0ef;
+    background-color: #CEE6F2;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+}
 
+body{
+    background-color: #CEE6F2;
 }
 .liste-section-title{
-    font-size: 3em;
-    font-weight: 900;
+
+    font-size : 3em;
+    font-weight : 900;
     text-decoration: underline;
-    margin-top : 60px;
-    margin-bottom: 80px;
+    margin-top : 70px;
 }
 
 .display-content{
-    display : flex;
+    display: flex;
     flex-direction: column;
-    gap : 20px;
     justify-content: center;
     align-items: center;
-   
-
+    gap : 30px;
+    margin-bottom: 100px;
 }
-
-.emp-div{
-    display : flex;
+.etud-div{
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 20px;
-    line-height: 35px;
-     padding : 20px;
+    gap: 20px;
+    padding : 20px;
+    background-color: #2F3C7E;
+    font-size : 17px;
+    color: white;
     width : 300px;
-    border-radius: 10px;
-    background-color: #faedcd;
-    margin-bottom : 30px;
+    border-radius: 5px;
 }
 .delete-button{
     height : 40px;
-    width : 100px;
+    width : 90px;
     background-color: red;
     color: white;
-    font-size : 15px;
-    font-weight : bold;
     border : none;
-    border-radius: 4px;
-    margin-top : 10px;
-   cursor: pointer;
-    
+    border-radius: 5px;
+    font-size : 15px;
+    font-weight: bold;
+    transition: opacity 0.25s;
+    cursor: pointer;
 }
 .delete-button:hover{
     opacity : 0.8;
 }
-
 .delete-button:active{
     opacity : 0.6;
 }
 
-@media(max-width : 380px){
-    .emp-div{
+@media(max-width : 400px){
+    .etud-div{
+        width : 270px;
+    }
+}
+
+@media(max-width : 360px){
+    .etud-div{
         width : 250px;
     }
 }
