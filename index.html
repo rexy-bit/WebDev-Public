@@ -3,56 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz.com</title>
+    <title>etud.com</title>
             <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="add.html">
+<link rel="stylesheet" href="liste.html">
+<link rel="stylesheet" href="search.html">
+<link rel="stylesheet" href="modif.html">
+<link rel="stylesheet" href="stat.html">
+<link rel="stylesheet" href="sort.html">
+
 
 
 <style>
 
     body{
-        display: flex;
+
+        display : flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0;
+        margin : 0;
         padding: 0;
-        background-color: #669bbc;
-        font-family : roboto, arial;
+        font-family: roboto, arial;
+        padding-top: 55px;
+    }
+
+    html{
+        margin : 0;
+        padding : 0;
+
+    }
+    *{
+        box-sizing: border-box;
     }
 </style>
-   
 
-<link rel="stylesheet" href="quiz.css">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="home.css">
+
 </head>
 <body>
+
     
+    <header>
 
-    <h1 class="quiz-title">Quiz App</h1>
+        <h1 class="header-title">Etud Gest</h1>
 
-    <section class="game-section">
-            <div class="quiz">
+        <div class="functions">
+            <a href="index.html" class="ff">Home</a>
+            <a href="add.html" class="ff">Add</a>
+            <a href="liste.html" class="ff">Liste</a>
+            <a href="search.html" class="ff">Search</a>
+            <a href="modif.html" class="ff">Modify</a>
+            <a href="stat.html" class="ff">Stat</a>
+            <a href="sort.html" class="ff">Sort</a>
+        </div>
 
-          
+    </header>
 
-                
 
-                
+    <section class="home-section">
+
+        <h1 class="home-section-title">Home Page</h1>
+
+
+        <div class="home-text">
+            This <strong>Student Management System</strong> is a web-based application developed using HTML, CSS, and JavaScript. It allows users to efficiently manage a list of students through a user-friendly interface. The system includes key features such as adding new students, displaying the full list, searching by name, editing existing entries, viewing real-time statistics (like average score and total number of students), and sorting students based on their average grades. The application is structured across multiple HTML pages for better navigation and uses localStorage to ensure data is saved even after the browser is closed.
+        </div>
+    </section>
+
+    <section class="contact-section">
+
+        <h1 class="contact-section-title">Contact Me</h1>
+
+            <div class="contact-text">
+              If you have any feedback, suggestions, or questions about this employee management project, feel free to get in touch&#33; Your input is always welcome and helps me improve my work.
+          </div>
+
+          <div class="contacts">
+            
+            <div class="contact">
+
+                <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="icon-type">Linkedin</div>
+
             </div>
-          
-          <div class="game-buttons">
-            <button class="chose-button">Chose</button>
-            <button class="score-button">Disp Score</button>
 
-            </div>            
+              <div class="contact">
 
+                <a href="https://github.com/rexy-bit" class="icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <div class="icon-type">Github</div>
+
+            </div>
+
+              <div class="contact">
+
+                <a href="mailto:yanisrezgui28@gmail.com" class="icon" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <div class="icon-type">Email</div>
+
+            </div>
+          </div>
     </section>
 
 
 
-
-
-    <script src="quiz.js"></script>
 </body>
 </html>
