@@ -1,88 +1,94 @@
-let emp = JSON.parse(localStorage.getItem('emp')) || [];
+let etud = JSON.parse(localStorage.getItem('etud'));
 
-
+    let intervalId;
+    let intervalId2;
 function searchEmp(){
 
-    let codeIn = document.querySelector(".s-code");
+    let codeIn = document.querySelector(".se-code");
     let code = codeIn.value;
 
-     let trouve = false;
-     let i = 0;
+    let trouve = false;
+    let sEtud;
 
-     while(i<emp.length && (!trouve)){
-
-        if(emp[i].code === code){
+    let i = 0;
+    while(i<etud.length && (!trouve)){
+        if(etud[i].code === code){
             trouve = true;
-        }else{
-            i++;
+            sEtud = etud[i];
         }
+        i++;
+    }
 
-     }
+   
+    clearInterval(intervalId);
 
-     if(trouve){
+    if(trouve){
+        
+        document.querySelector(".search-result").innerHTML = 'Student found !';
 
-        document.querySelector(".display-search-result").innerHTML = 'Employee found !';
-
-        setTimeout(()=>{
-            document.querySelector(".display-search-result").innerHTML = '';
-        },3000);
-
+        intervalId = setTimeout(()=>{
+            document.querySelector(".search-result").innerHTML = '';
+        }, 3000);
 
         const container = document.querySelector(".display-search");
         container.innerHTML = '';
-
-        const empDiv = document.createElement("div");
-        empDiv.className = "emp-div";
+        
+        const searchD = document.createElement("div");
+        searchD.className = "etud-div";
 
         const codeD = document.createElement("div");
-        codeD.className = "code";
-        codeD.textContent = `- Code : ${emp[i].code}`;
+        codeD.textContent = `- Code : ${sEtud.code}`;
 
         const nomD = document.createElement("div");
-        nomD.textContent = `- Fname : ${emp[i].nom}`;
+        nomD.textContent = `- Last-name : ${sEtud.nom}`;
 
         const prenomD = document.createElement("div");
-        prenomD.textContent = `- Lname : ${emp[i].prenom}`;
+        prenomD.textContent = `- First-name : ${sEtud.prenom}`;
 
         const ageD = document.createElement("div");
-        ageD.textContent = `- Age : ${emp[i].age}`;
+        ageD.textContent = `- Age : ${sEtud.age}`;
 
-        const salaireD = document.createElement("div");
-        salaireD.textContent = `- Salary : ${emp[i].salaire}`;
+        const moyD = document.createElement("div");
+        moyD.textContent = `Moy : ${sEtud.moy}`;
 
 
-        empDiv.appendChild(codeD);
-        empDiv.appendChild(nomD);
-        empDiv.appendChild(prenomD);
-        empDiv.appendChild(ageD);
-        empDiv.appendChild(salaireD);
+        searchD.appendChild(codeD);
+        searchD.appendChild(nomD);
+        searchD.appendChild(prenomD);
+        searchD.appendChild(ageD);
+        searchD.appendChild(moyD);
 
-        container.appendChild(empDiv);
 
+        container.appendChild(searchD);
+
+        codeIn.value = '';
 
         setTimeout(()=>{
             container.innerHTML = '';
+        }, 5000);
+
+    }else{
+
+
+                document.querySelector(".search-result").innerHTML = 'Student not found !';
+
+                clearInterval(intervalId2);
+
+        intervalId2 = setTimeout(()=>{
+            document.querySelector(".search-result").innerHTML = '';
         }, 3000);
 
-
-     }else{
-
-                document.querySelector(".display-search-result").innerHTML = 'Employee not found !';
-
-        setTimeout(()=>{
-            document.querySelector(".display-search-result").innerHTML = '';
-        },3000);
-     }
-
-     codeIn.value = '';
-
+    }
 }
+
 
 document.querySelector(".search-button").addEventListener('click', ()=>{
     searchEmp();
 });
 
-document.body.addEventListener('keydown', ()=>{
-    searchEmp();
-});
 
+document.body.addEventListener('keydown', (e)=>{
+   if(e.key === 'Enter'){
+    searchEmp();
+   }
+});
