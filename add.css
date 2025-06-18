@@ -1,102 +1,96 @@
 .add-section{
-    display : flex;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width : 100%;
-    background-color: #dad7cd;
-    box-sizing: border-box;
     height : 100vh;
+    width : 100%;
     justify-content: flex-start;
+    align-items: center;
+    background-color: #D3C5E5;
 }
-
-
-
 .add-section-title{
     font-size : 3em;
-    font-weight : 900;
-    text-decoration: underline;
-    margin-top : 80px;
+    text-decoration : underline;
+    margin-top: 60px;
 
 }
-
 .inputs{
-    display : grid;
-    grid-template-columns: 150px 200px 200px 150px 200px 100px;
-    column-gap: 20px;
+   display : grid;
+   grid-template-columns: 150px 250px 250px 150px 150px 100px;
+   column-gap: 20px;
 }
 .in{
-    padding: 10px;
-    font-size : 15px;
-    border : 1px solid gray;
-    border-radius: 3px;
+    padding : 10px;
+    font-size :15px;
+    border : none;
+    border-radius : 3px;
 }
 .add-button{
-    width : 100px;
     background-color: green;
-    border : none;
-    border-radius: 3px;
     color: white;
-    font-size: 15px;
+    border : none;
+    border-radius : 3px;
     font-weight: bold;
+    font-size : 15px;
     transition: opacity 0.25s;
     cursor: pointer;
+    width : 100px;
 }
 .add-button:hover{
-    opacity : 0.8;
+    opacity: 0.8;
 }
 .add-button:active{
-    opacity : 0.6;
+    opacity: 0.6;
 }
 
 .display-error-message{
     font-size : 20px;
-    margin-top : 20px;
-    margin-bottom : 20px;
-    color: red;
+    color : red;
     width : 300px;
+    margin-top : 20px;
+    margin-bottom: 20px;
 }
 
 .display-success-message{
     font-size : 20px;
-    margin-top : 20px;
-    margin-bottom : 20px;
-    color: green;
+    color : green;
     width : 300px;
+    margin-top : 20px;
+    margin-bottom: 50px;
 }
 
-
-@media(max-width : 1200px){
+@media(max-width : 1240px){
     .inputs{
         display : flex;
-        flex-direction: column;
+        flex-direction : column;
         justify-content: center;
         align-items: center;
         gap : 20px;
-        margin-top : 30px;
         padding : 20px;
-        border : 1px solid black;
-        border-radius: 3px;
+        border : 1px solid white;
+        border-radius: 5px;
+        margin-top: 40px;
+        margin-bottom : 20px;
     }
-
     .in{
-        width : 300px;
+        width : 350px;
     }
     .add-button{
         height : 45px;
     }
 }
-@media(max-width : 600px){
+@media(max-width : 500px){
     .in{
-        width : 280px;
-    }
-    .inputs{
-        padding : 10px;
+        width : 270px;
     }
 }
-@media(max-width : 370px){
+@media(max-width : 360px){
     .in{
         width : 250px;
     }
+    .inputs{
+        padding : 15px;
+    }
+    .add-section-title{
+        font-size : 2.2em;
+    }
 }
-
