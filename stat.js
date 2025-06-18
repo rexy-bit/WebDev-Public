@@ -1,32 +1,41 @@
+let etud = JSON.parse(localStorage.getItem('etud'));
 
-let emp = JSON.parse(localStorage.getItem('emp')) || [];
+
+
 function calculateMoy(){
 
-    let S = 0;
-    let cpt = 0;
-    let moy = 0;
+    let moy;
+    let S = 0,cpt = 0;
 
-    emp.forEach((element, i)=>{
-        S += Number(element.salaire);
+    etud.forEach((element, i)=>{
+        S += Number(element.moy);
         cpt++;
     });
 
-    if(cpt != 0){
+    if(cpt === 0){
+        moy= 0;
+    }else{
         moy = S/cpt;
     }
-    
-   return moy.toFixed(2);
+
+    return moy.toFixed(2);
+
 }
+
+
+let intervalId;
 
 function displayMoy(){
 
     let moy = calculateMoy();
 
-    document.querySelector(".display-moy").innerHTML = `${moy} Da`;
+    document.querySelector(".display-moy").innerHTML = `${moy}/20`;
 
-    setTimeout(()=>{
+    clearInterval(intervalId);
+
+    intervalId = setTimeout(()=>{
         document.querySelector(".display-moy").innerHTML = '';
-    },4000);
+    }, 4000);
 
 }
 
@@ -37,18 +46,18 @@ document.querySelector(".moy-button").addEventListener('click', ()=>{
 
 function findMax(){
 
+     let max = etud[0];
 
-    let max = emp[0];
-
-    emp.forEach((element, i)=>{
-        if(Number(element.salaire) > Number(max.salaire)){
+     etud.forEach((element, i)=>{
+        if(Number(max.moy) < Number(element.moy)){
             max = element;
         }
-    });
+     });
 
-    return max;
+
+     return max;
+
 }
-
 
 function displayMax(){
 
@@ -56,107 +65,128 @@ function displayMax(){
 
     if(max != null){
 
-        let container = document.querySelector(".max-content");
+        const container = document.querySelector(".display-max");
         container.innerHTML = '';
 
-        const empDiv = document.createElement("div");
-        empDiv.className = "emp-div";
-        
+        const etudD = document.createElement("div");
+        etudD.className = "etud-div";
+
         const codeD = document.createElement("div");
-        codeD.textContent = `- code : ${max.code}`;
+        codeD.className = "code";
+        codeD.textContent = `- Code : ${max.code}`;
 
         const nomD = document.createElement("div");
+        nomD.className = "nom";
         nomD.textContent = `- Last-name : ${max.nom}`;
 
         const prenomD = document.createElement("div");
-        prenomD.textContent = `- First Name : ${max.prenom}`;
+        prenomD.className = "prenom";
+        prenomD.textContent = `- First-name : ${max.prenom}`;
 
         const ageD = document.createElement("div");
+        ageD.className = "age";
         ageD.textContent = `- Age : ${max.age}`;
 
-        const salaireD = document.createElement("div");
-        salaireD.textContent = `- Salaire : ${max.salaire}`;
+        const moyD = document.createElement("div");
+        moyD.className = "moy";
+        moyD.textContent = `Grade Av : ${max.moy}`;
 
 
-        empDiv.appendChild(codeD);
-        empDiv.appendChild(nomD);
-        empDiv.appendChild(prenomD);
-        empDiv.appendChild(ageD);
-        empDiv.appendChild(salaireD);
+        etudD.appendChild(codeD);
+        etudD.appendChild(nomD);
+        etudD.appendChild(prenomD);
+        etudD.appendChild(ageD);
+        etudD.appendChild(moyD);
 
-        container.appendChild(empDiv);
+        container.appendChild(etudD);
 
+        clearTimeout(intervalId);
 
-        setTimeout(()=>{
+        intervalId = setTimeout(()=>{
             container.innerHTML = '';
-        },4000);
-    }
+        }, 4000);
 
+    }
 }
+
+
 
 
 document.querySelector(".max-button").addEventListener('click', ()=>{
     displayMax();
 });
 
+
+
 function findMin(){
 
-        let min = emp[0];
+    let min = etud[0];
 
-    emp.forEach((element, i)=>{
-        if(Number(element.salaire) < Number(min.salaire)){
+    etud.forEach((element, i)=>{
+
+        if(Number(element.moy) < Number(min.moy)){
             min = element;
         }
-    });
+    }    );
 
     return min;
-
-
 }
+
+
 function displayMin(){
 
-          let min = findMin();
+    let min = findMin();
+
 
     if(min != null){
 
-        let container = document.querySelector(".min-content");
+                const container = document.querySelector(".display-min");
         container.innerHTML = '';
 
-        const empDiv = document.createElement("div");
-        empDiv.className = "emp-div";
-        
+        const etudD = document.createElement("div");
+        etudD.className = "etud-div";
+
         const codeD = document.createElement("div");
-        codeD.textContent = `- code : ${min.code}`;
+        codeD.className = "code";
+        codeD.textContent = `- Code : ${min.code}`;
 
         const nomD = document.createElement("div");
+        nomD.className = "nom";
         nomD.textContent = `- Last-name : ${min.nom}`;
 
         const prenomD = document.createElement("div");
-        prenomD.textContent = `- First Name : ${min.prenom}`;
+        prenomD.className = "prenom";
+        prenomD.textContent = `- First-name : ${min.prenom}`;
 
         const ageD = document.createElement("div");
+        ageD.className = "age";
         ageD.textContent = `- Age : ${min.age}`;
 
-        const salaireD = document.createElement("div");
-        salaireD.textContent = `- Salaire : ${min.salaire}`;
+        const moyD = document.createElement("div");
+        moyD.className = "moy";
+        moyD.textContent = `Grade Av : ${min.moy}`;
 
 
-        empDiv.appendChild(codeD);
-        empDiv.appendChild(nomD);
-        empDiv.appendChild(prenomD);
-        empDiv.appendChild(ageD);
-        empDiv.appendChild(salaireD);
+        etudD.appendChild(codeD);
+        etudD.appendChild(nomD);
+        etudD.appendChild(prenomD);
+        etudD.appendChild(ageD);
+        etudD.appendChild(moyD);
 
-        container.appendChild(empDiv);
+        container.appendChild(etudD);
 
 
-        setTimeout(()=>{
+        clearTimeout(intervalId);
+
+        intervalId = setTimeout(()=>{
             container.innerHTML = '';
-        },4000);
+        }, 4000);
     }
 
 }
 
+
 document.querySelector(".min-button").addEventListener('click', ()=>{
     displayMin();
 });
+
