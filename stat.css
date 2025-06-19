@@ -1,102 +1,63 @@
-.moy-section{
+.stat-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width : 100%;
-    background-color: #dda15e;
+    background-color: #c8b1e4;
+    width: 100%;
+    height: 100vh;
 }
-.moy-section-title,.max-section-title,.min-section-title{
-
-    font-size : 3em;
+.done-div,.undone-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.undone-div{
+    border-top: 2px solid white;
+    width: 100%;
+}
+.done-div-title{
+    font-size : 2.2em;
     text-decoration: underline;
-    font-weight: bold;
     margin-top : 70px;
+    margin-bottom: 80px;
 }
 
-.moy-div{
-    display : flex;
+.done{
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap : 30px;
-    margin-bottom : 70px;
-    margin-top : 60px;
+    gap : 20px;
+    margin-bottom: 80px;
 }
-.display-moy{
-    height : 40px;
-    width: 120px;
+.disp-done,.disp-undone{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    height : 45px;
+    width : 120px;
     background-color: white;
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size : 15px;
 }
-.moy-button{
-    height : 40px;
-    width : 100px;
-    border : none;
-    border-radius: 4px;
-    font-size : 15px;
-    color: white;
-    background-color: green;
-    font-weight: bold;
-    transition: opaciti 0.25s;
-    cursor: pointer;
-}
-.moy-button:hover{
-    opacity: 0.8;
-}
-.moy-button:active{
-    opacity: 0.6;
-}
-
-.max-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width : 100%;
-    background-color: #b0c4b1;
-}
-.mb{
+.bb{
     height : 45px;
     width : 100px;
+    border: none;
+    border-radius: 4px;
     background-color: green;
     color: white;
     font-size : 15px;
     font-weight: bold;
-    border : none;
-    border-radius : 5px;
     cursor: pointer;
     transition: opacity 0.25s;
-    margin-bottom : 70px;
-    margin-top : 60px;
-}
-.mb:hover{
-    opacity : 0.8;
-}
-.mb:active{
-    opacity : 0.6;
-}
-.display-max,.display-min{
-    display : flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom : 50px;
-}
-.min-section{
-    display : flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width : 100%;
-    background-color: #d9dcd6;
 }
 
-@media(max-width : 390px){
-    .max-section-title,.min-section-title,.moy-section-title{
-        font-size : 2.2em;
-    }
+.bb:hover{
+    opacity : 0.8;
+}
+
+.bb:active{
+    opacity : 0.6;
 }
