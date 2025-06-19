@@ -1,0 +1,26 @@
+.done-section,.undone-section{
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9c784;
+    height : 100vh;
+    width : 100%;
+}
+.undone-section{
+    background-color: #f4d35e;
+}
+.done-section-title{
+    font-size : 3em;
+    text-decoration: underline;
+    font-weight : bold;
+    margin-top : 60px;
+}
+.display-done{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
