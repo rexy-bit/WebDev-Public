@@ -1,71 +1,68 @@
 .liste-section{
-    display: flex;
+    display : flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    background-color: #CEE6F2;
     width: 100%;
     height: 100vh;
+    background-color: #caf0f8;
 }
-
 body{
-    background-color: #CEE6F2;
+    background-color: #caf0f8;
 }
 .liste-section-title{
-
-    font-size : 3em;
-    font-weight : 900;
+    font-size: 3em;
+    margin-top : 60px;
     text-decoration: underline;
-    margin-top : 70px;
+    margin-bottom: 70px;
+    
 }
-
-.display-content{
+.display-content,.display-done,.display-undone{
+    margin-bottom : 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap : 30px;
-    margin-bottom: 100px;
-}
-.etud-div{
-    display: flex;
-    flex-direction: column;
+    gap : 20px;
+} 
+
+.todo-div{
+    display : flex;
+    flex-direction : column;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap : 20px;
+    font-size: 20px;
     padding : 20px;
-    background-color: #2F3C7E;
-    font-size : 17px;
+    border : 1px solid black;
+    background-color: #03045e;
     color: white;
-    width : 300px;
     border-radius: 5px;
+    width : 250px;
+}
+.state-button{
+    width : 30px;
+    height : 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+    border : 2px solid white;
 }
 .delete-button{
     height : 40px;
-    width : 90px;
-    background-color: red;
-    color: white;
-    border : none;
-    border-radius: 5px;
+    width : 100px;
     font-size : 15px;
+    color: white;
+    background-color: red;
     font-weight: bold;
-    transition: opacity 0.25s;
+    border : none;
+    border-radius: 4px;
     cursor: pointer;
+    transition: opacity 0.25s;
 }
 .delete-button:hover{
     opacity : 0.8;
 }
 .delete-button:active{
     opacity : 0.6;
-}
-
-@media(max-width : 400px){
-    .etud-div{
-        width : 270px;
-    }
-}
-
-@media(max-width : 360px){
-    .etud-div{
-        width : 250px;
-    }
 }
