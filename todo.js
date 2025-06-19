@@ -1,10 +1,12 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [{
-    name : 'Make dinner',
-    date : '20/06/2025',
-    state : 'Ndone'
+    name : 'Make Dinner',
+    date : '19/06/2006',
+    state : 'undone'
 }];
 
 displayTodo();
+
+
 function displayTodo(){
 
 
@@ -18,58 +20,57 @@ function displayTodo(){
 
         const nameD = document.createElement("div");
         nameD.className = "name";
-        nameD.textContent = element.name;
+        nameD.textContent = `Todo : ${element.name}`;
 
         const dateD = document.createElement("div");
         dateD.className = "date";
-        dateD.textContent = element.date;
+        dateD.textContent = `Date : ${element.date}`;
 
-        const statD = document.createElement("button");
-        statD.className ="state-button"
+        const stateButton = document.createElement("button");
+        stateButton.className = "state-button";
         if(element.state === 'done'){
-            statD.style.backgroundColor = "green";
+            stateButton.style.backgroundColor = "green";
         }else{
-            statD.style.backgroundColor = "transparent";
+            stateButton.style.backgroundColor = "transparent";
         }
 
-        statD.addEventListener('click', ()=>{
+        stateButton.addEventListener('click', ()=>{
             if(element.state === 'done'){
-                element.state = "Ndone";
-                statD.style.backgroundColor = "transparent";
-                
+                element.state = 'undone';
+                stateButton.style.backgroundColor = "transparent";
             }else{
-                     element.state = "done";
-                statD.style.backgroundColor = "green";
-           
+                element.state = 'done';
+                stateButton.style.backgroundColor = "green";
             }
 
             localStorage.setItem('todoList', JSON.stringify(todoList));
         });
 
 
-        const deleteButton = document.createElement("button");
-        deleteButton.className = "delete-button";
-        deleteButton.textContent = "Delete";
-        deleteButton.addEventListener('click', ()=>{
-            todoList.splice(i, 1);
-            displayTodo();
-        });
+      const deleteButton = document.createElement("button");
+      deleteButton.className = "delete-button";
+      deleteButton.textContent = "Delete";
+
+      deleteButton.addEventListener('click', ()=>{
+        todoList.splice(i, 1);
+        displayTodo();
+      });
 
 
-        todoD.appendChild(nameD);
-        todoD.appendChild(dateD);
-        todoD.appendChild(statD);
-        todoD.appendChild(deleteButton);
+      todoD.appendChild(nameD);
+      todoD.appendChild(dateD);
+      todoD.appendChild(stateButton);
+      todoD.appendChild(deleteButton);
 
-        container.appendChild(todoD);
-
+      container.appendChild(todoD);
     });
 
-
     localStorage.setItem('todoList', JSON.stringify(todoList));
+
 }
 
-
+let intervalId;
+let timeId;
 function addTodo(){
 
 
@@ -81,40 +82,150 @@ function addTodo(){
 
     if(name === '' || date === ''){
         document.querySelector(".display-error-message").innerHTML = 'Please enter all the necessary information';
+
+        clearTimeout(intervalId);
+
+        intervalId = setTimeout(()=>{
+            document.querySelector(".display-error-message").innerHTML = '';
+        }, 3000);
+
     }else{
 
-         document.querySelector(".display-error-message").innerHTML = '';
+        document.querySelector(".display-error-message").innerHTML = '';
+        let state = 'undone';
 
-         let state = "Ndone";
-
-         todoList.push({
+        todoList.push({
             name,
             date,
             state
-         });
+        });
 
-         displayTodo();
+        displayTodo();
 
+        document.querySelector(".display-success-message").innerHTML = 'Todo Added successfuly'   ;
 
-          document.querySelector(".display-success-message").innerHTML = 'Todo added with success';
+        clearTimeout(timeId);
 
-          setTimeout(()=>{
-             document.querySelector(".display-success-message").innerHTML = '';
-          }, 3000);
+        timeId = setTimeout(()=>{
+            document.querySelector(".display-success-message").innerHTML = '';
+        }, 3000);        
+
+        nameIn.value = '';
+        dateIn.value = '';
 
     }
 
+}
+
+document.querySelector(".add-button").addEventListener('click', ()=>{
+    addTodo();
+});
+
+
+function displayDone(){
+
+    let container = document.querySelector(".display-done");
+    container.innerHTML = '';
+    todoList.forEach((element, i)=>{
+        if(element.state === 'done'){
+        const todoD = document.createElement("div");
+        todoD.className = "todo-div";
+
+        const nameD = document.createElement("div");
+        nameD.className = "name";
+        nameD.textContent = `Todo : ${element.name}`;
+
+        const dateD = document.createElement("div");
+        dateD.className = "date";
+        dateD.textContent = `Date : ${element.date}`;
+
+        todoD.appendChild(nameD);
+        todoD.appendChild(dateD);
+
+        container.appendChild(todoD);
+        
+        }
+    });
+}
+
+displayDone();
+
+function displayUndone(){
+
+    let container = document.querySelector(".display-undone");
+    container.innerHTML = '';
+    todoList.forEach((element, i)=>{
+        if(element.state === 'undone'){
+        const todoD = document.createElement("div");
+        todoD.className = "todo-div";
+
+        const nameD = document.createElement("div");
+        nameD.className = "name";
+        nameD.textContent = `Todo : ${element.name}`;
+
+        const dateD = document.createElement("div");
+        dateD.className = "date";
+        dateD.textContent = `Date : ${element.date}`;
+
+        todoD.appendChild(nameD);
+        todoD.appendChild(dateD);
+
+        container.appendChild(todoD);
+        
+        }
+    });
+}
+
+displayUndone();
+
+let timeDone;
+function displayNbrDone(){
+
+    let cpt = 0;
+
+    todoList.forEach((element, i)=>{
+        if(element.state === 'done'){
+            cpt++;
+        }
+    });
+
+    document.querySelector(".disp-done").innerHTML = `${cpt}`;
+
+    clearTimeout(timeDone);
+     timeDone = setTimeout(()=>{
+       document.querySelector(".disp-done").innerHTML = '';
+    }, 3000);
+}
+
+
+document.querySelector(".done-button").addEventListener('click', ()=>{
+    displayNbrDone();
+});
+
+let timeU;
+function displayNbrUndone(){
+
+
+    let cpt = 0;
+
+    todoList.forEach((element, i)=>{
+        if(element.state === 'undone'){
+            cpt++;
+        }
+    });
+
+    document.querySelector(".disp-undone").innerHTML = `${cpt}`
+
+  
+    clearTimeout(timeU);
+
+    timeU = setTimeout(()=>{
+        document.querySelector(".disp-undone").innerHTML = '';
+    }, 3000);
 
 }
 
 
-document.querySelector(".add-button").addEventListener('click', ()=>{
-    addTodo();
-})
-
-document.body.addEventListener('keydown', (e)=>{
- 
-    if(e.key === 'Enter'){
-    addTodo();
-    }
+document.querySelector(".undone-button").addEventListener('click', ()=>{
+    displayNbrUndone();
 });
