@@ -3,21 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>etud.com</title>
-            <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>todo.com</title>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link rel="stylesheet" href="add.html">
-<link rel="stylesheet" href="liste.html">
-<link rel="stylesheet" href="search.html">
-<link rel="stylesheet" href="modif.html">
-<link rel="stylesheet" href="stat.html">
-<link rel="stylesheet" href="sort.html">
-
-
 
 <style>
 
@@ -27,16 +19,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-family: roboto, arial;
         margin : 0;
         padding: 0;
-        font-family: roboto, arial;
-        padding-top: 55px;
+        padding-top : 55px;
     }
 
+    section{
+     transition: opacity 0.3s ease;
+    }
     html{
-        margin : 0;
-        padding : 0;
-
+        scroll-behavior: smooth;
+        
     }
     *{
         box-sizing: border-box;
@@ -45,72 +39,166 @@
 
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="home.css">
-
+<link rel="stylesheet" href="add.css">
+<link rel="stylesheet" href="liste.css">
+<link rel="stylesheet" href="done.css">
+<link rel="stylesheet" href="stat.css">
 </head>
 <body>
 
-    
     <header>
-
-        <h1 class="header-title">Etud Gest</h1>
+        <h1 class="header-title">Todo List</h1>
 
         <div class="functions">
-            <a href="index.html" class="ff">Home</a>
-            <a href="add.html" class="ff">Add</a>
-            <a href="liste.html" class="ff">Liste</a>
-            <a href="search.html" class="ff">Search</a>
-            <a href="modif.html" class="ff">Modify</a>
-            <a href="stat.html" class="ff">Stat</a>
-            <a href="sort.html" class="ff">Sort</a>
+            <a href="#home" class="ff">Home</a>
+            <a href="#add" class="ff">Add</a>
+            <a href="#liste" class="ff">Liste</a>
+            <a href="#done" class="ff">done</a>
+            <a href="#undone" class="ff">Undone</a>
+            <a href="#stat" class="ff">stat</a>
         </div>
-
     </header>
 
 
-    <section class="home-section">
+    <section class="home-section" id="home" style="display: none;">
 
+        <div class="home-div">
         <h1 class="home-section-title">Home Page</h1>
 
-
         <div class="home-text">
-            This <strong>Student Management System</strong> is a web-based application developed using HTML, CSS, and JavaScript. It allows users to efficiently manage a list of students through a user-friendly interface. The system includes key features such as adding new students, displaying the full list, searching by name, editing existing entries, viewing real-time statistics (like average score and total number of students), and sorting students based on their average grades. The application is structured across multiple HTML pages for better navigation and uses localStorage to ensure data is saved even after the browser is closed.
+              Welcome to my <strong>Todo List SPA</strong> project! This application allows you to easily manage your daily tasks in one place. 
+  You can add, view, and organize your tasks, mark them as done or undone, and track useful statistics about your productivity. 
+  The interface is designed as a Single Page Application (SPA), meaning you can navigate between pages smoothly without reloading. 
+  It's built with pure HTML, CSS, and JavaScript, and uses localStorage to save your data. Enjoy staying organized!
+        </div>
+    </div>
+
+    <div class="contacts-div">
+        <h1 class="contact-title">Contact Me</h1>
+        <div class="contact-text">
+                          If you have any feedback, suggestions, or questions about this employee management project, feel free to get in touch&#33; Your input is always welcome and helps me improve my work.
+        </div>
+
+        <div class="contacts">
+            <div class="contact">
+                <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="icon-type">Linkedin</div>
+            </div>
+
+            <div class="contact">
+                <a href="https://github.com/rexy-bit" class="icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <div class="icon-type">Github</div>
+            </div>
+
+            <div class="contact">
+                <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=DmwnWrRrlZZHGsBjbhtsKBZWhQcCHxVjbgbwBqqvbZHTrTQCZfSkRBZZdkxfLvLxxXQpgclJrMVV" class="icon" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <div class="icon-type">Email</div>
+            </div>
+        </div>
+    </div>
+           
+    </section>
+
+
+    <section class="add-section" id="add" style="display: none;">
+      <div class="add-content">
+        <h1 class="add-section-title">
+            Add Todo
+        </h1>
+
+        <div class="inputs">
+            <input type="text" class="input-name in" placeholder="Enter Todo">
+            <input type="date" class="input-date in">
+
+            <button class="add-button">Add</button>
+
+        </div>
+
+        <p class="display-error-message"></p>
+        <p class="display-success-message"></p>
+     </div>
+    </section>
+
+    <section class="liste-section" id="liste" style="display : none;">
+       <div class="add-content">
+        <h1 class="liste-section-title">Todo Liste</h1>
+
+        <div class="display-content"></div>
+       </div>
+
+    </section>
+
+    <section class="done-section" id="done" style="display : none;">
+
+        <div class="add-content">
+
+            <h1 class="done-section-title">Done todo</h1>
+
+            <div class="display-done"></div>
+        </div>
+
+    </section>
+
+    <section class="undone-section" id="undone" style="display: none;">
+      
+        <div class="add-content">
+
+            <h1 class="done-section-title">Undone todo</h1>
+
+            <div class="display-undone"></div>
         </div>
     </section>
 
-    <section class="contact-section">
+    <section class="stat-section" id="stat" style="display : none;">
+    <div class="add-content">
+        <div class="done-div">
+            <h1 class="done-div-title">Number of done</h1>
 
-        <h1 class="contact-section-title">Contact Me</h1>
+            <div class="done">
+                <div class="disp-done"></div>
 
-            <div class="contact-text">
-              If you have any feedback, suggestions, or questions about this employee management project, feel free to get in touch&#33; Your input is always welcome and helps me improve my work.
-          </div>
-
-          <div class="contacts">
-            
-            <div class="contact">
-
-                <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <div class="icon-type">Linkedin</div>
-
+                <button class="done-button bb">Disp done</button>
             </div>
+        </div>
 
-              <div class="contact">
+                <div class="undone-div">
+            <h1 class="done-div-title">Number of undone</h1>
 
-                <a href="https://github.com/rexy-bit" class="icon" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <div class="icon-type">Github</div>
+            <div class="done">
+                <div class="disp-undone"></div>
 
+                <button class="undone-button bb">Disp undone</button>
             </div>
-
-              <div class="contact">
-
-                <a href="mailto:yanisrezgui28@gmail.com" class="icon" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                <div class="icon-type">Email</div>
-
-            </div>
-          </div>
+        </div>
+        </div>
     </section>
+    
 
 
+    <script>
 
+        function showPage(pageId){
+
+            const sections = document.querySelectorAll("section");
+
+            sections.forEach((section, i)=>{
+                if(section.id === pageId){
+                    section.style.display = "block";
+                }else{
+                    section.style.display = "none";
+                }
+            });    
+    }
+
+    function router(){
+        const hash = window.location.hash.slice(1) || "home";
+        showPage(hash);
+    }
+
+    window.addEventListener("hashchange", router);
+    window.addEventListener("DOMContentLoaded", router);
+    </script>
+
+    <script src="todo.js"></script>
 </body>
 </html>
