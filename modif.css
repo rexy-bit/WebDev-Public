@@ -1,49 +1,41 @@
 .modif-section{
-    display: flex;
+    display : flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color:  #90AFC5;
+    background-color: #d5bdaf;
     width: 100%;
-}
-.modif-section-title{
-    font-size: 3em;
-    color: white;
-    text-decoration: underline;
-    font-weight: 900;
-    margin-top: 70px;
+    height: 100vh;
 }
 .modif-button{
+    border : none;
     background-color: green;
-    border: none;
-    font-size: 15px;
     color: white;
-    font-weight: bold;
-    border-radius: 4px;
+    border-radius : 4px;
+    font-weight : bold;
+    font-size :15px;
     cursor: pointer;
     transition: opacity 0.25s;
     width : 100px;
     
 }
 .modif-button:hover{
-    opacity: 0.8;
+    opacity : 0.8;
 }
-
 .modif-button:active{
-    opacity: 0.6;
+    opacity : 0.6;
 }
 
 .modif-result{
-    font-size : 20px;
-    font-weight : 600;
-    color: green;
-    margin-top: 30px;
     width : 300px;
+    margin-top : 20px;
+    margin-bottom : 30px;
+    font-size: 20px;
+    color :blue;
 }
 
-@media(max-width : 100px){
-    .modif-button{
+@media(max-width : 1024px){
+    .search-button{
         height : 45px;
     }
 }
