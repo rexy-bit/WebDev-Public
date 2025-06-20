@@ -1,98 +1,101 @@
 .add-section{
-    display : flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fefae0;
-    width: 100%;
+    background-color: #f5ebe0;
+    width : 100%;
     height: 100vh;
 }
-
-.add-section-title{
+.section-content{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top : 70px;
-    font-size : 3em;
-    font-weight: bold;
-    text-decoration: underline;
-    margin-bottom : 60px;
-}
-.add-content{
-
-    display : flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
+}
+.add-section-title{
+    font-size: 3em;
+    color: black;
+    margin-top : 70px;
+    text-decoration: underline;
+    margin-bottom : 70px;
+
 }
 .inputs{
     display: grid;
-    grid-template-columns: 250px 150px 100px;
+    grid-template-columns: 250px 250px 200px 150px 100px;
     column-gap: 20px;
 }
+
 .in{
-    padding: 10px;
-    font-size : 15px;
-    border : 1px solid gray;
+    padding : 10px;
+    font-size: 15px;
+    border: 1px solid gray;
     border-radius: 4px;
 }
 .add-button{
-    font-size : 15px;
+    border: none;
+    width: 100px;
+    font-size: 15px;
     color: white;
     background-color: green;
-    border : none;
-    border-radius: 4px;
     font-weight: bold;
-    transition: opacity 0.25s;
+    border-radius: 4px;
     cursor: pointer;
-    width: 100px;
+    transition: opacity 0.25s;
 }
+
 .add-button:hover{
-    opacity: 0.8;
+    opacity : 0.8;
 }
 .add-button:active{
-    opacity: 0.6;
+    opacity : 0.6;
 }
 .display-error-message{
-    font-size : 20px;
-    color: red;
     width : 300px;
-    margin-top  : 30px;
+    color: red;
+    font-size: 20px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 .display-success-message{
-    font-size : 20px;
+    width: 300px;
     color: green;
-    width : 300px;
-    margin-top  : 30px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 80px;
 }
-@media(max-width : 700px){
 
+@media(max-width : 1200px){
     .inputs{
-        display: flex;
+        display : flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding : 20px;
-        border : 1px solid black;
+        gap : 20px;
+        padding :20px;
+        border: 1px solid black;
         border-radius: 5px;
-        gap: 20px;
+    }
+    .add-button{
+        height: 45px;
+        margin-top : 30px;
     }
     .in{
         width : 300px;
     }
-    .add-button{
-        height: 45px;
-    }
 }
-
-@media(max-width : 390px){
+@media(max-width : 450px){
     .inputs{
-        padding : 10px;
+        padding: 10px;
     }
     .in{
-        width: 270px;
+        width : 280px;
+    }
+}
+@media(max-width : 375px){
+    .in{
+        width : 250px;
     }
 }
