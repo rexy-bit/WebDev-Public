@@ -1,68 +1,72 @@
 .liste-section{
-    display : flex;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    height: 100vh;
     background-color: #caf0f8;
-}
-body{
-    background-color: #caf0f8;
+    width : 100%;
+    height : 100vh;
 }
 .liste-section-title{
+    margin-top : 70px;
     font-size: 3em;
-    margin-top : 60px;
     text-decoration: underline;
-    margin-bottom: 70px;
-    
+    margin-bottom : 50px; 
 }
-.display-content,.display-done,.display-undone{
-    margin-bottom : 50px;
+.book-div{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap : 20px;
-} 
-
-.todo-div{
-    display : flex;
-    flex-direction : column;
-    justify-content: center;
-    align-items: center;
-    gap : 20px;
-    font-size: 20px;
-    padding : 20px;
-    border : 1px solid black;
-    background-color: #03045e;
-    color: white;
-    border-radius: 5px;
-    width : 250px;
+    font-size: 17px;
+        background-color: #14213d;
+        padding :20px;
+        border-radius: 10px;
+        color: white;
+        width : 300px;
 }
 .state-button{
-    width : 30px;
     height : 30px;
-    border-radius: 30px;
+    width : 30px;
+    border-radius: 50%;
+    border: 2px solid white;
     cursor: pointer;
-    transition: color 0.3s;
-    border : 2px solid white;
+
 }
+.display-content{
+    display : flex;
+    flex-direction: column;
+    gap : 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #caf0f8;
+   padding-bottom: 100px;
+}
+
 .delete-button{
-    height : 40px;
     width : 100px;
-    font-size : 15px;
-    color: white;
+    height : 45px;
+    border: none;
     background-color: red;
+    color: white;
+    font-size: 15px;
     font-weight: bold;
-    border : none;
     border-radius: 4px;
     cursor: pointer;
     transition: opacity 0.25s;
 }
 .delete-button:hover{
-    opacity : 0.8;
+    opacity: 0.8;
 }
 .delete-button:active{
-    opacity : 0.6;
+    opacity: 0.6;
 }
+
+@media(max-width : 420px){
+   .book-div{
+    width : 250px;
+   }
+}
+
