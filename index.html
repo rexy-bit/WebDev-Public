@@ -39,6 +39,9 @@
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="add.css">
 <link rel="stylesheet" href="liste.css">
+<link rel="stylesheet" href="search.css">
+<link rel="stylesheet" href="modify.css">
+<link rel="stylesheet" href="stat.css">
 </head>
 <body>
 
@@ -124,11 +127,107 @@
         </div>
     </section>
 
-    <section class="search-section" id="search" style="display: none;"></section>
+    <section class="search-section" id="search" style="display: none;">
 
-    <section class="modif-section" id="modif" style="display: none;"></section>
+        <div class="section-content">
 
-    <section class="stat-section" id="stat" style="display: none;"></section>
+          <div class="search-div">
+             <h1 class="search-section-title">Search Employee</h1>
+
+               <div class="search-inputs">
+                <input type="text" class="search-code" placeholder="Enter code">
+                <button class="search-button">Search</button>
+               </div>
+
+               <p class="search-message"></p>
+               <div class="display-search"></div>
+         </div>   
+        </div>
+    </section>
+
+    <section class="modif-section" id="modif" style="display: none;">
+
+        <div class="section-content">
+
+            <div class="modif-div">
+
+                <h1 class="modif-section-title">Modify Emp</h1>
+
+                                <div class="inputs">
+
+                    <input type="text" class="m-code in" placeholder="code">
+                    <input type="text" class="m-nom in" placeholder="Last name">
+                    <input type="text" class="m-prenom in" placeholder="First name">
+
+                    <select class="m-departement in">
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="HR">Human Resources</option>
+                            <option value="Logistics">Logistics</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Projects">Projects</option>
+                            <option value="Technical">Technical</option>
+                    </select>
+
+                    <input type="text" class="m-poste in" placeholder="Poste">
+                    <button class="modif-button">Modify</button>
+
+                </div>
+
+                <p class="modif-message"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stat-section" id="stat" style="display: none;">
+
+        <div class="section-content">
+
+            <div class="total-div">
+                
+                <h1 class="total-title">Total Employee Number</h1>
+
+                <div class="total-content">
+                    <div class="display-total dd"></div>
+                    <button class="total-button sb">Disp Number</button>
+                </div>
+            </div>
+
+
+            <div class="each-div">
+
+                <h1 class="each-title">Employees in each Dep</h1>
+                <div class="each-content">
+                   
+                    
+
+                    <div class="display-each">
+
+                        <div class="nbr-div">
+                            <div class="dep">HR : </div>
+                            <div class="nbr-hr"></div>
+                        </div>
+                        <div class="nbr-div">
+                            <div class="dep">Logistics : </div>
+                            <div class="nbr-log"></div>
+                        </div>
+                        <div class="nbr-div">
+                            <div class="dep">Projects : </div>
+                            <div class="nbr-pro"></div>
+                        </div>
+                        <div class="nbr-div">
+                           <div class="dep">Finance : </div>
+                            <div class="nbr-fi"></div>
+                        </div>
+                        <div class="nbr-div">
+                            <div class="dep">Technical : </div>
+                            <div class="nbr-tec"></div>
+                        </div>
+             
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
