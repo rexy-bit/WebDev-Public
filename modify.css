@@ -1,0 +1,55 @@
+.modif-section{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #F4F4F4;
+}
+.modif-div{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #F4F4F4;
+    height: 100vh;
+
+}
+.modif-button{
+    width : 100px;
+    background-color: #E2001A;
+    color : white;
+    border : 1px solid gray;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.25s;
+    transition: background-color 0.25s;
+
+}
+.modif-button:hover{
+    color:#E2001A;
+    background-color: white;
+}
+.modif-button:active{
+    opacity: 0.6;
+}
+.modif-message{
+
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #E2001A;
+    width: 250px;
+
+}
+@media(max-width : 1240px){
+    .modif-button{
+        height : 45px;
+    }
+}
+
