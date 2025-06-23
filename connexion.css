@@ -1,0 +1,125 @@
+
+.connexion-section{
+    display : flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height : 100vh;
+    background-color: #F4F4F4;
+    padding-top: 55px;
+}
+.home-section{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     width: 100%;
+
+}
+.home-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F4F4;
+    width: 100%;
+    padding-bottom: 120px;
+}
+.home-title{
+    font-size : 3em;
+    text-decoration : underline;
+    color: #E2001A;
+    margin-top : 70px;
+    margin-bottom  : 70px;
+}
+.home-text{
+    color: #1E1E1E;
+    font-size :24px;
+    width : 850px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #F4F4F4;
+}
+
+.connexion{
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    width: 100%;
+}
+.connexion-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.connexion-title{
+    font-size : 3em;
+    color: #E2001A;
+    text-decoration: underline;
+    margin-top : 70px;
+    margin-bottom: 80px;
+    
+}
+.connexion-inputs{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap : 20px;
+    padding :20px;
+    border : 1px solid #E2001A;
+    border-radius: 4px;
+}
+.li{
+   padding: 10px;
+   font-size: 15px;
+   width: 250px;
+   border : 1px solid gray;
+   border-radius: 3px;
+}
+.login-button{
+    width : 100px;
+    height : 45px;
+    font-size : 15px;
+    color: white;
+    background-color: #E2001A;
+    border : 1px solid gray;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.25s;
+    transition:  background-color 0.25s ;
+}
+.login-button:hover{
+    color: #E2001A;
+    background-color: white;
+}
+.login-button:active{
+    opacity : 0.6;
+}
+@media(max-width : 912px){
+    .home-text{
+        width : 600px;
+    }
+}
+@media(max-width : 700px){
+    .home-text{
+        width : 400px;
+    }
+}
+@media(max-width : 500px){
+    .home-text{
+        font-size :20px;
+        width : 300px;
+    }
+    .connexion-title{
+        font-size : 2.3em;
+    }
+    .connexion-inputs{
+        padding: 10px;
+    }
+}
