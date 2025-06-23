@@ -1,80 +1,76 @@
-let etud = JSON.parse(localStorage.getItem('etud')) || [];
+currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
 
-function addEtud(){
+function displayH1(){
 
-    let codeIn = document.querySelector(".input-code");
-    let nomIn = document.querySelector(".input-nom");
-    let prenomIn = document.querySelector(".input-prenom");
-    let ageIn = document.querySelector(".input-age");
-    let moyIn = document.querySelector(".input-moy");
+    if(currentUser && currentUser.username){
+    document.querySelector(".employe-title").innerHTML = `Welcome ${currentUser.username}`;
+    }else{
+        window.location.hash = "connexion";
+    }
+}
 
-    let code = codeIn.value;
-    let nom = nomIn.value;
-    let prenom = prenomIn.value;
-    let age = ageIn.value;
-    let moy = moyIn.value;
+displayH1();
 
 
-    let trouve = false;
+
+let leave = [{
+    nom : 'Rezgui',
+    prenom : 'Yanis',
+    departement : 'HR',
+    start : '24/06/2025',
+    end : '28/06/2006'
+
+}];
+
+
+function displayLeave(){
+
     let i = 0;
+    let trouve = false;
 
-    while(i<etud.length && (!trouve)){
-        if(etud[i].code === code){
-            trouve = true;
+    let user;
+    while(i<leave.length && (!trouve)){
+        if(leave[i].prenom.toLowerCase()=== currentUser.username.toLowerCase()){
+           user = leave[i];
+           trouve = true;
         }else{
             i++;
         }
     }
 
     if(trouve){
-        document.querySelector(".display-error-message").innerHTML = 'The code you entered already exists';
-    }else if(code === '' || nom === '' || prenom === '' || age === '' || moy === ''){
-         document.querySelector(".display-error-message").innerHTML = 'Please enter all the necessary inforamtions';
-    }else if(isNaN(age) || isNaN(moy)){
-         document.querySelector(".display-error-message").innerHTML = 'The age and mean must contain only numbers';
-    }else if(Number(age) < 0){
-         document.querySelector(".display-error-message").innerHTML = 'Please the age must be positive';
-    }else if(Number(moy) < 0 || Number(moy)>20){
-         document.querySelector(".display-error-message").innerHTML = 'The mean must be between 0 and 20';
-    }else{
+        const container = document.querySelector(".add-content");
+        container.innerHTML = '';
 
-         document.querySelector(".display-error-message").innerHTML = '';
+        const addDiv = document.createElement("div");
+        addDiv.className = "user-info";
 
-         etud.push({
-            code,
-            nom,
-            prenom,
-            age : Number(age),
-            moy : Number(moy)
-         });
+        const nomD = document.createElement("div");
+        nomD.textContent = `-Last name : ${user.nom}`;
 
-         localStorage.setItem('etud', JSON.stringify(etud));
+        const prenomD = document.createElement("div");
+        prenomD.textContent = user.prenom;
 
-          document.querySelector(".display-success-message").innerHTML = 'Student entered successfuly';
+        const departementD = document.createElement("div");
+        departementD.textContent = user.departement;
+
+        const startD = document.createElement("div");
+        startD.textContent = user.start;
+
+        const endD = document.createElement("div");
+        endD.textContent = user.end;
 
 
-          setTimeout(()=>{
-            document.querySelector(".display-success-message").innerHTML = '';
-          }, 3000);
+        addDiv.appendChild(nomD);
+        addDiv.appendChild(prenomD);
+        addDiv.appendChild(departementD);
+        addDiv.appendChild(startD);
+        addDiv.appendChild(endD);
 
-          codeIn.value = '';
-          nomIn.value = '';
-          prenomIn.value = '';
-          ageIn.value = '';
-          moyIn.value = '';
-
+        container.appendChild(addDiv);
+        
     }
 }
 
-
-document.querySelector(".add-button").addEventListener('click', ()=>{
-    addEtud();
-
-});
-
-document.body.addEventListener('keydown', (e)=>{
-    if(e.key === 'Enter'){
-        addEtud();
-    }
-});
+displayLeave();
