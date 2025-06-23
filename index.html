@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABBemp.com</title>
+    <title>conge.com</title>
 
- <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -17,250 +17,119 @@
 
     body{
 
-        display : flex;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0;
-        margin: 0;
         font-family: roboto, arial;
-        padding-top : 55px;
+        margin: 0;
+        padding: 0;
     }
     html{
         scroll-behavior: smooth;
     }
     *{
-        box-sizing : border-box;
+        box-sizing: border-box;
     }
+
 </style>
 
 
-<link rel="stylesheet" href="header.css">
-<link rel="stylesheet" href="home.css">
-<link rel="stylesheet" href="add.css">
-<link rel="stylesheet" href="liste.css">
-<link rel="stylesheet" href="search.css">
-<link rel="stylesheet" href="modify.css">
-<link rel="stylesheet" href="stat.css">
+<link rel="stylesheet" href="headerCon.css">
+<link rel="stylesheet" href="connexion.css">
+<link rel="stylesheet" href="employe.css">
 </head>
 <body>
 
-    <header>
+    <div class="connexion-section" id="public-pages" style="display: none;">
 
-        <h1 class="header-title">ABB Employee Gestionnary</h1>
+          <header class="connexion-header">
+            <h1 class="header-title">Leave Management System</h1>
 
-        <div class="functions">
-            <a href="#home" class="ff">Home</a>
-            <a href="#add" class="ff">Add</a>
-            <a href="#liste" class="ff">Liste</a>
-            <a href="#search" class="ff">Search</a>
-            <a href="#modif" class="ff">Modify</a>
-            <a href="#stat" class="ff">Stat</a>
-
-
-        </div>
-
-    </header>
-
-    <section class="home-section" id="home" style="display: none;">
-
-        <div class="section-content">
-
-         <div class="home-div">
-            <h1 class="home-section-title">Home Page</h1>
-
-            <div class="home-text">
-                Welcome to the Employee Management System — a web-based application designed to help you manage employee data in a simple, efficient, and user-friendly way. This tool allows you to add new employees by entering key details such as name, department, position, salary, and hire date. You can view all employee records in a clean and organized layout, update their information at any time, or remove employees from the list when needed. The built-in search and filtering options make it easy to find specific employees by name or department. Additionally, the application provides helpful statistics, such as the total number of employees, the average salary, and the number of employees per department. All data is saved locally in your browser using localStorage, ensuring fast performance and persistent data without the need for a server. Inspired by ABB's professional design standards, this application combines simplicity and functionality to support modern employee management needs.
+            <div class="functions">
+                <a href="#home" class="ff">Home</a>
+                <a href="#connexion" class="ff">Connexion</a>
             </div>
-           </div>
-        </div>
-    </section>
+          </header>
 
-    <section class="add-section" id="add" style="display: none;">
+          <section class="home-section section-connexion" id="home" style="display: none;">
+               <div class="home-div">
+               <h1 class="home-title">Home page</h1>
 
-        <div class="section-content">
-
-            <div class="add-div">
-                <h1 class="add-section-title">Add Employee</h1>
-
-                <div class="inputs">
-
-                    <input type="text" class="input-code in" placeholder="code">
-                    <input type="text" class="input-nom in" placeholder="Last name">
-                    <input type="text" class="input-prenom in" placeholder="First name">
-
-                    <select class="input-departement in">
-                            <option value="" disabled selected>Select Department</option>
-                            <option value="HR">Human Resources</option>
-                            <option value="Logistics">Logistics</option>
-                            <option value="Finance">Finance</option>
-                            <option value="Projects">Projects</option>
-                            <option value="Technical">Technical</option>
-                    </select>
-
-                    <input type="text" class="input-poste in" placeholder="Poste">
-                    <button class="add-button">Add</button>
-
-                </div>
-
-                <p class="display-error-message"></p>
-                <p class="display-success-message"></p>
-
-                
-            </div>
-        </div>
-    </section>
-
-    <section class="liste-section" id="liste" style="display: none;">
-
-
-        <div class="section-content">
-
-            <div class="liste-div">
-
-                <h1 class="liste-section-title">
-                    Employee liste
-                </h1>
-
-                <div class="display-content"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="search-section" id="search" style="display: none;">
-
-        <div class="section-content">
-
-          <div class="search-div">
-             <h1 class="search-section-title">Search Employee</h1>
-
-               <div class="search-inputs">
-                <input type="text" class="search-code" placeholder="Enter code">
-                <button class="search-button">Search</button>
+               <div class="home-text">
+                This Web App is a Leave Management System with a Single Page Application (SPA) developed using HTML, CSS, and JavaScript for the RH departement of ABB. This internal tool allows employees to submit leave requests digitally, while administrators can view, approve, or reject them in real time. It includes a role-based login system, a dynamic leave request form, personal request tracking for employees, an admin dashboard for request management, and a statistics section to analyze leave data. All functionality is handled client-side using JavaScript and localStorage, with seamless navigation between views to ensure a smooth user experience.
                </div>
+              </div>
+          </section>
 
-               <p class="search-message"></p>
-               <div class="display-search"></div>
-         </div>   
-        </div>
-    </section>
 
-    <section class="modif-section" id="modif" style="display: none;">
+          <section class="connexion section-connexion" id="connexion" style="display: none;">
+            <div class="connexion-div">
+            <h1 class="connexion-title">Authentification</h1>
 
-        <div class="section-content">
+            <div class="connexion-inputs">
+                <input type="text" class="login-username li" placeholder="username">
+                <input type="text" class="login-passeword li" placeholder="Passeword">
+                <button class="login-button">Login</button>
+            </div>
 
-            <div class="modif-div">
+            <p class="display-login-message"></p>
+            </div>
+          </section>
 
-                <h1 class="modif-section-title">Modify Emp</h1>
+         
+    </div>
 
-                                <div class="inputs">
 
-                    <input type="text" class="m-code in" placeholder="code">
-                    <input type="text" class="m-nom in" placeholder="Last name">
-                    <input type="text" class="m-prenom in" placeholder="First name">
+    <div class="admin-div" id="admin">
 
-                    <select class="m-departement in">
+    
+    </div>
+
+    <div class="employe-div" id="employe">
+
+        <div class="emp-div">
+
+        <h1 class="employe-title"></h1>
+
+        <h2 class="add-title">Add Leave</h2>
+
+        <div class="inputs">
+            <input type="text" class="input-nom in" placeholder="Last name">
+            <input type="text" class="input-prenom in" placeholder="First name">
+                <select class="input-departement in">
                             <option value="" disabled selected>Select Department</option>
                             <option value="HR">Human Resources</option>
                             <option value="Logistics">Logistics</option>
                             <option value="Finance">Finance</option>
                             <option value="Projects">Projects</option>
                             <option value="Technical">Technical</option>
-                    </select>
+                </select>
+                <label for="date">Starting date:</label>
+            <input type="date" class="input-dateD in" placeholder="Starting day">
+            <label for="date">Ending date:</label>
+            <input type="date" class="input-dateF in" placeholder="Ending day">
 
-                    <input type="text" class="m-poste in" placeholder="Poste">
-                    <button class="modif-button">Modify</button>
+            <button class="add-button">Request Leave</button>
 
-                </div>
-
-                <p class="modif-message"></p>
-            </div>
         </div>
-    </section>
 
-    <section class="stat-section" id="stat" style="display: none;">
+        <p class="display-add-message"></p>
 
-        <div class="section-content">
-
-            <div class="total-div">
-                
-                <h1 class="total-title">Total Employee Number</h1>
-
-                <div class="total-content">
-                    <div class="display-total dd"></div>
-                    <button class="total-button sb">Disp Number</button>
-                </div>
-            </div>
-
-
-            <div class="each-div">
-
-                <h1 class="each-title">Employees in each Dep</h1>
-                <div class="each-content">
-                   
-                    
-
-                    <div class="display-each">
-
-                        <div class="nbr-div">
-                            <div class="dep">HR : </div>
-                            <div class="nbr-hr"></div>
-                        </div>
-                        <div class="nbr-div">
-                            <div class="dep">Logistics : </div>
-                            <div class="nbr-log"></div>
-                        </div>
-                        <div class="nbr-div">
-                            <div class="dep">Projects : </div>
-                            <div class="nbr-pro"></div>
-                        </div>
-                        <div class="nbr-div">
-                           <div class="dep">Finance : </div>
-                            <div class="nbr-fi"></div>
-                        </div>
-                        <div class="nbr-div">
-                            <div class="dep">Technical : </div>
-                            <div class="nbr-tec"></div>
-                        </div>
-             
-                    </div>
-                </div>
-            </div>
+        <div class="add-content"></div>
         </div>
-    </section>
+
+    </div>
+
+
+        
 
 
 
 
-    <script src="emp.js"></script>
-
-
-    <script>
-
-
-         function showPage(pageId){
-
-            let sections = document.querySelectorAll("section");
-            
-            sections.forEach((section)=>{
-                 
-                if(section.id === pageId){
-                    section.style.display = "block";
-                }else{
-                    section.style.display = "none";
-                }
-            });
-         }
-
-                 function router(){
-
-            const hash = window.location.hash.slice(1) || "home";
-            showPage(hash);
-        }
-
-        window.addEventListener("hashchange", router);
-        window.addEventListener("DOMContentLoaded", router);
-    </script>
     
+
+    <script src="login.js"></script>
+    <script src="add.js"></script>
 </body>
 </html>
