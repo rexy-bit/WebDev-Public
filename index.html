@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>conge.com</title>
+    <title>livraison.com</title>
 
      <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,18 +12,18 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 <style>
 
     body{
-
-        display: flex;
+        display : flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         font-family: roboto, arial;
-        margin: 0;
-        padding: 0;
+        margin : 0;
+        padding : 0;
+        padding-top: 55px;
+        background-color: #F4F4F4;
     }
     html{
         scroll-behavior: smooth;
@@ -32,104 +32,195 @@
         box-sizing: border-box;
     }
 
+   
 </style>
 
-
-<link rel="stylesheet" href="headerCon.css">
-<link rel="stylesheet" href="connexion.css">
-<link rel="stylesheet" href="employe.css">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="add.css">
+<link rel="stylesheet" href="liste.css">
+<link rel="stylesheet" href="search.css">
+<link rel="stylesheet" href="modif.css">
+<link rel="stylesheet" href="stat.css">
 </head>
 <body>
 
-    <div class="connexion-section" id="public-pages" style="display: none;">
+    <header>
 
-          <header class="connexion-header">
-            <h1 class="header-title">Leave Management System</h1>
+        <h1 class="header-title">ABB Delivery Tracker</h1>
 
-            <div class="functions">
-                <a href="#home" class="ff">Home</a>
-                <a href="#connexion" class="ff">Connexion</a>
+        <nav>
+            <a href="#home" class="ff">Home</a>
+            <a href="#add" class="ff">Add</a>
+            <a href="#liste" class="ff">Liste</a>
+            <a href="#search" class="ff">Search</a>
+            <a href="#modif" class="ff">Modify</a>
+            <a href="#stat" class="ff">Stat</a>
+        </nav>
+
+    </header>
+
+
+    <section class="home-section" id="home" style="display: none;">
+
+        <div class="home-div">
+            <h1 class="home-div-title">
+                Home Page
+            </h1>
+
+            <div class="home-text">
+                Welcome to the <strong>ABB Logistics Delivery Management System</strong>. This internal web application has been developed to help the ABB Logistics Department effectively manage all incoming and outgoing deliveries. The system offers a range of features including the ability to display the full list of deliveries, add new deliveries, delete existing ones, and update delivery details such as type, supplier, quantity, and status. It also includes a search function that allows users to quickly find a delivery based on its unique delivery code. Additionally, the application provides useful statistics on the total number of deliveries, their distribution by type (incoming or outgoing), and the current status of each delivery. This lightweight and user-friendly tool runs entirely in the browser using HTML, CSS, JavaScript, and localStorage, making it an efficient solution for daily logistics operations within ABB.
             </div>
-          </header>
-
-          <section class="home-section section-connexion" id="home" style="display: none;">
-               <div class="home-div">
-               <h1 class="home-title">Home page</h1>
-
-               <div class="home-text">
-                This Web App is a Leave Management System with a Single Page Application (SPA) developed using HTML, CSS, and JavaScript for the RH departement of ABB. This internal tool allows employees to submit leave requests digitally, while administrators can view, approve, or reject them in real time. It includes a role-based login system, a dynamic leave request form, personal request tracking for employees, an admin dashboard for request management, and a statistics section to analyze leave data. All functionality is handled client-side using JavaScript and localStorage, with seamless navigation between views to ensure a smooth user experience.
-               </div>
-              </div>
-          </section>
-
-
-          <section class="connexion section-connexion" id="connexion" style="display: none;">
-            <div class="connexion-div">
-            <h1 class="connexion-title">Authentification</h1>
-
-            <div class="connexion-inputs">
-                <input type="text" class="login-username li" placeholder="username">
-                <input type="text" class="login-passeword li" placeholder="Passeword">
-                <button class="login-button">Login</button>
-            </div>
-
-            <p class="display-login-message"></p>
-            </div>
-          </section>
-
-         
-    </div>
-
-
-    <div class="admin-div" id="admin">
-
-    
-    </div>
-
-    <div class="employe-div" id="employe">
-
-        <div class="emp-div">
-
-        <h1 class="employe-title"></h1>
-
-        <h2 class="add-title">Add Leave</h2>
-
-        <div class="inputs">
-            <input type="text" class="input-nom in" placeholder="Last name">
-            <input type="text" class="input-prenom in" placeholder="First name">
-                <select class="input-departement in">
-                            <option value="" disabled selected>Select Department</option>
-                            <option value="HR">Human Resources</option>
-                            <option value="Logistics">Logistics</option>
-                            <option value="Finance">Finance</option>
-                            <option value="Projects">Projects</option>
-                            <option value="Technical">Technical</option>
-                </select>
-                <label for="date">Starting date:</label>
-            <input type="date" class="input-dateD in" placeholder="Starting day">
-            <label for="date">Ending date:</label>
-            <input type="date" class="input-dateF in" placeholder="Ending day">
-
-            <button class="add-button">Request Leave</button>
-
         </div>
-
-        <p class="display-add-message"></p>
-
-        <div class="add-content"></div>
-        </div>
-
-    </div>
-
 
         
+    </section>
+    <section class="add-section" id="add" style="display: none;">
 
+        <div class="add-div">
+            <h1 class="add-div-title">Add Delivery</h1>
 
+            <div class="inputs">
 
+                    <select class="input-type in">
+                            <option value="" disabled selected>Select Delivery Type</option>
+                            <option value="incoming">Incoming Delivery</option>
+                            <option value="outgoing">Outgoing Delivery</option>
+                    </select>
+                    <input type="text" class="input-numero in" placeholder="Number">
+                    <input type="text" class="input-fournisseur in" placeholder="Supplier">
+                    <input type="text" class="input-produit in" placeholder="Product">
+                    <input type="text" class="input-quantite in" placeholder="Quantity">
+                    <select class="input-statut in">
+                            <option value="" disabled selected>Select Delivery status</option>
+                            <option value="in transit">In transit</option>
+                            <option value="arrived">Arrived</option>
+                            <option value="delivered">Delivered</option>
+                    </select>
 
-    
+                    <button class="add-button">Add</button>
+                    
+            </div>
 
-    <script src="login.js"></script>
-    <script src="add.js"></script>
+            <p class="add-message"></p>
+
+        </div>
+    </section>
+
+    <section class="liste-section" id="liste" style="display: none;">
+
+        <div class="liste-div">
+            <h1 class="liste-div-title">
+                Delivery Liste
+            </h1>
+
+            <div class="display-content"></div>
+        </div>
+    </section>
+    <section class="search-section" id="search" style="display: none;">
+
+        <div class="search-div">
+            <h1 class="search-div-title">Search Delivery</h1>
+
+            <div class="search-inputs">
+                <input type="text" class="search-numero" placeholder="Delivery number">
+                <button class="search-button">Search</button>
+
+            </div>
+
+            <div class="search-message"></div>
+
+            <div class="display-search"></div>
+        </div>
+    </section>
+    <section class="modif-section" id="modif" style="display: none;">
+        <div class="modif-div">
+            <h1 class="modif-div-title">Modify Delivery</h1>
+
+               <div class="inputs">
+                   <select class="m-type in">
+                            <option value="" disabled selected>Select Delivery Type</option>
+                            <option value="incoming">Incoming Delivery</option>
+                            <option value="outgoing">Outgoing Delivery</option>
+                    </select>
+                    <input type="text" class="m-numero in" placeholder="Number">
+                    <input type="text" class="m-fournisseur in" placeholder="Supplier">
+                    <input type="text" class="m-produit in" placeholder="Product">
+                    <input type="text" class="m-quantite in" placeholder="Quantity">
+                    <select class="m-statut in">
+                            <option value="" disabled selected>Select Delivery status</option>
+                            <option value="in transit">In transit</option>
+                            <option value="arrived">Arrived</option>
+                            <option value="delivered">Delivered</option>
+                    </select>
+
+                    <button class="modif-button">Modify</button>
+            
+                </div>
+
+                <div class="modif-message"></div>
+        </div>
+    </section>
+    <section class="stat-section" id="stat" style="display: none;">
+
+        <div class="stat-div">
+            <h1 class="stat-div-title">Statistics</h1>
+
+           <div class="stat-nbrD">
+            <h2 class="nbrD-title">Display total</h2>
+                <div class="nbrD-content">
+
+                     <div class="display-nbrD"></div>
+                     <button class="nbrD-button">Disp Total Nbr</button>
+                </div>
+            </div>
+            <div class="stat-outgoing">
+
+                <h2 class="Display-outgoing">Display Total Outgoing</h2>
+                <div class="nbrD-content">
+
+                     <div class="display-outgoing"></div>
+                     <button class="out-button">Disp Total out</button>
+                </div>
+            </div>
+
+            <div class="stat-incoming">
+
+                <h2 class="Display-incoming">Display Total Incoming</h2>
+                <div class="nbrD-content">
+
+                     <div class="display-incoming"></div>
+                     <button class="in-button">Disp Total In</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="livraison.js"></script>
+
+    <script>
+
+        function showPage(pageId){
+
+            let sections = document.querySelectorAll("section");
+
+            sections.forEach((s)=>{
+                if(s.id === pageId){
+                    s.style.display = "block";
+                }else{
+                    s.style.display = "none";
+                }
+            });
+        }
+
+       function router(){
+
+            const hash = window.location.hash.slice(1) || "home";
+            showPage(hash);
+        }
+
+        window.addEventListener("hashchange", router);
+        window.addEventListener("DOMContentLoaded", router);
+    </script>
 </body>
 </html>
