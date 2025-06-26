@@ -1,65 +1,52 @@
 .home-section{
-    display: flex;
-    flex-direction: column;
+    display  : flex;
+    flex-direction : column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
     background-color: #F4F4F4;
 }
-.home-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #F4F4F4;
-    height: 100vh;
-    width: 100%;
-    padding-bottom: 100px;
-}
-.home-div-title,.add-div-title,.liste-div-title,.search-div-title,.modif-div-title,.stat-div-title{
-    font-size : 3em;
+.home-section-title,.add-section-title,.liste-section-title,.search-section-title,.search-section-title,.modif-section-title,.stat-section-title,.sort-section-title{
+
+    font-size: 3em;
     color: #E2001A;
-    margin-top: 60px;
     text-decoration: underline;
-    margin-bottom : 80px
+    margin-top: 60px;
+    margin-bottom: 70px;
+
 }
 .home-text{
-    width : 900px;
-    font-size: 24px;
+
+    width: 1000px;
     line-height: 40px;
+    font-size: 20px;
+    margin-bottom : 90px;
     text-align: center;
-    background-color:#F4F4F4 ;
-    height: 100vh;
-    padding-bottom: 100px;
 }
 
-@media(max-width : 1023px){
+@media(max-width : 1050px){
     .home-text{
-        width : 700px;
+        width : 750px;
     }
 }
-@media(max-width : 850px){
-      .home-text{
+@media(max-width : 900px){
+    .home-text{
         width : 500px;
-      }
-}
-@media(max-width : 540px){
-    .home-text{
-        width: 350px;
-        font-size: 20;
     }
 }
-@media(max-width : 450px){
+@media(max-width : 750px){
     .home-text{
-        width : 300px;
-    }
-}
+        width : 400px;
 
-@media(max-width : 400px){
+    }
+}
+@media(max-width : 550px){
     .home-text{
         width : 250px;
-        font-size: 18px;
-        line-height: 35px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .home-section-title,.liste-section-title,.search-section-title,.modif-section-title,.stat-section-title,.sort-section-title{
+        font-size: 2.1em;
     }
 }
