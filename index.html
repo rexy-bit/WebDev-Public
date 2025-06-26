@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>livraison.com</title>
+    <title>Stock.com</title>
 
      <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,19 +12,21 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
 <style>
 
     body{
-        display : flex;
+
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 0;
+        padding: 0;
         font-family: roboto, arial;
-        margin : 0;
-        padding : 0;
-        padding-top: 55px;
-        background-color: #F4F4F4;
+        padding-top : 55px;
     }
+
     html{
         scroll-behavior: smooth;
     }
@@ -32,7 +34,6 @@
         box-sizing: border-box;
     }
 
-   
 </style>
 
 <link rel="stylesheet" href="header.css">
@@ -42,185 +43,177 @@
 <link rel="stylesheet" href="search.css">
 <link rel="stylesheet" href="modif.css">
 <link rel="stylesheet" href="stat.css">
+<link rel="stylesheet" href="sort.css">
+<link rel="stylesheet" href="contact.css">
 </head>
 <body>
+    
 
     <header>
 
-        <h1 class="header-title">ABB Delivery Tracker</h1>
+        <h1 class="header-title">Stock Management Application</h1>
 
-        <nav>
+
+        <div class="humburger">&#9776;</div>
+
+        <div class="functions func">
             <a href="#home" class="ff">Home</a>
             <a href="#add" class="ff">Add</a>
             <a href="#liste" class="ff">Liste</a>
             <a href="#search" class="ff">Search</a>
-            <a href="#modif" class="ff">Modify</a>
-            <a href="#stat" class="ff">Stat</a>
-        </nav>
-
-    </header>
-
-
-    <section class="home-section" id="home" style="display: none;">
-
-        <div class="home-div">
-            <h1 class="home-div-title">
-                Home Page
-            </h1>
-
-            <div class="home-text">
-                Welcome to the <strong>ABB Logistics Delivery Management System</strong>. This internal web application has been developed to help the ABB Logistics Department effectively manage all incoming and outgoing deliveries. The system offers a range of features including the ability to display the full list of deliveries, add new deliveries, delete existing ones, and update delivery details such as type, supplier, quantity, and status. It also includes a search function that allows users to quickly find a delivery based on its unique delivery code. Additionally, the application provides useful statistics on the total number of deliveries, their distribution by type (incoming or outgoing), and the current status of each delivery. This lightweight and user-friendly tool runs entirely in the browser using HTML, CSS, JavaScript, and localStorage, making it an efficient solution for daily logistics operations within ABB.
-            </div>
+            <a href="#modif" class="ff">Modification</a>
+            <a href="#stat" class="ff">Statistics</a>
+            <a href="#sort" class="ff">Sort</a>
+            <a href="#contacts" class="ff">Contacts</a>
         </div>
 
         
+    </header>
+
+
+
+    <section class="home-section" id="home">
+
+        <h1 class="home-section-title">Home Page</h1>
+
+        <div class="home-text">
+            <strong>The Stock Management Application</strong> is a user-friendly and responsive web-based system designed to simplify inventory management processes. Developed entirely with <strong>HTML, CSS, and JavaScript</strong>, this application allows users to efficiently handle their stock with a variety of essential features. Users can add new products by entering key details such as name, quantity, and price, as well as delete products that are no longer needed. The product listing feature displays all items in a clear and organized layout, making it easy to monitor available stock. The application also offers a search functionality to quickly locate specific products, along with a modification option to update product information as needed. Additionally, a dedicated statistics module provides valuable insights into total stock levels and overall inventory value. The sorting feature helps users arrange products by name, quantity, or price for better visibility and decision-making. To ensure a seamless experience across all devices, the application includes a responsive design with a hamburger menu that enhances navigation on mobile screens. This project highlights core <strong>front-end development skills</strong> such as <strong>DOM manipulation</strong>, responsive <strong>UI design</strong>, and <strong>client-side data storage using LocalStorage</strong>.
+        </div>
     </section>
-    <section class="add-section" id="add" style="display: none;">
 
-        <div class="add-div">
-            <h1 class="add-div-title">Add Delivery</h1>
 
-            <div class="inputs">
+    <section class="add-section" id="add">
 
-                    <select class="input-type in">
-                            <option value="" disabled selected>Select Delivery Type</option>
-                            <option value="incoming">Incoming Delivery</option>
-                            <option value="outgoing">Outgoing Delivery</option>
-                    </select>
-                    <input type="text" class="input-numero in" placeholder="Number">
-                    <input type="text" class="input-fournisseur in" placeholder="Supplier">
-                    <input type="text" class="input-produit in" placeholder="Product">
-                    <input type="text" class="input-quantite in" placeholder="Quantity">
-                    <select class="input-statut in">
-                            <option value="" disabled selected>Select Delivery status</option>
-                            <option value="in transit">In transit</option>
-                            <option value="arrived">Arrived</option>
-                            <option value="delivered">Delivered</option>
-                    </select>
+        <h1 class="add-section-title">Add</h1>
 
-                    <button class="add-button">Add</button>
-                    
-            </div>
+        <div class="inputs">
+            <input type="text" class="input-code in" placeholder="Enter code">
+            <input type="text" class="input-nom in" placeholder="Enter name">
+            <input type="text" class="input-quantite in" placeholder="Enter quantity">
+            <input type="text" class="input-prix in" placeholder="Enter price">
 
-            <p class="add-message"></p>
+            <button class="add-button">Add</button>
+        </div>
+
+        <div class="add-message"></div>
+    </section>
+
+
+    <section class="liste-section" id="liste">
+
+        <h1 class="liste-section-title">Stock Liste</h1>
+
+        <div class="display-liste">
 
         </div>
     </section>
 
-    <section class="liste-section" id="liste" style="display: none;">
 
-        <div class="liste-div">
-            <h1 class="liste-div-title">
-                Delivery Liste
-            </h1>
+    <section class="search-section" id="search">
+        <h1 class="search-section-title">Search Product</h1>
 
-            <div class="display-content"></div>
+        <div class="search-inputs">
+            <input type="text" class="search-code" placeholder="Enter code">
+              <button class="search-button">Search</button>
         </div>
+
+        <div class="search-message"></div>
+
+        <div class="display-search"></div>
+
+        
     </section>
-    <section class="search-section" id="search" style="display: none;">
 
-        <div class="search-div">
-            <h1 class="search-div-title">Search Delivery</h1>
 
-            <div class="search-inputs">
-                <input type="text" class="search-numero" placeholder="Delivery number">
-                <button class="search-button">Search</button>
+    <section class="modif-section" id="modif">
+        <h1 class="modif-section-title">Modify Product</h1>
 
-            </div>
+        <div class="inputs">
+            <input type="text" class="m-code in" placeholder="Enter code">
+            <input type="text" class="m-nom in" placeholder="Enter name">
+            <input type="text" class="m-quantite in" placeholder="Enter quantity">
+            <input type="text" class="m-prix in" placeholder="Enter price">
 
-            <div class="search-message"></div>
-
-            <div class="display-search"></div>
+            <button class="modif-button">Modify</button>
         </div>
+
+        <div class="modif-message"></div>
     </section>
-    <section class="modif-section" id="modif" style="display: none;">
-        <div class="modif-div">
-            <h1 class="modif-div-title">Modify Delivery</h1>
 
-               <div class="inputs">
-                   <select class="m-type in">
-                            <option value="" disabled selected>Select Delivery Type</option>
-                            <option value="incoming">Incoming Delivery</option>
-                            <option value="outgoing">Outgoing Delivery</option>
-                    </select>
-                    <input type="text" class="m-numero in" placeholder="Number">
-                    <input type="text" class="m-fournisseur in" placeholder="Supplier">
-                    <input type="text" class="m-produit in" placeholder="Product">
-                    <input type="text" class="m-quantite in" placeholder="Quantity">
-                    <select class="m-statut in">
-                            <option value="" disabled selected>Select Delivery status</option>
-                            <option value="in transit">In transit</option>
-                            <option value="arrived">Arrived</option>
-                            <option value="delivered">Delivered</option>
-                    </select>
 
-                    <button class="modif-button">Modify</button>
-            
-                </div>
+    <section class="stat-section" id="stat">
+        <h1 class="stat-section-title">Statistics</h1>
 
-                <div class="modif-message"></div>
+        <div class="max-div">
+            <h2 class="max-div-title">Max Price</h2>
+
+            <div class="display-max"></div>
         </div>
-    </section>
-    <section class="stat-section" id="stat" style="display: none;">
 
-        <div class="stat-div">
-            <h1 class="stat-div-title">Statistics</h1>
+       <div class="min-div">
+            <h2 class="min-div-title">Min Price</h2>
 
-           <div class="stat-nbrD">
-            <h2 class="nbrD-title">Display total</h2>
-                <div class="nbrD-content">
+            <div class="display-min"></div>
+        </div>
 
-                     <div class="display-nbrD"></div>
-                     <button class="nbrD-button">Disp Total Nbr</button>
-                </div>
+
+        <div class="total">
+            <h2 class="total-title">Total product</h2>
+
+            <div class="total-div">
+                <div class="display-total"></div>
+                <button class="total-button">Disp Total</button>
             </div>
-            <div class="stat-outgoing">
+        </div>
 
-                <h2 class="Display-outgoing">Display Total Outgoing</h2>
-                <div class="nbrD-content">
-
-                     <div class="display-outgoing"></div>
-                     <button class="out-button">Disp Total out</button>
-                </div>
-            </div>
-
-            <div class="stat-incoming">
-
-                <h2 class="Display-incoming">Display Total Incoming</h2>
-                <div class="nbrD-content">
-
-                     <div class="display-incoming"></div>
-                     <button class="in-button">Disp Total In</button>
-                </div>
+        <div class="mean">
+            <h2 class="mean-title">Mean</h2>
+            <div class="mean-div">
+                <div class="display-mean"></div>
+                <button class="mean-button">Disp Mean</button>
             </div>
         </div>
     </section>
 
-    <script src="livraison.js"></script>
 
-    <script>
+    <section class="sort-section" id="sort">
 
-        function showPage(pageId){
+        <h1 class="sort-section-title">Sort</h1>
 
-            let sections = document.querySelectorAll("section");
+        <button class="sort-button">Disp Sort</button>
 
-            sections.forEach((s)=>{
-                if(s.id === pageId){
-                    s.style.display = "block";
-                }else{
-                    s.style.display = "none";
-                }
-            });
-        }
+        <div class="sort-content"></div>
+    </section>
 
-       function router(){
 
-            const hash = window.location.hash.slice(1) || "home";
-            showPage(hash);
-        }
+    <section class="contacts-section" id="contacts">
 
-        window.addEventListener("hashchange", router);
-        window.addEventListener("DOMContentLoaded", router);
+        <h1 class="contacts-section-title">Contact Me</h1>
+
+          <div class="contacts">
+            <div class="contact">
+                <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="contact-type">Linkedin</div>
+            </div>
+
+           <div class="contact">
+                <a href="" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
+                <div class="contact-type">0553533167</div>
+            </div>
+
+            <div class="contact">
+                <a href="https://github.com/rexy-bit" class="icon"><i class="fa-brands fa-github"></i></a>
+                <div class="contact-type">Github</div>
+            </div>
+          
+          </div>
+
+
+
+    </section>
+
+    <script src="stock.js">
+
     </script>
 </body>
 </html>
