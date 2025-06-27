@@ -1,52 +1,51 @@
 .home-section{
-    display  : flex;
-    flex-direction : column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width : 100%;
     background-color: #F4F4F4;
+
 }
-.home-section-title,.add-section-title,.liste-section-title,.search-section-title,.search-section-title,.modif-section-title,.stat-section-title,.sort-section-title{
-
-    font-size: 3em;
-    color: #E2001A;
+.home-section-title,.add-section-title{
+    font-size : 3em;
     text-decoration: underline;
-    margin-top: 60px;
+    color: #E2001A;
+    margin-top : 70px;
     margin-bottom: 70px;
-
 }
 .home-text{
-
-    width: 1000px;
-    line-height: 40px;
+    width : 900px;
+    line-height : 35px;
     font-size: 20px;
-    margin-bottom : 90px;
     text-align: center;
+    margin-bottom: 90px;
 }
 
-@media(max-width : 1050px){
+@media(max-width : 1024px){
     .home-text{
-        width : 750px;
+        width : 700px;
     }
 }
-@media(max-width : 900px){
+@media(max-width : 850px){
     .home-text{
         width : 500px;
     }
 }
-@media(max-width : 750px){
-    .home-text{
-        width : 400px;
-
-    }
-}
 @media(max-width : 550px){
     .home-text{
-        width : 250px;
-        line-height: 30px;
-        font-size: 14px;
+        width : 300px;
+        font-size : 20px;
+        
     }
-    .home-section-title,.liste-section-title,.search-section-title,.modif-section-title,.stat-section-title,.sort-section-title{
-        font-size: 2.1em;
+}
+@media(max-width:450px){
+    .home-text{
+        width : 240px;
+        font-size : 18px;
+        line-height: 35px;
+    }
+    .home-section-title,.add-section-title{
+        font-size : 2.3em;
     }
 }
