@@ -4,75 +4,64 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: gray;
+    background-color: #0055A4;
 }
 .inputs{
-    margin-bottom : 30px;
     display: grid;
-    grid-template-columns: 150px 200px 150px 200px 100px;
-    column-gap: 20px;
+    grid-template-columns: 150px 200px 200px 200px 150px 200px 100px;
+    gap : 20px;
+    margin-bottom : 50px;
 }
 .in{
-    padding: 10px;
+    padding : 10px;
     font-size : 15px;
-    border : 1px solid gray;
-    border-radius: 3px;
+    border :1px solid lightgray;
+    border-radius : 3px;
+
 }
 .add-button{
-    font-size: 15px;
     color: white;
-    background-color: green;
-    border: none;
+    font-size: 15px;
     font-weight: bold;
-    border-radius: 3px;
+    border : none;
+    border-radius : 3px;
+    background-color: green;
     cursor: pointer;
     transition : opacity 0.25s;
-    width: 100%;
 }
 .add-button:hover{
-    opacity: 0.8;
+    opacity : 0.8;
 }
 .add-button:active{
     opacity: 0.6;
 }
 .add-message{
-    font-size : 25px;
-    margin-top : 20px;
-    margin-bottom: 90px;
     width : 250px;
+    font-size: 20px;
+    margin-top : 20px;
+    margin-bottom : 90px;
 }
-
-@media(max-width : 1024px){
+@media(max-width : 1400px){
     .inputs{
         display: flex;
         flex-direction: column;
-        justify-items: center;
+        justify-content: center;
         align-items: center;
         gap : 20px;
-        padding: 20px;
+        padding : 20px;
         border : 2px solid #E2001A;
         border-radius: 5px;
     }
     .add-button{
-        height: 40px;
-        width: 100px;
+        width : 100px;
+        height : 45px;
     }
     .in{
         width : 300px;
     }
 }
-@media(max-width : 414px) {
-    .add-section-title{
-        font-size : 2.2em;
-    }
-
-    .inputs{
-        padding : 15px;
-        border-width: 1px;
-        
-    }
+@media(max-width : 414px){
     .in{
-        width : 250px;
+        width: 250px;
     }
-    
 }
