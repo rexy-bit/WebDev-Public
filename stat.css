@@ -3,54 +3,42 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #F4F4F4;
     width: 100%;
-    background-color: #F2F2F2;
 }
-.max-div,.min-div,.total,.mean{
+h2{
+    font-size : 1.8em;
+    color: #E2001A;
+    text-decoration: underline;
+}
+.total-div,.ongoing-div,.completed-div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
-h2{
-    font-size  : 1.7em;
-    color: #E2001A;
-    text-decoration: underline;
-    margin-bottom : 50px;
-    margin-top : 50px
-}
-.display-max,.display-min{
-    margin-bottom: 70px;
-}
-.min-div{
-    border-top : 2px solid #E2001A;
-    width: 70%;
-}
+
 .total{
-    border-top : 2px solid #E2001A;
-    width: 70%;
-}
-.total-div,.mean-div{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap : 20px;
-    margin-bottom : 80px;
+    gap : 15px;
+    margin-top : 50px;
+    margin-bottom: 90px;
 }
-.display-total,.display-mean{
-    height: 40px;
-    width : 120px;
-    background-color: white;
-    border-radius : 3px;
+.dd{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
-    font-weight: 500;
+    height : 40px;
+    width : 120px;
+    background-color: white;
+    font-size :15px;
+    font-weight : 550;
 }
-.mean{
-    border-top : 2px solid #E2001A;
-    width: 70%;
+.ongoing-div,.completed-div{
+    border-top : 1px solid #E2001A;
+    width : 70%;
 }
