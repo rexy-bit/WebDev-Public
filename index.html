@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock.com</title>
+    <title>TrainingTracker.com</title>
 
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -16,24 +16,26 @@
 <style>
 
     body{
-
-        display: flex;
-        flex-direction: column;
+        
+        display : flex;
+        flex-direction : column;
         justify-content: center;
         align-items: center;
-        margin: 0;
-        padding: 0;
+        margin : 0;
+        padding : 0;
         font-family: roboto, arial;
-        padding-top : 55px;
-    }
+        padding-top: 55px;
 
+    }
     html{
         scroll-behavior: smooth;
     }
     *{
         box-sizing: border-box;
+
     }
 
+    
 </style>
 
 <link rel="stylesheet" href="header.css">
@@ -44,53 +46,56 @@
 <link rel="stylesheet" href="modif.css">
 <link rel="stylesheet" href="stat.css">
 <link rel="stylesheet" href="sort.css">
-<link rel="stylesheet" href="contact.css">
+<link rel="stylesheet" href="contacts.css">
+
 </head>
 <body>
-    
 
+    
     <header>
 
-        <h1 class="header-title">Stock Management Application</h1>
+        <h1 class="header-title">Employee Training Tracker</h1>
 
+        <div class="humburger">&#9777;</div>
 
-        <div class="humburger">&#9776;</div>
-
-        <div class="functions func">
-            <a href="#home" class="ff">Home</a>
-            <a href="#add" class="ff">Add</a>
-            <a href="#liste" class="ff">Liste</a>
-            <a href="#search" class="ff">Search</a>
-            <a href="#modif" class="ff">Modification</a>
-            <a href="#stat" class="ff">Statistics</a>
-            <a href="#sort" class="ff">Sort</a>
-            <a href="#contacts" class="ff">Contacts</a>
-        </div>
-
-        
+        <nav>
+            <a href="#home" class="ff">- Home Page</a>
+            <a href="#add" class="ff">- Add</a>
+            <a href="#liste" class="ff">- Liste</a>
+            <a href="#search" class="ff">- Search</a>
+            <a href="#modif" class="ff">- Modify</a>
+            <a href="#stat" class="ff">- Statistics</a>
+            <a href="#sort" class="ff">- Sort</a>
+            <a href="#contacts" class="ff">- Contacts</a>
+        </nav>
     </header>
 
 
-
     <section class="home-section" id="home">
-
         <h1 class="home-section-title">Home Page</h1>
 
         <div class="home-text">
-            <strong>The Stock Management Application</strong> is a user-friendly and responsive web-based system designed to simplify inventory management processes. Developed entirely with <strong>HTML, CSS, and JavaScript</strong>, this application allows users to efficiently handle their stock with a variety of essential features. Users can add new products by entering key details such as name, quantity, and price, as well as delete products that are no longer needed. The product listing feature displays all items in a clear and organized layout, making it easy to monitor available stock. The application also offers a search functionality to quickly locate specific products, along with a modification option to update product information as needed. Additionally, a dedicated statistics module provides valuable insights into total stock levels and overall inventory value. The sorting feature helps users arrange products by name, quantity, or price for better visibility and decision-making. To ensure a seamless experience across all devices, the application includes a responsive design with a hamburger menu that enhances navigation on mobile screens. This project highlights core <strong>front-end development skills</strong> such as <strong>DOM manipulation</strong>, responsive <strong>UI design</strong>, and <strong>client-side data storage using LocalStorage</strong>.
+            A fully web-based Employee <strong>Training Tracker designed</strong> to streamline the management and monitoring of employee training sessions within a company. The system provides HR managers with a user-friendly interface to add detailed training records, including employee name, training title, date, and status (Ongoing or Completed). It offers a dynamic and responsive list view that displays all training sessions with the ability to sort by date or status for better organization. An integrated search functionality allows quick filtering of records based on employee names, making it easy to locate specific trainings. Users can also modify existing records to keep the database up to date. The application includes a real-time statistics section that calculates and displays useful insights, such as the total number of training sessions, the number of completed trainings, and overall completion rates. Built entirely with <strong>HTML, CSS, and JavaScript</strong>, the project leverages <strong>LocalStorage</strong> to ensure data persistence without the need for a backend server. This project focuses on front-end development best practices, including DOM manipulation, event-driven programming, data filtering, sorting algorithms, and client-side storage management, making it a practical solution for internal <strong>HR management</strong> needs.
         </div>
+
     </section>
 
 
     <section class="add-section" id="add">
-
         <h1 class="add-section-title">Add</h1>
 
         <div class="inputs">
             <input type="text" class="input-code in" placeholder="Enter code">
-            <input type="text" class="input-nom in" placeholder="Enter name">
-            <input type="text" class="input-quantite in" placeholder="Enter quantity">
-            <input type="text" class="input-prix in" placeholder="Enter price">
+            <input type="text" class="input-nom in" placeholder="Last name">
+            <input type="text" class="input-prenom in" placeholder="First name">
+            <input type="text" class="input-titre in" placeholder="Training Title">
+            <input type="date" class="input-date in">
+            
+                    <select class="input-statut in">
+                            <option value="" disabled selected>Select Training status</option>
+                            <option value="ongoing">Ongoing</option>
+                            <option value="completed">Completed</option>
+                     </select>
 
             <button class="add-button">Add</button>
         </div>
@@ -101,38 +106,39 @@
 
     <section class="liste-section" id="liste">
 
-        <h1 class="liste-section-title">Stock Liste</h1>
-
-        <div class="display-liste">
-
-        </div>
+        <h1 class="add-section-title">Liste</h1>
+        <div class="display-content"></div>
     </section>
 
 
     <section class="search-section" id="search">
-        <h1 class="search-section-title">Search Product</h1>
+        <h1 class="add-section-title">Search</h1>
 
         <div class="search-inputs">
             <input type="text" class="search-code" placeholder="Enter code">
-              <button class="search-button">Search</button>
+            <button class="search-button">Search</button>
         </div>
 
         <div class="search-message"></div>
-
         <div class="display-search"></div>
-
-        
     </section>
 
 
     <section class="modif-section" id="modif">
-        <h1 class="modif-section-title">Modify Product</h1>
+        <h1 class="add-section-title">Modify</h1>
 
         <div class="inputs">
             <input type="text" class="m-code in" placeholder="Enter code">
-            <input type="text" class="m-nom in" placeholder="Enter name">
-            <input type="text" class="m-quantite in" placeholder="Enter quantity">
-            <input type="text" class="m-prix in" placeholder="Enter price">
+            <input type="text" class="m-nom in" placeholder="Last name">
+            <input type="text" class="m-prenom in" placeholder="First name">
+            <input type="text" class="m-titre in" placeholder="Training Title">
+            <input type="date" class="m-date in">
+            
+                    <select class="m-statut in">
+                            <option value="" disabled selected>Select Training status</option>
+                            <option value="ongoing">Ongoing</option>
+                            <option value="completed">Completed</option>
+                     </select>
 
             <button class="modif-button">Modify</button>
         </div>
@@ -142,78 +148,70 @@
 
 
     <section class="stat-section" id="stat">
-        <h1 class="stat-section-title">Statistics</h1>
+        <h1 class="add-section-title">Statistics</h1>
 
-        <div class="max-div">
-            <h2 class="max-div-title">Max Price</h2>
+        <div class="total-div">
+            <h2 class="total-div-title">Total</h2>
 
-            <div class="display-max"></div>
-        </div>
-
-       <div class="min-div">
-            <h2 class="min-div-title">Min Price</h2>
-
-            <div class="display-min"></div>
-        </div>
-
-
-        <div class="total">
-            <h2 class="total-title">Total product</h2>
-
-            <div class="total-div">
-                <div class="display-total"></div>
-                <button class="total-button">Disp Total</button>
+            <div class="total">
+                <div class="display-total dd"></div>
+                <button class="total-button bb">Disp Total</button>
             </div>
         </div>
 
-        <div class="mean">
-            <h2 class="mean-title">Mean</h2>
-            <div class="mean-div">
-                <div class="display-mean"></div>
-                <button class="mean-button">Disp Mean</button>
+        <div class="ongoing-div">
+            <h2 class="total-div-title">Ongoing</h2>
+
+            <div class="total">
+                <div class="display-ongoing dd"></div>
+                <button class="ongoing-button bb">Disp Ongoing</button>
+            </div>
+        </div>
+
+        <div class="completed-div">
+            <h2 class="total-div-title">Completed</h2>
+
+            <div class="total">
+                <div class="display-completed dd"></div>
+                <button class="completed-button bb">Disp Total</button>
             </div>
         </div>
     </section>
 
 
     <section class="sort-section" id="sort">
+        <h1 class="add-section-title">Sort</h1>
 
-        <h1 class="sort-section-title">Sort</h1>
+        <button class="sort-button">Sort</button>
 
-        <button class="sort-button">Disp Sort</button>
+        <div class="display-sort">
 
-        <div class="sort-content"></div>
+        </div>
     </section>
-
 
     <section class="contacts-section" id="contacts">
 
-        <h1 class="contacts-section-title">Contact Me</h1>
+        <h1 class="add-section-title contacts-title">Contact Me</h1>
 
-          <div class="contacts">
+        <div class="contacts">
             <div class="contact">
                 <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon"><i class="fa-brands fa-linkedin"></i></a>
                 <div class="contact-type">Linkedin</div>
             </div>
 
-           <div class="contact">
-                <a href="" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
-                <div class="contact-type">0553533167</div>
-            </div>
-
-            <div class="contact">
+          <div class="contact">
                 <a href="https://github.com/rexy-bit" class="icon"><i class="fa-brands fa-github"></i></a>
                 <div class="contact-type">Github</div>
             </div>
-          
-          </div>
 
-
+          <div class="contact">
+                <a href="" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
+                <div class="contact-type">0553533167</div>
+            </div>
+        </div>
 
     </section>
-
-    <script src="stock.js">
-
-    </script>
+    
+    <script src="formation.js"></script>
 </body>
 </html>
