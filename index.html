@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrainingTracker.com</title>
-
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>emp.com</title>
+             <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -16,23 +15,22 @@
 <style>
 
     body{
-        
-        display : flex;
-        flex-direction : column;
+
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin : 0;
-        padding : 0;
-        font-family: roboto, arial;
+        margin: 0;
+        padding: 0;
         padding-top: 55px;
-
+        font-family: roboto, arial;
     }
+
     html{
         scroll-behavior: smooth;
     }
     *{
         box-sizing: border-box;
-
     }
 
     
@@ -44,60 +42,51 @@
 <link rel="stylesheet" href="liste.css">
 <link rel="stylesheet" href="search.css">
 <link rel="stylesheet" href="modif.css">
-<link rel="stylesheet" href="stat.css">
-<link rel="stylesheet" href="sort.css">
-<link rel="stylesheet" href="contacts.css">
-
 </head>
 <body>
-
     
+
     <header>
+        <h1 class="header-title">Employee Management System</h1>
 
-        <h1 class="header-title">Employee Training Tracker</h1>
+        <div class="humburger">&#9776;</div>
 
-        <div class="humburger">&#9777;</div>
-
-        <nav>
+        <nav class="functions">
             <a href="#home" class="ff">- Home Page</a>
-            <a href="#add" class="ff">- Add</a>
             <a href="#liste" class="ff">- Liste</a>
+            <a href="#add" class="ff">- Add</a>
             <a href="#search" class="ff">- Search</a>
             <a href="#modif" class="ff">- Modify</a>
             <a href="#stat" class="ff">- Statistics</a>
-            <a href="#sort" class="ff">- Sort</a>
-            <a href="#contacts" class="ff">- Contacts</a>
+            <a href="#contacts" class="ff">- Contact Me</a>
         </nav>
     </header>
 
 
     <section class="home-section" id="home">
-        <h1 class="home-section-title">Home Page</h1>
+        <h1 class="home-section-title">
+            Home Page
+        </h1>
 
         <div class="home-text">
-            A fully web-based Employee <strong>Training Tracker designed</strong> to streamline the management and monitoring of employee training sessions within a company. The system provides HR managers with a user-friendly interface to add detailed training records, including employee name, training title, date, and status (Ongoing or Completed). It offers a dynamic and responsive list view that displays all training sessions with the ability to sort by date or status for better organization. An integrated search functionality allows quick filtering of records based on employee names, making it easy to locate specific trainings. Users can also modify existing records to keep the database up to date. The application includes a real-time statistics section that calculates and displays useful insights, such as the total number of training sessions, the number of completed trainings, and overall completion rates. Built entirely with <strong>HTML, CSS, and JavaScript</strong>, the project leverages <strong>LocalStorage</strong> to ensure data persistence without the need for a backend server. This project focuses on front-end development best practices, including DOM manipulation, event-driven programming, data filtering, sorting algorithms, and client-side storage management, making it a practical solution for internal <strong>HR management</strong> needs.
+                This project is an <strong>Employee Management System</strong> developed using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. It is designed to simulate real-world backend interactions by using a <strong>REST API</strong> powered by <strong>JSON Server</strong>. The employee data is stored in a local <strong>JSON file</strong>, acting as a mock database. Through this application, users can perform key operations such as <strong>displaying the list of employees</strong> (using <strong>GET requests</strong>), <strong>adding new employees</strong> (<strong>POST</strong>), <strong>deleting existing employees</strong> (<strong>DELETE</strong>), and soon, <strong>updating employee information</strong> (<strong>PATCH/PUT</strong>). This project helped me gain practical experience in <strong>working with APIs</strong>, <strong>understanding HTTP methods</strong>, <strong>handling JSON data</strong>, and <strong>building dynamic web applications</strong> that communicate with a backend service. It also strengthened my skills in <strong>frontend development</strong>, <strong>data management</strong>, and <strong>asynchronous JavaScript programming using the Fetch API</strong>.
         </div>
-
     </section>
 
-
+    
     <section class="add-section" id="add">
-        <h1 class="add-section-title">Add</h1>
+
+        <h1 class="home-section-title">Add Employe</h1>
 
         <div class="inputs">
-            <input type="text" class="input-code in" placeholder="Enter code">
+            <input type="text" class="input-code in" placeholder="Code">
             <input type="text" class="input-nom in" placeholder="Last name">
             <input type="text" class="input-prenom in" placeholder="First name">
-            <input type="text" class="input-titre in" placeholder="Training Title">
-            <input type="date" class="input-date in">
-            
-                    <select class="input-statut in">
-                            <option value="" disabled selected>Select Training status</option>
-                            <option value="ongoing">Ongoing</option>
-                            <option value="completed">Completed</option>
-                     </select>
+            <input type="text" class="input-poste in" placeholder="Poste">
+            <input type="text" class="input-salaire in" placeholder="Salary">
 
-            <button class="add-button">Add</button>
+        <button class="add-button">Add</button>
+
         </div>
 
         <div class="add-message"></div>
@@ -106,112 +95,47 @@
 
     <section class="liste-section" id="liste">
 
-        <h1 class="add-section-title">Liste</h1>
+
+        <h1 class="home-section-title">Employe liste</h1>
+
         <div class="display-content"></div>
     </section>
 
-
     <section class="search-section" id="search">
-        <h1 class="add-section-title">Search</h1>
+        <h1 class="home-section-title">Search Employe</h1>
 
         <div class="search-inputs">
             <input type="text" class="search-code" placeholder="Enter code">
             <button class="search-button">Search</button>
+
         </div>
 
         <div class="search-message"></div>
-        <div class="display-search"></div>
+        <div class="display-search">
+
+        </div>
     </section>
 
 
     <section class="modif-section" id="modif">
-        <h1 class="add-section-title">Modify</h1>
+
+        <h1 class="home-section-title">Modify Emp</h1>
 
         <div class="inputs">
-            <input type="text" class="m-code in" placeholder="Enter code">
+            <input type="text" class="m-code in" placeholder="Code">
             <input type="text" class="m-nom in" placeholder="Last name">
             <input type="text" class="m-prenom in" placeholder="First name">
-            <input type="text" class="m-titre in" placeholder="Training Title">
-            <input type="date" class="m-date in">
-            
-                    <select class="m-statut in">
-                            <option value="" disabled selected>Select Training status</option>
-                            <option value="ongoing">Ongoing</option>
-                            <option value="completed">Completed</option>
-                     </select>
+            <input type="text" class="m-poste in" placeholder="Poste">
+            <input type="text" class="m-salaire in" placeholder="Salary">
 
-            <button class="modif-button">Modify</button>
+        <button class="modif-button">Modify</button>
+
         </div>
 
         <div class="modif-message"></div>
-    </section>
-
-
-    <section class="stat-section" id="stat">
-        <h1 class="add-section-title">Statistics</h1>
-
-        <div class="total-div">
-            <h2 class="total-div-title">Total</h2>
-
-            <div class="total">
-                <div class="display-total dd"></div>
-                <button class="total-button bb">Disp Total</button>
-            </div>
-        </div>
-
-        <div class="ongoing-div">
-            <h2 class="total-div-title">Ongoing</h2>
-
-            <div class="total">
-                <div class="display-ongoing dd"></div>
-                <button class="ongoing-button bb">Disp Ongoing</button>
-            </div>
-        </div>
-
-        <div class="completed-div">
-            <h2 class="total-div-title">Completed</h2>
-
-            <div class="total">
-                <div class="display-completed dd"></div>
-                <button class="completed-button bb">Disp Total</button>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="sort-section" id="sort">
-        <h1 class="add-section-title">Sort</h1>
-
-        <button class="sort-button">Sort</button>
-
-        <div class="display-sort">
-
-        </div>
-    </section>
-
-    <section class="contacts-section" id="contacts">
-
-        <h1 class="add-section-title contacts-title">Contact Me</h1>
-
-        <div class="contacts">
-            <div class="contact">
-                <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon"><i class="fa-brands fa-linkedin"></i></a>
-                <div class="contact-type">Linkedin</div>
-            </div>
-
-          <div class="contact">
-                <a href="https://github.com/rexy-bit" class="icon"><i class="fa-brands fa-github"></i></a>
-                <div class="contact-type">Github</div>
-            </div>
-
-          <div class="contact">
-                <a href="" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
-                <div class="contact-type">0553533167</div>
-            </div>
-        </div>
 
     </section>
-    
-    <script src="formation.js"></script>
+   
+    <script src="emp.js"></script>
 </body>
 </html>
