@@ -3,67 +3,64 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    top : 0;
-    position: fixed;
     width: 100%;
+    top: 0;
+    position: fixed;
     height: 55px;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
     background-color: white;
 }
 nav{
     display: none;
     flex-direction: column;
     justify-content: center;
-    width : 160px;
-    position : absolute;
-    right: 20px;
-    margin-top: 350px;
-    background-color: #E2001A;
+    margin-top : 340px;
     padding: 20px;
-    line-height: 30px;
-    border-radius: 10px;
+    width : 150px;
+    position: absolute;
+    right : 20px;
+    background-color: #E2001A;
+    border-radius : 10px;
+    box-shadow: 1px 2px 3px black;
+
 }
 .ff{
     text-decoration: none;
     color: white;
-    font-size : 18px;
-    font-weight: 550;
+    font-size: 18px;
+    line-height: 30px;
     text-decoration: underline;
     transition: opacity 0.25s;
 }
 .ff:hover{
-    opacity : 0.8;
+    opacity: 0.8;
 }
 .ff:active{
     opacity: 0.6;
+}
+.header-title{
+    color: #E2001A;
+    font-size  :1.8;
+    margin-left: 5px;
 }
 .humburger{
     font-size: 40px;
     color: #E2001A;
     margin-right: 20px;
     cursor: pointer;
-    transition: opacity 0.25s;
+    transition: opacity 0.2s;
 }
 .humburger:hover{
-    opacity: 0.6;
+    opacity : 0.6;
 }
 .humburger:active{
-    opacity: 0.4;
+    opacity: 0.5;
 }
-.header-title{
-    color: #E2001A;
-    font-size : 2em;
-    margin-left : 10px;
-}
-@media(max-width : 750px){
+@media(max-width : 760px){
     .header-title{
-        font-size: 1.6em;
+        font-size: 1.2em;
+    }
+    .humburger{
+        margin-right: 5px;
     }
 }
-@media(max-width : 500px){
-    .header-title{
-        font-size : 1.3em;
-        margin-left : 5px;
-    }
-}
-
