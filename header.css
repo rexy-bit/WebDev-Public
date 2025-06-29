@@ -3,34 +3,38 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     top: 0;
     position: fixed;
-    height: 55px;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    width: 100%;
+    height : 55px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
     background-color: white;
+}
+.header-title{
+    color: #E2001A;
+    margin-left: 5px;
+    font-size: 1.7em;
 }
 nav{
     display: none;
     flex-direction: column;
     justify-content: center;
-    margin-top : 340px;
-    padding: 20px;
-    width : 150px;
     position: absolute;
     right : 20px;
+    margin-top : 350px;
+    padding : 15px;
+    width : 150px;
+    gap: 10px;
     background-color: #E2001A;
-    border-radius : 10px;
-    box-shadow: 1px 2px 3px black;
+    border-radius: 10px;
 
 }
 .ff{
     text-decoration: none;
     color: white;
     font-size: 18px;
-    line-height: 30px;
-    text-decoration: underline;
-    transition: opacity 0.25s;
+    font-weight: 500;
+    transition: opacity 0.2s;
 }
 .ff:hover{
     opacity: 0.8;
@@ -38,15 +42,10 @@ nav{
 .ff:active{
     opacity: 0.6;
 }
-.header-title{
-    color: #E2001A;
-    font-size  :1.8;
-    margin-left: 5px;
-}
 .humburger{
-    font-size: 40px;
+    font-size: 35px;
+    margin-right : 15px;
     color: #E2001A;
-    margin-right: 20px;
     cursor: pointer;
     transition: opacity 0.2s;
 }
@@ -54,13 +53,31 @@ nav{
     opacity : 0.6;
 }
 .humburger:active{
-    opacity: 0.5;
+    opacity: 0.4;
 }
 @media(max-width : 760px){
     .header-title{
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
+}
+@media(max-width : 540px){
+    .header-title{
+        font-size : 1.2em;
+    }
+}
+@media(max-width : 450px){
+    .header-title{
+        font-size: 1em;
+    }
+}
+@media(max-width : 414px){
     .humburger{
-        margin-right: 5px;
+        font-size : 30px;
+        margin-right : 5px;
+    }
+}
+@media(max-width : 360px){
+    .header-title{
+        font-size: 0.9em;
     }
 }
