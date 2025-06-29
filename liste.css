@@ -3,43 +3,47 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;   
+    background-color: white;
+    width: 100%;
 }
 .display-content{
-    gap : 20px;
-    display: flex;
+    display : flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap : 20px;
     margin-bottom: 90px;
+    margin-top: 40px;
 }
-.emp-div{
-    display: flex;
+.liv-div{
+    display : flex;
     flex-direction: column;
     justify-content: center;
+    width : 250px;
+    gap : 10px;
+    font-size : 20px;
+    padding : 20px;
     background-color: lightgray;
     border : 2px solid #E2001A;
-    padding: 20px;
     border-radius : 5px;
-    width : 250px;
-    font-size: 20px;
-    line-height: 35px;
 }
 .delete-button{
-    width : 90px;
     height : 40px;
+    width : 100px;
+    border : 1px solid lightgray;
     font-size: 15px;
-    font-weight: bold;
-    border: none;
-    border-radius: 3px;
-    background-color: #E2001A;
     color: white;
-    margin-top: 20px;
+    background-color: #E2001A;
+    border-radius: 3px;
+    font-weight: bold;
+    border-radius : 4px;
+    transition : color 0.2s, background-color 0.2s, opacity 0.2s;
     cursor: pointer;
-    transition: opacity 0.25s;
+    margin-top: 15px;
 }
 .delete-button:hover{
-    opacity : 0.8;
+    color: #E2001A;
+    background-color: white;
 }
 .delete-button:active{
     opacity: 0.6;
