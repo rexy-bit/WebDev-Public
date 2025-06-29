@@ -1,12 +1,19 @@
 .modif-section{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #F4F4F4;
+    background-color: lightgray;
+
+}
+.inputs{
+    margin-top : 30px;
 }
 .modif-message{
     margin-top : 30px;
     margin-bottom : 90px;
+    width: 250px;
+    font-size: 22px;
 }
