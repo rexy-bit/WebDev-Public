@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>emp.com</title>
-             <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>livraison.com</title>
+
+         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 <style>
-
     body{
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 0;
         padding: 0;
-        padding-top: 55px;
         font-family: roboto, arial;
+        padding-top: 55px;
     }
-
     html{
         scroll-behavior: smooth;
     }
@@ -33,7 +30,6 @@
         box-sizing: border-box;
     }
 
-    
 </style>
 
 <link rel="stylesheet" href="header.css">
@@ -42,100 +38,133 @@
 <link rel="stylesheet" href="liste.css">
 <link rel="stylesheet" href="search.css">
 <link rel="stylesheet" href="modif.css">
+<link rel="stylesheet" href="stat.css">
+<link rel="stylesheet" href="sort.css">
+<link rel="stylesheet" href="contacts.css">
+
 </head>
 <body>
     
 
-    <header>
-        <h1 class="header-title">Employee Management System</h1>
+     <header>
+        <h1 class="header-title">Logistics Delivery Management System</h1>
 
         <div class="humburger">&#9776;</div>
 
-        <nav class="functions">
-            <a href="#home" class="ff">- Home Page</a>
-            <a href="#liste" class="ff">- Liste</a>
-            <a href="#add" class="ff">- Add</a>
-            <a href="#search" class="ff">- Search</a>
-            <a href="#modif" class="ff">- Modify</a>
-            <a href="#stat" class="ff">- Statistics</a>
-            <a href="#contacts" class="ff">- Contact Me</a>
+        <nav>
+            <a href="#home" class="ff">Home page</a>
+            <a href="#add" class="ff">Add</a>
+            <a href="#liste" class="ff">Liste</a>
+            <a href="#search" class="ff">Search</a>
+            <a href="#modif" class="ff">Modify</a>
+            <a href="#stat" class="ff">Statistics</a>
+            <a href="#sort" class="ff">Sort</a>
+            <a href="#contacts" class="ff">Contact Me</a>
         </nav>
-    </header>
+     </header>
 
 
-    <section class="home-section" id="home">
-        <h1 class="home-section-title">
-            Home Page
-        </h1>
+     <section class="home-section" id="home">
 
+        <h1 class="home-section-title">Home page</h1>
+               
         <div class="home-text">
-                This project is an <strong>Employee Management System</strong> developed using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. It is designed to simulate real-world backend interactions by using a <strong>REST API</strong> powered by <strong>JSON Server</strong>. The employee data is stored in a local <strong>JSON file</strong>, acting as a mock database. Through this application, users can perform key operations such as <strong>displaying the list of employees</strong> (using <strong>GET requests</strong>), <strong>adding new employees</strong> (<strong>POST</strong>), <strong>deleting existing employees</strong> (<strong>DELETE</strong>), and soon, <strong>updating employee information</strong> (<strong>PATCH/PUT</strong>). This project helped me gain practical experience in <strong>working with APIs</strong>, <strong>understanding HTTP methods</strong>, <strong>handling JSON data</strong>, and <strong>building dynamic web applications</strong> that communicate with a backend service. It also strengthened my skills in <strong>frontend development</strong>, <strong>data management</strong>, and <strong>asynchronous JavaScript programming using the Fetch API</strong>.
+                  This project is a <strong>Logistics Delivery Management System</strong> developed as a web-based application using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. It simulates a <strong>backend API</strong> by leveraging <strong>JSON Server</strong>, allowing <strong>CRUD operations</strong> (Create, Read, Update, Delete) on delivery records stored in a local <strong>JSON file</strong>. The system enables users to <strong>view</strong>, <strong>add</strong>, <strong>edit</strong>, and <strong>delete</strong> deliveries, with key details such as <strong>delivery type</strong> (incoming/outgoing), <strong>supplier</strong>, <strong>product</strong>, <strong>quantity</strong>, and <strong>status</strong>. This project helped me <strong>practice working with RESTful APIs</strong>, <strong>handling HTTP requests (GET, POST, PUT, DELETE)</strong>, and <strong>connecting a Frontend to a local API</strong> environment without the need for a full backend server.
+
         </div>
-    </section>
+     </section>
 
-    
-    <section class="add-section" id="add">
 
-        <h1 class="home-section-title">Add Employe</h1>
+     <section class="add-section" id="add">
+
+        <h1 class="home-section-title">Add Delivery</h1>
 
         <div class="inputs">
-            <input type="text" class="input-code in" placeholder="Code">
-            <input type="text" class="input-nom in" placeholder="Last name">
-            <input type="text" class="input-prenom in" placeholder="First name">
-            <input type="text" class="input-poste in" placeholder="Poste">
-            <input type="text" class="input-salaire in" placeholder="Salary">
 
-        <button class="add-button">Add</button>
+                   <select class="input-type in">
+                            <option value="" disabled selected>Select Delivery Type</option>
+                            <option value="incoming">Incoming Delivery</option>
+                            <option value="outgoing">Outgoing Delivery</option>
+                    </select>
 
+                    <input type="text" class="input-code in" placeholder="Code">
+                    <input type="text" class="input-fournisseur in" placeholder="Supplier">
+                    <input type="text" class="input-produit in" placeholder="Product name">
+                    <input type="text" class="input-quantite in" placeholder="Quantity">
+                    <select class="input-statut in">
+                            <option value="" disabled selected>Select Delivery status</option>
+                            <option value="in transit">In transit</option>
+                            <option value="arrived">Arrived</option>
+                            <option value="delivered">Delivered</option>
+                    </select>
+
+                    <button class="add-button">Add</button>
         </div>
 
         <div class="add-message"></div>
-    </section>
+
+     </section>
 
 
-    <section class="liste-section" id="liste">
-
-
-        <h1 class="home-section-title">Employe liste</h1>
+     <section class="liste-section" id="liste">
+        <h1 class="home-section-title">Delivery Liste</h1>
 
         <div class="display-content"></div>
-    </section>
+     </section>
 
-    <section class="search-section" id="search">
-        <h1 class="home-section-title">Search Employe</h1>
+
+     <section class="search-section" id="search">
+        <h1 class="home-section-title">Search Delivery</h1>
 
         <div class="search-inputs">
-            <input type="text" class="search-code" placeholder="Enter code">
+            <input type="text" class="search-code" placeholder="Code">
             <button class="search-button">Search</button>
-
         </div>
 
         <div class="search-message"></div>
-        <div class="display-search">
-
-        </div>
-    </section>
+        <div class="display-search"></div>
+     </section>
 
 
-    <section class="modif-section" id="modif">
-
-        <h1 class="home-section-title">Modify Emp</h1>
+     <section class="modif-section" id="modif">
+        <h1 class="home-section-title">Modify delivery</h1>
 
         <div class="inputs">
-            <input type="text" class="m-code in" placeholder="Code">
-            <input type="text" class="m-nom in" placeholder="Last name">
-            <input type="text" class="m-prenom in" placeholder="First name">
-            <input type="text" class="m-poste in" placeholder="Poste">
-            <input type="text" class="m-salaire in" placeholder="Salary">
+                               <select class="m-type in">
+                            <option value="" disabled selected>Select Delivery Type</option>
+                            <option value="incoming">Incoming Delivery</option>
+                            <option value="outgoing">Outgoing Delivery</option>
+                    </select>
 
-        <button class="modif-button">Modify</button>
+                    <input type="text" class="m-code in" placeholder="Code">
+                    <input type="text" class="m-fournisseur in" placeholder="Supplier">
+                    <input type="text" class="m-produit in" placeholder="Product name">
+                    <input type="text" class="m-quantite in" placeholder="Quantity">
+                    <select class="m-statut in">
+                            <option value="" disabled selected>Select Delivery status</option>
+                            <option value="in transit">In transit</option>
+                            <option value="arrived">Arrived</option>
+                            <option value="delivered">Delivered</option>
+                    </select>
 
+                    <button class="modif-button">Modify</button>
         </div>
 
-        <div class="modif-message"></div>
+           <div class="modif-message"></div>
+     </section>
 
-    </section>
-   
-    <script src="emp.js"></script>
+
+     <section class="sort-section" id="sort">
+        <h1 class="home-section-title">Sort</h1>
+
+        <button class="sort-button">sort</button>
+
+        <div class="display-sort"></div>
+
+     </section>
+
+
+
+    <script src="liv.js"></script>
 </body>
 </html>
