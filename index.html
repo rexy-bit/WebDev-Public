@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>livraison.com</title>
+    <title>Emp.com</title>
 
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -14,6 +14,7 @@
 
 <style>
     body{
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -39,82 +40,84 @@
 <link rel="stylesheet" href="search.css">
 <link rel="stylesheet" href="modif.css">
 <link rel="stylesheet" href="stat.css">
-<link rel="stylesheet" href="sort.css">
 <link rel="stylesheet" href="contacts.css">
 
 </head>
 <body>
-    
 
-     <header>
-        <h1 class="header-title">Logistics Delivery Management System</h1>
+    
+    <header>
+        <h1 class="header-title">ABB Employee Gestionnary</h1>
 
         <div class="humburger">&#9776;</div>
 
         <nav>
-            <a href="#home" class="ff">Home page</a>
-            <a href="#add" class="ff">Add</a>
-            <a href="#liste" class="ff">Liste</a>
-            <a href="#search" class="ff">Search</a>
-            <a href="#modif" class="ff">Modify</a>
-            <a href="#stat" class="ff">Statistics</a>
-            <a href="#sort" class="ff">Sort</a>
-            <a href="#contacts" class="ff">Contact Me</a>
+            <a href="#home" class="ff">- Home</a>
+            <a href="#add" class="ff">- Add</a>
+            <a href="#liste" class="ff">- Liste</a>
+            <a href="#search" class="ff">- Search</a>
+            <a href="#modif" class="ff">- Modify</a>
+            <a href="#stat" class="ff">- Statistics</a>
+            <a href="#contacts" class="ff">- Contacts</a>
         </nav>
-     </header>
+
+    </header>
 
 
-     <section class="home-section" id="home">
+    <section class="home-section" id="home">
+        <h1 class="home-section-title">Home Page</h1>            
 
-        <h1 class="home-section-title">Home page</h1>
-               
         <div class="home-text">
-                  This project is a <strong>Logistics Delivery Management System</strong> developed as a web-based application using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. It simulates a <strong>backend API</strong> by leveraging <strong>JSON Server</strong>, allowing <strong>CRUD operations</strong> (Create, Read, Update, Delete) on delivery records stored in a local <strong>JSON file</strong>. The system enables users to <strong>view</strong>, <strong>add</strong>, <strong>edit</strong>, and <strong>delete</strong> deliveries, with key details such as <strong>delivery type</strong> (incoming/outgoing), <strong>supplier</strong>, <strong>product</strong>, <strong>quantity</strong>, and <strong>status</strong>. This project helped me <strong>practice working with RESTful APIs</strong>, <strong>handling HTTP requests (GET, POST, PUT, DELETE)</strong>, and <strong>connecting a Frontend to a local API</strong> environment without the need for a full backend server.
+            
+                This <strong>Employee Management Web Application</strong> is a <strong>full-stack project</strong> designed to help organizations efficiently manage their workforce data. Built with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> for the front-end, and powered by a <strong>Node.js</strong> server for the back-end, it allows users to perform key operations such as <strong>adding new employees</strong>, <strong>viewing the full list of employees</strong>, <strong>deleting or updating employee information</strong>, and <strong>searching for employees by their unique code</strong>. The application also provides <strong>real-time statistics</strong>, including the <strong>total number of employees in each department</strong>, helping users better analyze staff distribution across the organization. All data is securely stored in a <strong>local JSON file</strong> on the server, ensuring <strong>data persistence</strong> even after the browser is closed or the page is refreshed. The project focuses on <strong>simplicity</strong>, <strong>speed</strong>, and <strong>user-friendly interaction</strong>, making it a practical solution for small to medium-sized businesses.
+
 
         </div>
-     </section>
+        
+    </section>
 
 
-     <section class="add-section" id="add">
-
-        <h1 class="home-section-title">Add Delivery</h1>
+    <section class="add-section" id="add">
+        <h1 class="home-section-title">Add Employee</h1>
 
         <div class="inputs">
 
-                   <select class="input-type in">
-                            <option value="" disabled selected>Select Delivery Type</option>
-                            <option value="incoming">Incoming Delivery</option>
-                            <option value="outgoing">Outgoing Delivery</option>
+                    <input type="text" class="input-code in" placeholder="code">
+                    <input type="text" class="input-nom in" placeholder="Last name">
+                    <input type="text" class="input-prenom in" placeholder="First name">
+
+                    <select class="input-departement in">
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="HR">Human Resources</option>
+                            <option value="Logistics">Logistics</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Projects">Projects</option>
+                            <option value="Technical">Technical</option>
+                            <option value="IT">IT</option>
                     </select>
 
-                    <input type="text" class="input-code in" placeholder="Code">
-                    <input type="text" class="input-fournisseur in" placeholder="Supplier">
-                    <input type="text" class="input-produit in" placeholder="Product name">
-                    <input type="text" class="input-quantite in" placeholder="Quantity">
-                    <select class="input-statut in">
-                            <option value="" disabled selected>Select Delivery status</option>
-                            <option value="in transit">In transit</option>
-                            <option value="arrived">Arrived</option>
-                            <option value="delivered">Delivered</option>
-                    </select>
-
+                    <input type="text" class="input-poste in" placeholder="Poste">
                     <button class="add-button">Add</button>
+
         </div>
 
         <div class="add-message"></div>
+    </section>
 
-     </section>
 
+    <section class="liste-section" id="liste">
 
-     <section class="liste-section" id="liste">
-        <h1 class="home-section-title">Delivery Liste</h1>
+        <h1 class="home-section-title">Employee Liste</h1>
+
+        <div class="liste-message"></div>
 
         <div class="display-content"></div>
-     </section>
+    </section>
 
 
-     <section class="search-section" id="search">
-        <h1 class="home-section-title">Search Delivery</h1>
+    <section class="search-section" id="search">
+
+        <h1 class="home-section-title">Search Employee</h1>
 
         <div class="search-inputs">
             <input type="text" class="search-code" placeholder="Code">
@@ -122,49 +125,86 @@
         </div>
 
         <div class="search-message"></div>
+
         <div class="display-search"></div>
-     </section>
+
+    </section>
 
 
-     <section class="modif-section" id="modif">
-        <h1 class="home-section-title">Modify delivery</h1>
+    <section class="modif-section" id="modif">
+        <h1 class="home-section-title">Modify Employee</h1>
 
         <div class="inputs">
-                               <select class="m-type in">
-                            <option value="" disabled selected>Select Delivery Type</option>
-                            <option value="incoming">Incoming Delivery</option>
-                            <option value="outgoing">Outgoing Delivery</option>
+
+                    <input type="text" class="m-code in" placeholder="code">
+                    <input type="text" class="m-nom in" placeholder="Last name">
+                    <input type="text" class="m-prenom in" placeholder="First name">
+
+                    <select class="m-departement in">
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="HR">Human Resources</option>
+                            <option value="Logistics">Logistics</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Projects">Projects</option>
+                            <option value="Technical">Technical</option>
+                            <option value="IT">IT</option>
                     </select>
 
-                    <input type="text" class="m-code in" placeholder="Code">
-                    <input type="text" class="m-fournisseur in" placeholder="Supplier">
-                    <input type="text" class="m-produit in" placeholder="Product name">
-                    <input type="text" class="m-quantite in" placeholder="Quantity">
-                    <select class="m-statut in">
-                            <option value="" disabled selected>Select Delivery status</option>
-                            <option value="in transit">In transit</option>
-                            <option value="arrived">Arrived</option>
-                            <option value="delivered">Delivered</option>
-                    </select>
-
+                    <input type="text" class="m-poste in" placeholder="Poste">
                     <button class="modif-button">Modify</button>
         </div>
 
-           <div class="modif-message"></div>
-     </section>
+        <div class="modif-message"></div>
+    </section>
 
 
-     <section class="sort-section" id="sort">
-        <h1 class="home-section-title">Sort</h1>
+    <section class="stat-section" id="statistics">
+        <h1 class="home-section-title">Statistics</h1>
 
-        <button class="sort-button">sort</button>
+        <div class="stat-dep">
+            <h2>Employees in each departement</h2>
 
-        <div class="display-sort"></div>
+            <div class="display-dep"></div>
+        </div>
 
-     </section>
+        <div class="total-div">
+            <h2>Total Employee number</h2>
+            <div class="display-total"></div>
+        </div>
+    </section>
 
 
+    <section class="contacts-section" id="contacts">
 
-    <script src="liv.js"></script>
+        <h1 class="home-section-title lt">Contact Me</h1>
+
+        <div class="contact-text">
+             Thank you for checking out my project! If you have any feedback or suggestions, please don't hesitate to contact me. Your opinion is very important and will help me grow as a developer.
+        </div>
+
+        <div class="contacts">
+            <div class="contact">
+                <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="icon-type">Linkedin</div>
+            </div>
+
+          <div class="contact">
+                <a href="https://github.com/rexy-bit" class="icon" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <div class="icon-type">Github</div>
+            </div>
+
+           <div class="contact">
+                <a href="" class="icon" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <div class="icon-type">0553533167</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="last-section">
+        <div class="copy last-text">&#169; Yanis Rezgui</div>       
+         <div class="last-text lt">Made with &#10084; by Yanis</div>
+    </section>
+
+    <script src="emp2.js"></script>
 </body>
 </html>
