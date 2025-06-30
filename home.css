@@ -3,47 +3,49 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F4F4F4;
     width: 100%;
+    background-color: #F4F4F4;
 }
 .home-section-title{
     font-size: 3em;
+    text-decoration: underline;
     color: #E2001A;
     margin-top : 70px;
     font-weight: 900;
-    text-decoration: underline;
 }
 .home-text{
-    width : 900px;
-    font-size :24px;
-    line-height : 40px;
+    font-size: 23px;
+    width: 900px;
+    line-height: 40px;
     text-align: center;
-    margin-top : 30px;
+    margin-top :30px;
     margin-bottom: 90px;
 }
+
 @media(max-width : 1024px){
     .home-text{
         width : 600px;
     }
 }
-
-@media(max-width : 760px){
+@media(max-width : 768px){
     .home-text{
-        width: 450px;
-    }
-}
-@media(max-width : 550px){
-    .home-text{
+        width: 400px;
         font-size: 20px;
         line-height: 35px;
+    }
+}
+@media(max-width : 540px){
+    .home-text{
         width : 300px;
     }
     .home-section-title{
-        font-size : 2.2em;
+        font-size: 2em;
     }
 }
-@media(max-width : 375px){
+@media(max-width : 450px){
     .home-text{
         width : 250px;
+        font-size : 14px;
+        line-height : 25px;
     }
 }
