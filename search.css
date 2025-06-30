@@ -1,5 +1,5 @@
 .search-section{
-    display : flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -10,39 +10,40 @@
     display: grid;
     grid-template-columns: 150px 100px;
     column-gap: 15px;
-
+    margin-top : 30px;
 }
 .search-code{
-    padding : 10px;
-    font-size : 15px;
+    padding: 10px;
+    font-size: 15px;
     border: 1px solid lightgray;
     border-radius: 3px;
 }
-.search-button,.modif-button,.sort-button{
-    font-size : 15px;
-    width : 100px;
+.search-button,.modif-button{
     height : 40px;
-    border: 1px solid lightgray;
-    font-weight : bold;
-    background-color: #E2001A;
+    width: 100px;
+    font-size :15px;
     color : white;
-    cursor : pointer;
-    border-radius : 3px;
+    font-weight: bold;
+    border : 1px solid lightgray;
+    cursor: pointer;
+    background-color: #E2001A;
     transition : color 0.2s, background-color 0.2s, opacity 0.2s;
+    border-radius : 3px;
 }
-.search-button:hover,.modif-button:hover,.sort-button:hover{
+.search-button:hover,.modif-button:hover{
     background-color: white;
     color: #E2001A;
 }
-.search-button:active,.modif-button:active,.sort-button:active{
+.search-button:active,.modif-button:active{
     opacity: 0.6;
 }
 .search-message{
-    font-size: 22px;
     width : 250px;
-    margin-top: 30px;
+    margin-top : 30px;
     margin-bottom : 30px;
+    font-size  : 22px;
+    font-weight: bold;
 }
 .display-search{
-    margin-bottom: 90px;;
+    margin-bottom: 90px;
 }
