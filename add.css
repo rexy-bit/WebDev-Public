@@ -3,31 +3,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width : 100%;
+    width: 100%;
     background-color: lightgray;
+
 }
 .inputs{
     display: grid;
-    grid-template-columns: 200px 150px 150px 200px 150px 200px 100px;
+    grid-template-columns: 150px 200px 200px 200px 200px 100px;
     column-gap: 15px;
+    margin-top : 30px;
 }
 .in{
-    padding: 10px;
+    padding : 10px;
     font-size: 15px;
-    border : 1px solid gray;
-    border-radius : 3px;
-    
+    border : 1px solid lightgray;
+    border-radius: 3px;
 }
 .add-button{
     font-size : 15px;
     color: white;
     background-color: green;
-    border: none;
-    width: 100px;
     font-weight: bold;
+    border: none;
     border-radius: 3px;
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition : opacity 0.2s;
 }
 .add-button:hover{
     opacity: 0.8;
@@ -35,28 +35,31 @@
 .add-button:active{
     opacity: 0.6;
 }
+
 .add-message{
+    font-size  : 22px;
+    font-weight: 500;
+    width : 250px;
     margin-top : 30px;
     margin-bottom : 90px;
-    width : 250px;
-    font-size : 22px;
-    font-weight: 550;
 }
-@media(max-width : 1280px){
+
+@media(max-width : 1240px){
     .inputs{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-items: center;
         align-items: center;
-        gap : 20px;
         padding: 20px;
-        border: 1px solid #E2001A;
-        border-radius: 3px;
+        border : 1px solid #E2001A;
+        border-radius : 5px;
+        gap  : 20px;
     }
     .in{
         width : 250px;
     }
     .add-button{
-        height : 40px;
+        width : 100px;
+        height: 40px;
     }
 }
