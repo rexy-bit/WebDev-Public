@@ -3,42 +3,78 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F4F4F4;
     width: 100%;
+    background-color: white;
+
+}
+.stat-dep{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top : 2px solid #E2001A;
+    width : 80%;
 }
 h2{
-    font-size : 1.8em;
+    font-size: 1.7em;
     color: #E2001A;
+    font-weight: 900;
     text-decoration: underline;
+    margin-top : 60px;
 }
-.total-div,.ongoing-div,.completed-div{
+.display-dep{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap : 10px;
+    font-size : 20px;
+    margin-top : 20px;
+    margin-bottom : 50px;
+}
+.total-div{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width : 80%;
+    border-top: 2px solid #E2001A;
+}
+.display-total{
+    margin-top : 20px;
+    margin-bottom : 90px;
+    font-size: 2em;
+    color: #E2001A;
+    font-weight: bold;
+
+}
+.contacts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap : 30px;
+    margin-bottom : 50px;
+}
+.contact{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
+.icon{
+    text-decoration: none;
+    font-size: 45px;
+    color: white;
+    transition: opacity 0.2s;
 
-.total{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap : 15px;
-    margin-top : 50px;
-    margin-bottom: 90px;
 }
-.dd{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height : 40px;
-    width : 120px;
-    background-color: white;
-    font-size :15px;
-    font-weight : 550;
+.icon:hover{
+    opacity: 0.8;
 }
-.ongoing-div,.completed-div{
-    border-top : 1px solid #E2001A;
-    width : 70%;
+.icon:active{
+    opacity: 0.6;
+}
+.icon-type{
+    color: white;
 }
