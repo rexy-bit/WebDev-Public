@@ -1,5 +1,4 @@
 .modif-section{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,12 +7,11 @@
     background-color: lightgray;
 
 }
-.inputs{
-    margin-top : 30px;
-}
 .modif-message{
-    margin-top : 30px;
-    margin-bottom : 90px;
+    margin-top: 30px;
+    margin-bottom: 90px;
     width: 250px;
     font-size: 22px;
+    font-weight: bold;
+
 }
