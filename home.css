@@ -1,51 +1,48 @@
 .home-section{
-    display: flex;
+    display : flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width : 100%;
     background-color: #F4F4F4;
 }
 .home-section-title{
-    font-size: 3em;
+    font-size : 3em;
     text-decoration: underline;
+    font-weight: 900;
     color: #E2001A;
     margin-top : 70px;
-    font-weight: 900;
 }
 .home-text{
-    font-size: 23px;
     width: 900px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom : 90px;
+    margin-top : 30px;
     text-align: center;
-    margin-top :30px;
-    margin-bottom: 90px;
 }
 
 @media(max-width : 1024px){
     .home-text{
-        width : 600px;
+        width: 600px;
     }
 }
-@media(max-width : 768px){
+@media(max-width : 850px){
     .home-text{
-        width: 400px;
-        font-size: 20px;
-        line-height: 35px;
+        width : 400px;
     }
 }
-@media(max-width : 540px){
+@media(max-width : 550px){
     .home-text{
-        width : 300px;
-    }
-    .home-section-title{
-        font-size: 2em;
+        width : 350px;
+        font-size : 15px;
+        line-height : 20px;
     }
 }
-@media(max-width : 450px){
+@media(max-width : 420px){
     .home-text{
         width : 250px;
-        font-size : 14px;
-        line-height : 25px;
+        font-size: 13px;
+        line-height: 17px;
     }
 }
