@@ -1,65 +1,63 @@
 .add-section{
-    display: flex;
+    display : flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     background-color: lightgray;
-
+    
 }
 .inputs{
+    margin-top : 30px;
     display: grid;
     grid-template-columns: 150px 200px 200px 200px 200px 100px;
     column-gap: 15px;
-    margin-top : 30px;
-}
-.in{
-    padding : 10px;
-    font-size: 15px;
-    border : 1px solid lightgray;
-    border-radius: 3px;
 }
 .add-button{
-    font-size : 15px;
-    color: white;
+    width: 100px;
     background-color: green;
+    color: white;
+    font-size: 15px;
     font-weight: bold;
     border: none;
-    border-radius: 3px;
+    transition: opacity 0.2s;
     cursor: pointer;
-    transition : opacity 0.2s;
 }
 .add-button:hover{
-    opacity: 0.8;
+    opacity  : 0.8;
 }
-.add-button:active{
-    opacity: 0.6;
+.add-button:active{opacity: 0.6;}
+.in{
+   
+    padding :10px;
+    font-size: 15px;
+    border: 1px solid lightgray;
+    border-radius : 5px;
 }
 
 .add-message{
-    font-size  : 22px;
-    font-weight: 500;
-    width : 250px;
-    margin-top : 30px;
+    font-size : 22px;
+    margin-top: 30px;
     margin-bottom : 90px;
+    font-weight: bold;
+    width  : 250px;
 }
 
-@media(max-width : 1240px){
+@media(max-width : 1400px){
     .inputs{
         display: flex;
         flex-direction: column;
-        justify-items: center;
+        justify-content: center;
         align-items: center;
+        gap : 20px;
         padding: 20px;
         border : 1px solid #E2001A;
         border-radius : 5px;
-        gap  : 20px;
     }
     .in{
         width : 250px;
     }
     .add-button{
-        width : 100px;
-        height: 40px;
+        height : 40px;
     }
 }
