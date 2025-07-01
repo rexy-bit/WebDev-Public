@@ -4,14 +4,10 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: lightgray;
-
 }
 .modif-message{
-    margin-top: 30px;
+    width : 250px;
+    font-size : 22px;
+    margin-top: 60px;
     margin-bottom: 90px;
-    width: 250px;
-    font-size: 22px;
-    font-weight: bold;
-
 }
