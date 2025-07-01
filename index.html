@@ -3,35 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emp.com</title>
-
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>IT Asset Management System</title>
+         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-    body{
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-        font-family: roboto, arial;
-        padding-top: 55px;
-    }
-    html{
-        scroll-behavior: smooth;
-    }
-    *{
-        box-sizing: border-box;
-    }
-
-</style>
 
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="home.css">
@@ -41,16 +19,35 @@
 <link rel="stylesheet" href="modif.css">
 <link rel="stylesheet" href="stat.css">
 <link rel="stylesheet" href="contacts.css">
+<style>
 
+    body{
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        font-family: roboto, arial;
+        padding-top: 55px;
+
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    *{
+        box-sizing: border-box;
+    }
+</style>
 </head>
 <body>
+     
 
-    
     <header>
-        <h1 class="header-title">ABB Employee Gestionnary</h1>
+
+        <h1 class="header-title">IT Asset Management System</h1>
 
         <div class="humburger">&#9776;</div>
-
         <nav>
             <a href="#home" class="ff">- Home</a>
             <a href="#add" class="ff">- Add</a>
@@ -58,34 +55,40 @@
             <a href="#search" class="ff">- Search</a>
             <a href="#modif" class="ff">- Modify</a>
             <a href="#stat" class="ff">- Statistics</a>
-            <a href="#contacts" class="ff">- Contacts</a>
+            <a href="#contacts" class="ff">- Contact Me</a>
         </nav>
-
     </header>
 
 
     <section class="home-section" id="home">
-        <h1 class="home-section-title">Home Page</h1>            
+
+
+        <h1 class="home-section-title">Home Page</h1>
 
         <div class="home-text">
-            
-                This <strong>Employee Management Web Application</strong> is a <strong>full-stack project</strong> designed to help organizations efficiently manage their workforce data. Built with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> for the front-end, and powered by a <strong>Node.js</strong> server for the back-end, it allows users to perform key operations such as <strong>adding new employees</strong>, <strong>viewing the full list of employees</strong>, <strong>deleting or updating employee information</strong>, and <strong>searching for employees by their unique code</strong>. The application also provides <strong>real-time statistics</strong>, including the <strong>total number of employees in each department</strong>, helping users better analyze staff distribution across the organization. All data is securely stored in a <strong>local JSON file</strong> on the server, ensuring <strong>data persistence</strong> even after the browser is closed or the page is refreshed. The project focuses on <strong>simplicity</strong>, <strong>speed</strong>, and <strong>user-friendly interaction</strong>, making it a practical solution for small to medium-sized businesses.
 
+                This <strong>IT Asset Management System</strong> is a <strong>web-based application</strong> designed to help companies like <strong>ABB</strong> effectively track and manage their <strong>hardware equipment</strong>. The system allows users to <strong>add new assets</strong> by entering details such as the <strong>equipment name</strong>, <strong>type</strong>, <strong>purchase date</strong>, <strong>status</strong>, and <strong>assigned employee or department</strong>. It also features a <strong>dynamic display of the full equipment list</strong>, making it easy to <strong>monitor</strong> and <strong>control the inventory</strong>. Users can <strong>search</strong> for specific equipment using its <strong>unique code</strong>, <strong>update</strong> equipment information like <strong>operational status</strong> or <strong>assignment</strong>, and <strong>delete</strong> equipment records when necessary. Additionally, the system provides useful <strong>statistics</strong> such as the <strong>total number of assets</strong>, the number of items <strong>in service</strong>, <strong>under maintenance</strong>, or <strong>out of service</strong>. The project is built using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, and communicates with a <strong>local JSON-based API</strong> for <strong>data storage</strong> and <strong>real-time updates</strong>. This project reflects my growing skills in <strong>front-end development</strong>, <strong>API integration</strong>, and <strong>dynamic data management</strong>.
 
         </div>
-        
     </section>
 
 
     <section class="add-section" id="add">
-        <h1 class="home-section-title">Add Employee</h1>
+
+        <h1 class="home-section-title">Add</h1>
 
         <div class="inputs">
 
-                    <input type="text" class="input-code in" placeholder="code">
-                    <input type="text" class="input-nom in" placeholder="Last name">
-                    <input type="text" class="input-prenom in" placeholder="First name">
-
+            <input type="text" class="input-code in" placeholder="Code">
+            <input type="text" class="input-nom in" placeholder="Nom">
+            <input type="text" class="input-type in" placeholder="Type">
+            
+            <select class="input-state in">
+                <option value=""disabled selected>Select state</option>
+                <option value="in stock">in stock</option>
+                <option value="assigned">assigned</option>
+                <option value="pending delivery">pending delivery</option>
+            </select>
                     <select class="input-departement in">
                             <option value="" disabled selected>Select Department</option>
                             <option value="HR">Human Resources</option>
@@ -96,31 +99,26 @@
                             <option value="IT">IT</option>
                     </select>
 
-                    <input type="text" class="input-poste in" placeholder="Poste">
-                    <button class="add-button">Add</button>
+            <button class="add-button">Add</button>
 
         </div>
 
         <div class="add-message"></div>
     </section>
 
-
     <section class="liste-section" id="liste">
-
-        <h1 class="home-section-title">Employee Liste</h1>
-
-        <div class="liste-message"></div>
+        <h1 class="home-section-title">Liste</h1>
 
         <div class="display-content"></div>
     </section>
 
 
     <section class="search-section" id="search">
-
-        <h1 class="home-section-title">Search Employee</h1>
+        <h1 class="home-section-title">Search Material</h1>
 
         <div class="search-inputs">
             <input type="text" class="search-code" placeholder="Code">
+
             <button class="search-button">Search</button>
         </div>
 
@@ -132,14 +130,19 @@
 
 
     <section class="modif-section" id="modif">
-        <h1 class="home-section-title">Modify Employee</h1>
+        <h1 class="home-section-title">Modify</h1>
 
         <div class="inputs">
-
-                    <input type="text" class="m-code in" placeholder="code">
-                    <input type="text" class="m-nom in" placeholder="Last name">
-                    <input type="text" class="m-prenom in" placeholder="First name">
-
+            <input type="text" class="m-code in" placeholder="Code">
+            <input type="text" class="m-nom in" placeholder="Nom">
+            <input type="text" class="m-type in" placeholder="Type">
+            
+            <select class="m-state in">
+                <option value=""disabled selected>Select state</option>
+                <option value="in stock">in stock</option>
+                <option value="assigned">assigned</option>
+                <option value="pending delivery">pending delivery</option>
+            </select>
                     <select class="m-departement in">
                             <option value="" disabled selected>Select Department</option>
                             <option value="HR">Human Resources</option>
@@ -150,61 +153,57 @@
                             <option value="IT">IT</option>
                     </select>
 
-                    <input type="text" class="m-poste in" placeholder="Poste">
-                    <button class="modif-button">Modify</button>
+            <button class="modif-button">Modify</button>
+
         </div>
 
-        <div class="modif-message"></div>
+
+       <div class="modif-message"></div>
     </section>
 
 
-    <section class="stat-section" id="statistics">
+    <section class="stat-section" id="stat">
+
         <h1 class="home-section-title">Statistics</h1>
 
-        <div class="stat-dep">
-            <h2>Employees in each departement</h2>
-
-            <div class="display-dep"></div>
-        </div>
-
         <div class="total-div">
-            <h2>Total Employee number</h2>
+            <h2>Total Materials</h2>
+
             <div class="display-total"></div>
         </div>
+
+        <div class="dep-div">
+            <h2>Employees in departements</h2>
+
+            <div class="display-each"></div>
+        </div>
+
     </section>
 
 
-    <section class="contacts-section" id="contacts">
+        <section class="contacts-section">
+        <h1 class="home-section-title con-title">Contact Me</h1>
 
-        <h1 class="home-section-title lt">Contact Me</h1>
-
-        <div class="contact-text">
-             Thank you for checking out my project! If you have any feedback or suggestions, please don't hesitate to contact me. Your opinion is very important and will help me grow as a developer.
+        <div class="contacts-text">
+            Thank you for taking the time to visit my website. Your support and feedback are greatly appreciated as they help me improve and make this project better. I truly value every comment and suggestion, and I encourage you to share your thoughts or recommendations through the contact section.
         </div>
 
-        <div class="contacts">
-            <div class="contact">
+        <div class="contacts">                  <div class="contact">
                 <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 <div class="icon-type">Linkedin</div>
             </div>
 
-          <div class="contact">
+            <div class="contact">
                 <a href="https://github.com/rexy-bit" class="icon" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <div class="icon-type">Github</div>
             </div>
 
-           <div class="contact">
+            <div class="contact">
                 <a href="" class="icon" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                 <div class="icon-type">0553533167</div>
             </div>
         </div>
     </section>
-
-    <section class="last-section">
-        <div class="copy last-text">&#169; Yanis Rezgui</div>       
-         <div class="last-text lt">Made with &#10084; by Yanis</div>
-    </section>
-
-    <script src="emp2.js"></script>
+    <script src="materiel.js"></script>
 </body>
 </html>
