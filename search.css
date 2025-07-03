@@ -1,51 +1,54 @@
 .search-section{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     background-color: #F4F4F4;
-    width : 100%;
-
 }
 .search-inputs{
-    display: grid;
-    grid-template-columns: 150px 100px;
-    column-gap: 15px;
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap : 15px;
 }
 .search-code{
+
     padding : 10px;
     font-size: 15px;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-}
-.search-button,.modif-button{
-    font-size: 15px;
-    color : white;
-    background-color: #E2001A;
     border : 1px solid lightgray;
-    border-radius: 3px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s , background-color 0.2s, opacity 0.2s;
-    width : 100px;
-    height : 40px;
+    border-radius : 3px;
 }
-.search-button:hover,.modif-button:hover{
+.search-button,.modif-button,.sort-button{
+    height : 40px;
+    width : 100px;
+    background-color: #E2001A;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    border-radius : 3px;
+    cursor: pointer;
+    transition : color 0.2s, background-color 0.2s, opacity 0.2s;
+}
+.search-button:hover,.modif-button:hover,.sort-button:hover{
     background-color: white;
     color: #E2001A;
 }
-.search-button:active,.modif-button:active{
+.search-button:active,.modif-button:active,.sort-button:active{
     opacity: 0.6;
 }
-.search-message{
-    margin-top : 30px;
-    margin-bottom: 50px;
+.search-msg,.modif-msg{
+    margin-top : 25px;
+    margin-bottom: 35px;
+    font-size: 20px;
+    font-weight: bold;
     width: 250px;
-    font-size: 22px;
-       
+    text-align: center;
+    
 }
-
 .display-search{
     margin-bottom : 90px;
+    
 }
