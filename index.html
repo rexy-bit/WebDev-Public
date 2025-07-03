@@ -3,56 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz.com</title>
-            <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>stock.com</title>
+                  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
 <style>
 
     body{
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0;
+        margin:  0;
         padding: 0;
-        background-color: #669bbc;
         font-family : roboto, arial;
+        padding-top: 50px;;
     }
-</style>
-   
+    html{
+        scroll-behavior: smooth;
+    }
+    *{
+        box-sizing: border-box;
+    }
 
-<link rel="stylesheet" href="quiz.css">
+</style>
+
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="add.css">
+<link rel="stylesheet" href="liste.css">
+<link rel="stylesheet" href="search.css">
+<link rel="stylesheet" href="modif.css">
+<link rel="stylesheet" href="stat.css">
+<link rel="stylesheet" href="sort.css">
+<link rel="stylesheet" href="contacts.css">
 </head>
 <body>
-    
 
-    <h1 class="quiz-title">Quiz App</h1>
+    <header>
+        <h1 class="header-title">Logistics Inventory Manager</h1>
 
-    <section class="game-section">
-            <div class="quiz">
+        <div class="humburger">&#9776;</div>
 
-          
+        <nav>
+            <a href="#home" class="ff">- Home</a>
+            <a href="#add" class="ff">- Add</a>
+            <a href="#liste" class="ff">- Liste</a>
+            <a href="#search" class="ff">- Search</a>
+            <a href="#modif" class="ff">- Modify</a>
+            <a href="#stat" class="ff">- Statistics</a>
+            <a href="#sort" class="ff">- Sort</a>
+            <a href="#contacts" class="ff">- Contact Me</a>
 
-                
+        </nav>
 
-                
-            </div>
-          
-          <div class="game-buttons">
-            <button class="chose-button">Chose</button>
-            <button class="score-button">Disp Score</button>
+    </header>
 
-            </div>            
+    <section class="home-section" id="home">
+        <h1 class="home-section-title">Home Page</h1>
+
+        <div class="home-text">
+                            <strong>Logistics Inventory Manager</strong> is a <strong>lightweight</strong> and <strong>user-friendly</strong> web application 
+                designed to assist logistics departments in <strong>managing their inventory efficiently</strong>. 
+                It provides essential features such as <strong>adding new items</strong>, <strong>deleting entries</strong>, 
+                <strong>searching</strong> for materials by code or name, <strong>modifying existing records</strong>, 
+                <strong>sorting</strong> the inventory list, and <strong>displaying all stored items</strong> in a structured and accessible format. 
+                The system helps keep track of warehouse materials in real-time, improving <strong>visibility</strong> 
+                and <strong>decision-making</strong> within the logistics workflow. All data is securely stored in the browser using 
+                <strong>localStorage</strong>, ensuring the application runs smoothly without requiring a backend server. 
+                This makes it ideal for <strong>internal use</strong> or as a <strong>prototype</strong> for more advanced systems.
+
+        </div>
+
+    </section>
+
+    <section class="add-section" id="add">
+       <h1 class="home-section-title">Add</h1>
+
+       <div class="inputs">
+          <input type="text" class="input-code in" placeholder="Code">
+          <input type="text" class="input-nom in" placeholder="Product Name">
+          <input type="text" class="input-quantite in" placeholder="Quantity">
+          <input type="text" class="input-prix in" placeholder="Unit price">
+           <button class="add-button">Add</button>
+
+       </div>
+
+       <div class="add-msg"></div>
+
+    </section>
+
+    <section class="liste-section" id="liste">
+        <h1 class="home-section-title">Liste</h1>
+
+        <div class="display-content"></div>
+    </section>
+
+
+    <section class="search-section" id="search">
+        <h1 class="home-section-title">Search</h1>
+
+        <div class="search-inputs">
+            <input type="text" class="search-code" placeholder="Code">
+            <button class="search-button">Search</button>
+        </div>
+
+        <div class="search-msg"></div>
+
+        <div class="display-search"></div>
+    </section>
+
+
+    <section class="modif-section" id="modif">
+
+        <h1 class="home-section-title">Modify</h1>
+
+        <div class="inputs">
+          <input type="text" class="m-code in" placeholder="Code">
+          <input type="text" class="m-nom in" placeholder="Product Name">
+          <input type="text" class="m-quantite in" placeholder="Quantity">
+          <input type="text" class="m-prix in" placeholder="Unit price">
+           <button class="modif-button">Modify</button>
+
+       </div>
+
+       <div class="modif-msg"></div>
 
     </section>
 
 
+    <section class="stat-section" id="stat">
+
+        <h1 class="home-section-title">Statistics</h1>
+
+        <div class="moy-div">
+            <h2>Mean Prices</h2>
+
+            <div class="display-moy"></div>
+        </div>
+
+        <div class="max-div">
+            <h2>Max price</h2>
+
+            <div class="display-max"></div>
+        </div>
+
+        <div class="min-div">
+            <h2>Min price</h2>
+            
+            <div class="display-min"></div>
+        </div>
+
+    </section>
 
 
+    <section class="sort-section" id="sort">
 
-    <script src="quiz.js"></script>
+        <h1 class="home-section-title">Sort Prices</h1>
+
+        <button class="sort-button">Sort</button>
+
+        <div class="display-sort"></div>
+
+    </section>
+
+
+    <section class="contacts-section" id="contacts">
+        <h1 class="home-section-title ht">Contact Me</h1>
+
+        <div class="contact-text">
+            If you’ve tried this application or have any suggestions for improvement, your feedback would be greatly appreciated. It helps me grow and make this project even better. Feel free to share your thoughts!
+        </div>
+
+        <div class="contacts">
+            <div class="contact">
+                <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="contact-type">Linkedin</div>
+            </div>
+
+            <div class="contact">
+                <a href="https://github.com/rexy-bit" class="icon"><i class="fa-brands fa-github"></i></a>
+                <div class="contact-type">Github</div>
+            </div>
+
+            <div class="contact">
+                <a href="" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
+                <div class="contact-type">whatsapp</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="end-section">
+        <div class="copy-text">&copy; Yanis Rezgui</div>
+        <div class="made">Made with &#x2764; by Yanis</div>
+    </section>
+
+    
+    <script src="stock.js"></script>
+    
 </body>
 </html>
