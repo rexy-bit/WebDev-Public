@@ -1,77 +1,60 @@
 header{
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: white;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
-    height : 50px;
+    height: 50px;
     top : 0;
     position: fixed;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    background-color: white;
 }
 
 .header-title{
-    color: #E2001A;
-    font-weight: 900;
-    font-size : 1.7em;
-    margin-left : 5px;
+    color: #FFB823;
+    font-weight : 900;
+    margin-left : 10px;
 }
-
 .humburger{
-    color: #E2001A;
-    font-size: 35px;
+    font-size: 30px;
+    color: #FFB823;
     font-weight: 900;
+    margin-right: 10px;
     cursor: pointer;
-    margin-right: 5px;
-    transition: opacity 0.2s;
+    transition : opacity 0.2s;
+
 }
 .humburger:hover{
-    opacity : 0.6;
+
+   opacity: 0.6;
+   
 }
 .humburger:active{
     opacity : 0.4;
 }
-
 nav{
-    display: none; 
+    display: none;
     flex-direction: column;
     justify-content: center;
     position: absolute;
-    right : 20px;
-    margin-top  :320px;
-    padding :20px;
-    background-color: #E2001A;
-    gap : 10px;
-    border-radius: 5px;
+    right : 15px;
+    background-color: #FFB823;
+    margin-top : 230px;
+    padding : 20px;
+    line-height : 30px;
+    width: 120px;
+    border-radius: 10px;
 }
 .ff{
-    font-size : 15px;
     text-decoration: none;
     color: white;
-    font-weight: 550;
+    font-size: 18px;
     transition : opacity 0.2s;
 }
 .ff:hover{
-    opacity : 0.8;
+    opacity: 0.8;
 }
 .ff:active{
-    opacity : 0.6;
-}
-
-@media(max-width : 541px){
-    .header-title{
-        font-size : 1.3em;
-    }
-    .humburger{
-        font-size : 30px;
-    }
-
-}
-
-@media(max-width : 420px){
-    .header-title{
-        font-size: 1.1em;
-    }
+    opacity: 0.6;
 }
