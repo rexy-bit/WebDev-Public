@@ -1,0 +1,95 @@
+.cart-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+
+}
+.cart-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap : 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top : 30px;
+    padding : 20px;
+    margin-bottom : 50px;
+}
+.delete-button{
+    width : 90px;
+    height : 30px;
+    font-size : 15px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius : 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition : opacity 0.2s;
+}
+.delete-button:hover{
+    opacity: 0.8;
+}
+.delete-button:active{
+    opacity: 0.6;
+}
+
+
+.st{
+    color: white;
+}
+.total-div{
+    display: flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3C623;
+    color: white;
+    width: 100%;
+}
+.display-total{
+    font-size : 1.2em;
+    color : white;
+    font-weight: 900;
+    margin-bottom : 30px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap : 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom :70px;
+}
+.order-button{
+    font-size: 15px;
+    width : 110px;
+    height : 40px;
+    background-color: lightgreen;
+    border: 1px solid lightgray;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+.reset-button{
+    width : 110px;
+    height : 40px;
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius : 3px;
+    font-weight: bold;
+    transition : opacity 0.2s;
+    cursor: pointer;
+}
+.reset-button:hover,.order-button:hover{
+    opacity: 0.8;
+}
+.reset-button:active,.order-button:active{
+    opacity: 0.6;
+}
