@@ -3,115 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stock.com</title>
-                  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>bookStore.com</title>
+</head>
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 <style>
-
     body{
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin:  0;
-        padding: 0;
-        font-family : roboto, arial;
-        padding-top: 50px;;
+        margin: 0;
+        padding : 0;
+        font-family: roboto, arial;
+        padding-top: 50px;
     }
     html{
         scroll-behavior: smooth;
+
     }
     *{
         box-sizing: border-box;
     }
 
+
 </style>
 
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="home.css">
-<link rel="stylesheet" href="add.css">
 <link rel="stylesheet" href="liste.css">
+<link rel="stylesheet" href="cart.css">
 <link rel="stylesheet" href="search.css">
-<link rel="stylesheet" href="modif.css">
-<link rel="stylesheet" href="stat.css">
-<link rel="stylesheet" href="sort.css">
-<link rel="stylesheet" href="contacts.css">
-</head>
+
+
 <body>
 
     <header>
-        <h1 class="header-title">Logistics Inventory Manager</h1>
+        <h1 class="header-title">Booky   <i class="fa-solid fa-book"></i></h1>
 
         <div class="humburger">&#9776;</div>
 
         <nav>
             <a href="#home" class="ff">- Home</a>
-            <a href="#add" class="ff">- Add</a>
             <a href="#liste" class="ff">- Liste</a>
             <a href="#search" class="ff">- Search</a>
-            <a href="#modif" class="ff">- Modify</a>
-            <a href="#stat" class="ff">- Statistics</a>
-            <a href="#sort" class="ff">- Sort</a>
-            <a href="#contacts" class="ff">- Contact Me</a>
-
+            <a href="#cart" class="ff">- Cart</a>
+            
         </nav>
 
     </header>
 
-    <section class="home-section" id="home">
-        <h1 class="home-section-title">Home Page</h1>
+
+    <section class="home-section" style="display : none;" id="home">
+        <h1 class="home-section-title">Home page</h1>
 
         <div class="home-text">
-                            <strong>Logistics Inventory Manager</strong> is a <strong>lightweight</strong> and <strong>user-friendly</strong> web application 
-                designed to assist logistics departments in <strong>managing their inventory efficiently</strong>. 
-                It provides essential features such as <strong>adding new items</strong>, <strong>deleting entries</strong>, 
-                <strong>searching</strong> for materials by code or name, <strong>modifying existing records</strong>, 
-                <strong>sorting</strong> the inventory list, and <strong>displaying all stored items</strong> in a structured and accessible format. 
-                The system helps keep track of warehouse materials in real-time, improving <strong>visibility</strong> 
-                and <strong>decision-making</strong> within the logistics workflow. All data is securely stored in the browser using 
-                <strong>localStorage</strong>, ensuring the application runs smoothly without requiring a backend server. 
-                This makes it ideal for <strong>internal use</strong> or as a <strong>prototype</strong> for more advanced systems.
+
+            <strong>Booky</strong> is a feature-rich online bookstore built entirely with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>vanilla JavaScript</strong>, designed to offer users a smooth and interactive experience while exploring books. The platform allows visitors to browse a visually appealing list of books, each presented with a <strong>cover image</strong>, <strong>title</strong>, <strong>author</strong>, and <strong>price</strong>. Users can seamlessly <strong>add books to their shopping cart</strong>, review their selections, and update the cart in real time, all without page reloads. The site also includes a powerful <strong>search functionality</strong> that enables users to quickly find books by typing keywords related to the title. Built as a <strong>single-page application (SPA)</strong> using <strong>hash-based routing</strong>, Booky dynamically switches between different sections such as the <strong>homepage</strong>, <strong>book list</strong>, <strong>search page</strong>, and <strong>cart</strong>, offering a fluid navigation experience. It’s a fully <strong>responsive website</strong> that adjusts beautifully across screen sizes, from desktop to mobile, ensuring <strong>accessibility</strong> and <strong>usability</strong> for all users. This project demonstrates how core web technologies can be used to build a lightweight but effective <strong>e-commerce platform</strong> without relying on external libraries or frameworks, making it an excellent foundation for anyone learning frontend development.
+
 
         </div>
 
     </section>
 
-    <section class="add-section" id="add">
-       <h1 class="home-section-title">Add</h1>
 
-       <div class="inputs">
-          <input type="text" class="input-code in" placeholder="Code">
-          <input type="text" class="input-nom in" placeholder="Product Name">
-          <input type="text" class="input-quantite in" placeholder="Quantity">
-          <input type="text" class="input-prix in" placeholder="Unit price">
-           <button class="add-button">Add</button>
-
-       </div>
-
-       <div class="add-msg"></div>
-
-    </section>
-
-    <section class="liste-section" id="liste">
-        <h1 class="home-section-title">Liste</h1>
+    <section class="liste-section" style="display: none;" id="liste">
+        <h1 class="home-section-title">Book Liste</h1>
 
         <div class="display-content"></div>
     </section>
 
 
-    <section class="search-section" id="search">
-        <h1 class="home-section-title">Search</h1>
+    <section class="search-section" style="display: none;" id="search">
+    
+        <h1 class="home-section-title">Search Book</h1>
 
         <div class="search-inputs">
-            <input type="text" class="search-code" placeholder="Code">
-            <button class="search-button">Search</button>
+            <input type="text" class="search-titre" placeholder="Titre">
+            <button class="search-button">Rechercher</button>
         </div>
 
         <div class="search-msg"></div>
@@ -119,93 +95,31 @@
         <div class="display-search"></div>
     </section>
 
+    <section class="cart-section" style="display: none;" id="cart">
+        <h1 class="home-section-title">Cart</h1>
 
-    <section class="modif-section" id="modif">
+        <div class="cart-content"></div>
 
-        <h1 class="home-section-title">Modify</h1>
+        <div class="total-div">
+            <h1 class="home-section-title st">Totale a payer</h1>
 
-        <div class="inputs">
-          <input type="text" class="m-code in" placeholder="Code">
-          <input type="text" class="m-nom in" placeholder="Product Name">
-          <input type="text" class="m-quantite in" placeholder="Quantity">
-          <input type="text" class="m-prix in" placeholder="Unit price">
-           <button class="modif-button">Modify</button>
-
-       </div>
-
-       <div class="modif-msg"></div>
-
-    </section>
-
-
-    <section class="stat-section" id="stat">
-
-        <h1 class="home-section-title">Statistics</h1>
-
-        <div class="moy-div">
-            <h2>Mean Prices</h2>
-
-            <div class="display-moy"></div>
-        </div>
-
-        <div class="max-div">
-            <h2>Max price</h2>
-
-            <div class="display-max"></div>
-        </div>
-
-        <div class="min-div">
-            <h2>Min price</h2>
+            <div class="display-total"></div>
             
-            <div class="display-min"></div>
-        </div>
-
-    </section>
-
-
-    <section class="sort-section" id="sort">
-
-        <h1 class="home-section-title">Sort Prices</h1>
-
-        <button class="sort-button">Sort</button>
-
-        <div class="display-sort"></div>
-
-    </section>
-
-
-    <section class="contacts-section" id="contacts">
-        <h1 class="home-section-title ht">Contact Me</h1>
-
-        <div class="contact-text">
-            If you’ve tried this application or have any suggestions for improvement, your feedback would be greatly appreciated. It helps me grow and make this project even better. Feel free to share your thoughts!
-        </div>
-
-        <div class="contacts">
-            <div class="contact">
-                <a href="https://www.linkedin.com/in/yanis-rezgui/" class="icon"><i class="fa-brands fa-linkedin"></i></a>
-                <div class="contact-type">Linkedin</div>
+            <div class="buttons">
+                <button class="order-button">Commander</button>
+                <button class="reset-button">Reinitialiser</button>
             </div>
 
-            <div class="contact">
-                <a href="https://github.com/rexy-bit" class="icon"><i class="fa-brands fa-github"></i></a>
-                <div class="contact-type">Github</div>
-            </div>
-
-            <div class="contact">
-                <a href="" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
-                <div class="contact-type">whatsapp</div>
-            </div>
         </div>
     </section>
 
-    <section class="end-section">
-        <div class="copy-text">&copy; Yanis Rezgui</div>
-        <div class="made">Made with &#x2764; by Yanis</div>
-    </section>
 
     
-    <script src="stock.js"></script>
-    
+
+
+
+    <script src="book.js"></script>
+    <script src="book2.js"></script>
+
 </body>
 </html>
