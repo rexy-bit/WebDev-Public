@@ -1,49 +1,61 @@
 .liste-section{
-    display: flex;
+    display : flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    background-color: white;
+    height: 100vh;
     
 }
 .display-content{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap : 20px;
-    margin-bottom : 90px;
+    margin-bottom : 100px;
+    padding: 20px;
 }
-.stock-div{
+.book-div{
     display: flex;
     flex-direction: column;
-    justify-items: center;
-    gap : 15px;
-    background-color: lightgray;
-    padding: 18px;
-    font-weight: bold;
-    width: 250px;
-    border-radius : 5px;
-    border: 2px solid #E2001A;
-}
-.delete-button{
-    font-size: 15px;
-    color: white;
-    font-weight: bold;
-    width: 100px;
-    height: 40px;
-    cursor: pointer;
-    background-color: #E2001A;
-    border: 1px solid lightgray;
-    border-radius : 3px;
-    transition : color 0.2s, background-color 0.2s, opacity 0.2s;
-    margin-top : 15px;
-}
-.delete-button:hover{
+    justify-content: center;
+    padding: 20px;
+    height: 540px;
+    box-shadow : 1px 2px 3px black;
+    width : 250px;
     background-color: white;
-    color: #E2001A;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    gap : 8px;
+    font-weight: bold;
+    margin-bottom :20px;
 }
-.delete-button:active{
+.book-image{
+   width : 100%;
+   height : 300px;
+   object-fit: cover;
+   border-radius: 4px;
+}
+.add-button{
+
+    color: white;
+    background-color: #F3C623;
+    width : 150px;
+    border  : 1px solid lightgray;
+    height : 40px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top : 5px;
+    transition : color 0.2s, background-color 0.2s, opacity 0.2s;
+}
+.add-button:hover{
+    color: #F3C623;
+    background-color: white;
+
+}
+.add-button:active{
     opacity: 0.6;
 }
