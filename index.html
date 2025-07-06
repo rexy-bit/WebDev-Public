@@ -3,165 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bookStore.com</title>
+    <title>todo.com</title>
 
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
 <style>
-
+    
     body{
-
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-content: center;
-        margin: 0;;
+        align-items: center;
+        margin: 0;
         padding: 0;
         font-family: roboto, arial;
-        padding-top : 55px;
-    }
-
-    html{
-        scroll-behavior: smooth;
+        padding-top: 50px;
     }
     *{
-
         box-sizing: border-box;
+    }
+    html{
+        scroll-behavior: smooth;
     }
 
 </style>
 
 <link rel="stylesheet" href="header.css">
-<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="add.css">
 <link rel="stylesheet" href="liste.css">
-<link rel="stylesheet" href="cart.css">
-<link rel="stylesheet" href="search.css">
-<link rel="stylesheet" href="filter.css">
-<link rel="stylesheet" href="description.css">
-
+<link rel="stylesheet" href="done.css">
 </head>
 <body>
 
-
+    
     <header>
-        <h1 class="header-title">Booky <i class="fa-solid fa-book"></i></h1>
 
-        <div class="humburger">&#9776;</div>
+        <h1 class="header-title">Todo List</h1>
 
         <nav>
-            <a href="#home" class="ff">- Home</a>
-            <a href="#liste" class="ff">- Books</a>
-            <a href="#search" class="ff">- Search</a>
-            <a href="#filter" class="ff">- Filter</a>
-            <a href="#cart" class="ff">- Cart</a>
+            <a href="#add" class="ff">Add</a>
+            <a href="#liste" class="ff">Liste</a>
+            <a href="#done" class="ff">Done</a>
+            <a href="#undone" class="ff">Undone</a>
         </nav>
 
     </header>
 
-    <section class="home-section" style="display: none;" id="home">
-        <h1 class="home-section-title">Home Page</h1>
+    <section class="add-section">
+        <h1 class="add-section-title">Add Todo</h1>
 
-        <div class="home-text">            <strong>Booky</strong> is a feature-rich online bookstore built entirely with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>vanilla JavaScript</strong>, designed to offer users a smooth and interactive experience while exploring books. The platform allows visitors to browse a visually appealing list of books, each presented with a <strong>cover image</strong>, <strong>title</strong>, <strong>author</strong>, and <strong>price</strong>. Users can seamlessly <strong>add books to their shopping cart</strong>, review their selections, and update the cart in real time, all without page reloads. The site also includes a powerful <strong>search functionality</strong> that enables users to quickly find books by typing keywords related to the title. Built as a <strong>single-page application (SPA)</strong> using <strong>hash-based routing</strong>, Booky dynamically switches between different sections such as the <strong>homepage</strong>, <strong>book list</strong>, <strong>search page</strong>, and <strong>cart</strong>, offering a fluid navigation experience. It’s a fully <strong>responsive website</strong> that adjusts beautifully across screen sizes, from desktop to mobile, ensuring <strong>accessibility</strong> and <strong>usability</strong> for all users. This project demonstrates how core web technologies can be used to build a lightweight but effective <strong>e-commerce platform</strong> without relying on external libraries or frameworks, making it an excellent foundation for anyone learning frontend development.</div>
+        <div class="inputs">
+            <input type="text" class="input-name in" placeholder="Name">
+            <input type="date" class="input-date in">
+            <select name="" id="" class="input-state in">
+                <option value=""selected option>Chose State</option>
+                <option value="done">done</option>
+                <option value="undone">undone</option>
+            </select>
+            <button class="add-button">Add</button>
+        </div>
 
+        <div class="add-msg"></div>
     </section>
 
-
-    <section class="liste-section" style="display: none;" id="liste">
-        <h1 class="home-section-title">Book liste</h1>
-
-        <div class="add-msg" style="display: none;"></div>
+    <section class="liste-section">
+        <h1 class="add-section-title">Liste</h1>
 
         <div class="display-content"></div>
     </section>
+    
+    <section class="done-section">
+        <h1 class="add-section-title">Done todo</h1>
 
-    <section class="search-section" style="display: none;" id="search">
-        <h1 class="home-section-title">Search Book</h1>
+        <div class="display-done"></div>
+    </section>
 
-        <div class="searchM" style="display: none;"></div>
-         <div class="search-inputs">
-             <input type="text" class="search-code" placeholder="Code">
-             <button class="search-button">Search</button>
-         </div>
+    <section class="undone-section">
+        <h1 class="add-section-title">Undone todo</h1>
 
-
-
-         <div class="search-msg"></div>
-
-         <div class="display-search"></div>
+        <div class="display-undone"></div>
     </section>
 
 
-    <section class="filter-section" style="display: none;" id="filter">
-        <h1 class="home-section-title">Filter</h1>
-
-        <div class="filter-msg" style="display: none;"></div>
-        
-
-        <div class="filter-div">
-            <select class="input-categorie in">
-                    <option value="" disabled selected>Select categorie</option>
-                    <option value="Histoire">History</option>
-                    <option value="Philosophie">Philosophy</option>
-                    <option value="Littérature">Litterature</option>
-                    <option value="Développement">Developpement</option>
-                    <option value="Études">Studies</option>
-            </select>
-   
-            <button class="filter-button">Filter</button>
-        </div>
-        <div class="display-filter-msg"></div>
-
-        <div class="display-filter"></div>
-    </section>
-
-    <section class="cart-section" style="display: none;" id="cart">
-        <h1 class="home-section-title">Cart</h1>
-
-        <div class="display-numbers-articles"></div>
-        <div class="cart-msg" style="display: none;"></div>
-
-        <div class="display-total-items"></div>
-        <div class="display-cart"></div>
-
-
-        <div class="total-div">
-            <h1 class="home-section-title htl">Total and Order</h1>
-            <div class="display-total"></div>
-
-            <div class="buttons">
-                <button class="order-button">Order</button>
-                <button class="reset-button">Reset Cart</button>
-            </div>
-        </div>
-
-    </section>
-    
-    
-    
-    <section class="description-section" style="display: none;" id="description">
-
-        <h1 class="description-title"></h1>
-
-        <div class="description-msg" style="display: none;"></div>
-
-        <div class="description-container">
-            <div class="image-div"></div>
-
-            <div class="content-div"></div>
-        </div>
-    </section>
-     
-
-
-    <script src="description.js"></script>
-    <script src="book1.js"></script>
-    <script src="book2.js"></script>
-
-    
+    <script src="todo.js"></script>
 </body>
 </html>
