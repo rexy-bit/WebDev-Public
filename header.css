@@ -1,57 +1,45 @@
 header{
+
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top : 0;
+    width: 100%;
+    background-color: darkblue;
     height : 50px;
-    box-shadow: 0px 2px 4px black;
-    background-color: white;
+    position: fixed;
+    top: 0;
 }
-nav{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    position : absolute;
-    right : 15px;
-    margin-top : 240px;
-    padding: 15px;
-    background-color: #F3C623;
-    gap : 10px;
-    width : 130px;
-    border-radius : 5px;
-}
-.ff{
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    font-size: 18px;
-    transition: opacity 0.2s;
-}
-.ff:hover{
-    opacity : 0.8;
-}
-.ff:active{
-    opacity: 0.6;
-}
+
 .header-title{
-    color: #F3C623;
+    font-size: 2em;
+    color: white;
     font-weight: 900;
     margin-left : 5px;
 }
-.humburger{
-    font-size : 35px;
-    font-weight: 900;
-    color: #F3C623;
-    cursor: pointer;
-    transition : opacity 0.2s;
-    margin-right: 5px;
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap : 15px;
+    margin-right : 5px;
 }
-.humburger:hover{
-    opacity : 0.6;
+.ff{
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight : 500;
 }
-.humburger:active{
-    opacity: 0.4;
+@media(max-width : 420px){
+    .header-title{
+        font-size: 1.7em;
+    }
+    .ff{
+        font-size: 13px;
+
+    }
+    nav{
+        gap : 13px;
+    }
 }
