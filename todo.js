@@ -1,98 +1,121 @@
-let todoList = JSON.parse(localStorage.getItem('todoList')) || [{
-    name : 'Make Dinner',
-    date : '19/06/2006',
-    state : 'undone'
-}];
-
-displayTodo();
-
-
-function displayTodo(){
+let todoList =JSON.parse(localStorage.getItem('todoList')) || [
+    {
+        name : 'Make dinner',
+        date : '08/07/2025',
+        state : 'done'
+    }
+];
 
 
-    const container = document.querySelector(".display-content");
+function displayTodoList(){
+
+    let container = document.querySelector(".display-content");
     container.innerHTML = '';
 
-    todoList.forEach((element, i)=>{
 
-        const todoD = document.createElement("div");
-        todoD.className = "todo-div";
+    todoList.forEach((todo, i)=>{
 
-        const nameD = document.createElement("div");
-        nameD.className = "name";
-        nameD.textContent = `Todo : ${element.name}`;
+        const todoDiv = createTodo(todo, i);
 
-        const dateD = document.createElement("div");
-        dateD.className = "date";
-        dateD.textContent = `Date : ${element.date}`;
-
-        const stateButton = document.createElement("button");
-        stateButton.className = "state-button";
-        if(element.state === 'done'){
-            stateButton.style.backgroundColor = "green";
-        }else{
-            stateButton.style.backgroundColor = "transparent";
-        }
-
-        stateButton.addEventListener('click', ()=>{
-            if(element.state === 'done'){
-                element.state = 'undone';
-                stateButton.style.backgroundColor = "transparent";
-            }else{
-                element.state = 'done';
-                stateButton.style.backgroundColor = "green";
-            }
-
-            localStorage.setItem('todoList', JSON.stringify(todoList));
-        });
-
-
-      const deleteButton = document.createElement("button");
-      deleteButton.className = "delete-button";
-      deleteButton.textContent = "Delete";
-
-      deleteButton.addEventListener('click', ()=>{
-        todoList.splice(i, 1);
-        displayTodo();
-      });
-
-
-      todoD.appendChild(nameD);
-      todoD.appendChild(dateD);
-      todoD.appendChild(stateButton);
-      todoD.appendChild(deleteButton);
-
-      container.appendChild(todoD);
+        container.appendChild(todoDiv);
     });
 
     localStorage.setItem('todoList', JSON.stringify(todoList));
-
+    
 }
 
-let intervalId;
-let timeId;
+displayTodoList();
+
+
+function createTodo(todo, i){
+
+    const todoDiv = document.createElement("div");
+    todoDiv.className = "todo-div";
+    
+    const nomDiv = document.createElement("div");
+    nomDiv.textContent = `- Name : ${todo.name}`;
+
+    const dateDiv = document.createElement("div");
+    dateDiv.textContent = `- Date : ${todo.date}`;
+
+    const stateButton = document.createElement("button");
+    stateButton.className = "state-button";
+    stateButton.textContent = todo.state;
+
+    if(todo.state === "done"){
+            stateButton.style.backgroundColor = "green";
+            
+        }else{
+            stateButton.style.backgroundColor = "transparent";
+            
+        }
+
+    stateButton.addEventListener('click', ()=>{
+         
+        if(todo.state === "done"){
+            stateButton.style.backgroundColor = "transparent";
+            todo.state = "undone";
+        }else{
+            stateButton.style.backgroundColor = "green";
+            todo.state = "done";
+        }
+
+        displayTodoList();
+        displayDone();
+        displayUndone();
+
+    });
+
+
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "delete-button";
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener('click', ()=>{
+        todoList.splice(i, 1);
+
+        displayTodoList();
+        displayDone();
+        displayUndone();
+    });
+
+
+    todoDiv.appendChild(nomDiv);
+    todoDiv.appendChild(dateDiv);
+    todoDiv.appendChild(stateButton);
+    todoDiv.appendChild(deleteButton);
+
+
+    return todoDiv;
+}
+
+
+
+let addMsgTimeout;
 function addTodo(){
 
-
     let nameIn = document.querySelector(".input-name");
-    let dateIn = document.querySelector(".input-date");
-
     let name = nameIn.value;
+
+    let dateIn = document.querySelector(".input-date");
     let date = dateIn.value;
 
-    if(name === '' || date === ''){
-        document.querySelector(".display-error-message").innerHTML = 'Please enter all the necessary information';
+    let stateIn = document.querySelector(".input-state");
+    let state = stateIn.value;
 
-        clearTimeout(intervalId);
+     const addMsg = document.querySelector(".add-msg");
 
-        intervalId = setTimeout(()=>{
-            document.querySelector(".display-error-message").innerHTML = '';
-        }, 3000);
+    if(!name || !date || !state){
+        
+        addMsg.style.color = "red";
+        addMsg.innerHTML = "Please enter all the necessary information";
+
+        clearTimeout(addMsgTimeout);
+
+        addMsgTimeout = setTimeout(()=>{
+            addMsg.innerHTML = '';
+        }, 2000);
 
     }else{
-
-        document.querySelector(".display-error-message").innerHTML = '';
-        let state = 'undone';
 
         todoList.push({
             name,
@@ -100,52 +123,49 @@ function addTodo(){
             state
         });
 
-        displayTodo();
+        displayTodoList();
 
-        document.querySelector(".display-success-message").innerHTML = 'Todo Added successfuly'   ;
+        addMsg.style.color = "green";
+        addMsg.innerHTML = 'Todo added with success';
 
-        clearTimeout(timeId);
-
-        timeId = setTimeout(()=>{
-            document.querySelector(".display-success-message").innerHTML = '';
-        }, 3000);        
+        clearTimeout(addMsgTimeout);
+        addMsgTimeout = setTimeout(()=>{
+            addMsg.innerHTML = '';
+        }, 2000);
 
         nameIn.value = '';
         dateIn.value = '';
-
+        stateIn.value = '';
     }
 
 }
 
-document.querySelector(".add-button").addEventListener('click', ()=>{
-    addTodo();
+const addButton = document.querySelector(".add-button");
+addButton.addEventListener('click', ()=>{
+    addButton.disabled = true;
+
+     addTodo();
+
+     setTimeout(()=>{
+        addButton.disabled = false;
+     }, 2000);
+
 });
 
 
-function displayDone(){
+function  displayDone(){
 
-    let container = document.querySelector(".display-done");
+    const container = document.querySelector(".display-done");
     container.innerHTML = '';
-    todoList.forEach((element, i)=>{
-        if(element.state === 'done'){
-        const todoD = document.createElement("div");
-        todoD.className = "todo-div";
 
-        const nameD = document.createElement("div");
-        nameD.className = "name";
-        nameD.textContent = `Todo : ${element.name}`;
+    todoList.forEach((todo,i)=>{
+        if(todo.state === "done"){
+            let todoDiv = createTodo(todo, i);
 
-        const dateD = document.createElement("div");
-        dateD.className = "date";
-        dateD.textContent = `Date : ${element.date}`;
-
-        todoD.appendChild(nameD);
-        todoD.appendChild(dateD);
-
-        container.appendChild(todoD);
-        
+            container.appendChild(todoDiv);
         }
     });
+
 }
 
 displayDone();
@@ -154,78 +174,15 @@ function displayUndone(){
 
     let container = document.querySelector(".display-undone");
     container.innerHTML = '';
-    todoList.forEach((element, i)=>{
-        if(element.state === 'undone'){
-        const todoD = document.createElement("div");
-        todoD.className = "todo-div";
 
-        const nameD = document.createElement("div");
-        nameD.className = "name";
-        nameD.textContent = `Todo : ${element.name}`;
+    todoList.forEach((todo, i)=>{
 
-        const dateD = document.createElement("div");
-        dateD.className = "date";
-        dateD.textContent = `Date : ${element.date}`;
+        if(todo.state === "undone"){
+            let todoDiv = createTodo(todo, i);
 
-        todoD.appendChild(nameD);
-        todoD.appendChild(dateD);
-
-        container.appendChild(todoD);
-        
+            container.appendChild(todoDiv);
         }
     });
 }
 
 displayUndone();
-
-let timeDone;
-function displayNbrDone(){
-
-    let cpt = 0;
-
-    todoList.forEach((element, i)=>{
-        if(element.state === 'done'){
-            cpt++;
-        }
-    });
-
-    document.querySelector(".disp-done").innerHTML = `${cpt}`;
-
-    clearTimeout(timeDone);
-     timeDone = setTimeout(()=>{
-       document.querySelector(".disp-done").innerHTML = '';
-    }, 3000);
-}
-
-
-document.querySelector(".done-button").addEventListener('click', ()=>{
-    displayNbrDone();
-});
-
-let timeU;
-function displayNbrUndone(){
-
-
-    let cpt = 0;
-
-    todoList.forEach((element, i)=>{
-        if(element.state === 'undone'){
-            cpt++;
-        }
-    });
-
-    document.querySelector(".disp-undone").innerHTML = `${cpt}`
-
-  
-    clearTimeout(timeU);
-
-    timeU = setTimeout(()=>{
-        document.querySelector(".disp-undone").innerHTML = '';
-    }, 3000);
-
-}
-
-
-document.querySelector(".undone-button").addEventListener('click', ()=>{
-    displayNbrUndone();
-});
