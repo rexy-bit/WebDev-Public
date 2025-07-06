@@ -1,61 +1,67 @@
 .liste-section{
-    display : flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    
-}
-.display-content{
+
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    background-color: white;
+
+}
+.display-content{
+    padding : 20px;
+    display: flex;
+    flex-wrap: wrap;
     gap : 20px;
-    margin-bottom : 100px;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 .book-div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    height: 540px;
-    box-shadow : 1px 2px 3px black;
-    width : 250px;
-    background-color: white;
-    border: 1px solid #ccc;
-    font-size: 17px;
-    gap : 8px;
-    font-weight: bold;
-    margin-bottom :20px;
+    box-shadow: 1px 2px 3px black;
+    width: 250px;
+    height : 570px;
+    font-size: 16px;
+    gap : 10px;
+    font-weight: 500;
+    margin-bottom : 10px;
+    cursor: pointer;
 }
-.book-image{
-   width : 100%;
-   height : 300px;
-   object-fit: cover;
-   border-radius: 4px;
+.image{
+    width : 100%;
+    height : 300px;
+    object-fit: cover;
+
 }
 .add-button{
-
+    font-size: 15px;
     color: white;
     background-color: #F3C623;
-    width : 150px;
-    border  : 1px solid lightgray;
-    height : 40px;
-    font-size: 15px;
-    font-weight: bold;
+    width : 120px;
+    border : 1px solid lightgray;
+    border-radius: 20px;
     cursor: pointer;
-    border-radius: 4px;
-    margin-top : 5px;
-    transition : color 0.2s, background-color 0.2s, opacity 0.2s;
+    height : 30px;
+    font-weight: bold;
+    transition: color 0.2s, background-color 0.2s, opacity 0.2s;
 }
 .add-button:hover{
-    color: #F3C623;
     background-color: white;
-
+    color: #F3C623;
 }
-.add-button:active{
-    opacity: 0.6;
+
+.add-msg{
+    font-size :20px;
+    font-weight : bold;
+    position : fixed;
+    top : 150px;
+    width : 200px;
+    padding: 20px;
+    background-color: #F4F4F4;
+    border-radius : 10px;
+    text-align: center;
+    box-shadow: 1px 2px 3px black;
 }
