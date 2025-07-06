@@ -1,90 +1,112 @@
 .cart-section{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: white;
-
+    
 }
-.cart-content{
-    display: flex;
-    flex-wrap: wrap;
-    gap : 20px;
+.cart-msg{
+    position: fixed;
+    font-size: 20px;
+    padding: 20px;
+    font-weight : bold;
+      box-shadow: 1px 2px 3px black;
+    top :150px;
+    background-color: white;
+    width : 200px;
+    text-align: center;
+    border-radius : 10px;
+    background-color: #F4F4F4;
+    
+}
+.display-cart{
+
+    display : flex;
+    flex-wrap : wrap;
     justify-content: center;
     align-items: center;
-    margin-top : 30px;
-    padding : 20px;
-    margin-bottom : 50px;
+    gap : 20px;
+    padding: 20px;
+    margin-bottom : 70px;
 }
-.delete-button{
-    width : 90px;
-    height : 30px;
-    font-size : 15px;
-    color: white;
-    background-color: red;
-    border: none;
-    border-radius : 4px;
-    font-weight: bold;
+.plus-div{
+    display: flex;
+    flex-direction :row;
+    gap : 15px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.plus-button,.moins-button{
+    background-color: #F3C623;
     cursor: pointer;
-    transition : opacity 0.2s;
+    transition: opacity 0.2s;
+    color: white;
+    font-size : 17px;
+    font-weight: bold;
+    border : none;
+    width : 35px;
+    height : 25px;
+     box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+     border-radius : 4px;
 }
-.delete-button:hover{
-    opacity: 0.8;
+.plus-button:hover,.moins-button:hover{
+    opacity : 0.8;
 }
-.delete-button:active{
+.plus-button:active,.moins-button:active{
     opacity: 0.6;
 }
-
-
-.st{
-    color: white;
+.display-numbers-articles{
+    font-size : 20px;
+    color: #F3C623;
+    font-weight: bold;
+    width : 280px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 .total-div{
+    background-color: #F3C623;
+    width: 100%;
     display: flex;
-    flex-direction : column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F3C623;
-    color: white;
-    width: 100%;
 }
-.display-total{
-    font-size : 1.2em;
-    color : white;
-    font-weight: 900;
-    margin-bottom : 30px;
+.htl{
+    color: white;
 }
 .buttons{
     display: flex;
     flex-direction: row;
-    gap : 20px;
     justify-content: center;
     align-items: center;
-    margin-bottom :70px;
+    gap: 15px;
+    margin-bottom : 90px;
 }
 .order-button{
-    font-size: 15px;
-    width : 110px;
-    height : 40px;
-    background-color: lightgreen;
-    border: 1px solid lightgray;
-    color: black;
+    font-size : 15px;
     font-weight: bold;
-    border-radius: 3px;
-    transition: opacity 0.2s;
+    color: black;
+    background-color: lightgreen;
+    border : 1px solid gray;
+    width : 90px;
+    height : 40px;
+    border-radius : 5px;
     cursor: pointer;
+    transition : opacity 0.2s;
 }
 .reset-button{
-    width : 110px;
     height : 40px;
+    width : 100px;
     font-size: 15px;
-    background-color: red;
     color: white;
+    background-color: red;
     border: none;
-    border-radius : 3px;
+    border-radius: 5px;
     font-weight: bold;
-    transition : opacity 0.2s;
+    transition: opacity 0.2s;
     cursor: pointer;
 }
 .reset-button:hover,.order-button:hover{
@@ -92,4 +114,11 @@
 }
 .reset-button:active,.order-button:active{
     opacity: 0.6;
+}
+.display-total{
+    margin-bottom: 20px;
+    margin-top : 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }
