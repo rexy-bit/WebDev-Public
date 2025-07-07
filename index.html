@@ -3,94 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo.com</title>
+    <title>Weather.com</title>
 
                     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
-<style>
-    
+ <style>
     body{
+
         display: flex;
-        flex-direction: column;
+        flex-direction : column;
         justify-content: center;
         align-items: center;
         margin: 0;
         padding: 0;
-        font-family: roboto, arial;
-        padding-top: 50px;
-    }
-    *{
-        box-sizing: border-box;
+        font-family: roboto ,arial;
+        background-color: #e0f7fa;
     }
     html{
         scroll-behavior: smooth;
     }
+    *{
+        box-sizing: border-box;
+    }
 
-</style>
+ </style>
 
-<link rel="stylesheet" href="header.css">
-<link rel="stylesheet" href="add.css">
-<link rel="stylesheet" href="liste.css">
-<link rel="stylesheet" href="done.css">
+ <link rel="stylesheet" href="weather.css">
 </head>
 <body>
-
     
-    <header>
 
-        <h1 class="header-title">Todo List</h1>
+    <h1>Weather App 🌤️</h1>
 
-        <nav>
-            <a href="#add" class="ff">Add</a>
-            <a href="#liste" class="ff">Liste</a>
-            <a href="#done" class="ff">Done</a>
-            <a href="#undone" class="ff">Undone</a>
-        </nav>
+    <div class="inputs">
+        <input type="text" class="input-ville" placeholder="Town name">
+        <button class="search-button">Search</button>
+    </div>
 
-    </header>
-
-    <section class="add-section">
-        <h1 class="add-section-title">Add Todo</h1>
-
-        <div class="inputs">
-            <input type="text" class="input-name in" placeholder="Name">
-            <input type="date" class="input-date in">
-            <select name="" id="" class="input-state in">
-                <option value=""selected option>Chose State</option>
-                <option value="done">done</option>
-                <option value="undone">undone</option>
-            </select>
-            <button class="add-button">Add</button>
-        </div>
-
-        <div class="add-msg"></div>
-    </section>
-
-    <section class="liste-section">
-        <h1 class="add-section-title">Liste</h1>
-
-        <div class="display-content"></div>
-    </section>
-    
-    <section class="done-section">
-        <h1 class="add-section-title">Done todo</h1>
-
-        <div class="display-done"></div>
-    </section>
-
-    <section class="undone-section">
-        <h1 class="add-section-title">Undone todo</h1>
-
-        <div class="display-undone"></div>
-    </section>
+    <div class="weather-msg"></div>
+    <div class="display-weather">
+         
+    </div>
 
 
-    <script src="todo.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>
