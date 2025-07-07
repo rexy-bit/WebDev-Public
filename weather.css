@@ -1,0 +1,37 @@
+h1{
+
+    font-size: 3em;
+    font-weight: 900;
+    color: #333;
+    margin-top : 100px;
+    text-decoration: underline;
+}
+.inputs{
+    display: grid;
+    grid-template-columns: 200px 100px;
+    column-gap: 15px;
+
+}
+.input-ville{
+    padding: 10px;
+    font-size: 15px;
+    border : 1px solid lightgray;
+    border-radius : 3px;
+
+}
+.search-button{
+    background-color: #FFA726;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border :1px solid lightgray;
+    border-radius : 5px;
+    transition : opacity 0.2s;
+    cursor: pointer;
+}
+.search-button:hover{
+    opacity : 0.7;
+}
+.search-button:active{
+    opacity: 0.5;
+}
