@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather.com</title>
-
-                    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>weather.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
- <style>
+<style>
     body{
-
         display: flex;
-        flex-direction : column;
-        justify-content: center;
+        flex-direction: column;
+        justify-content : center;
         align-items: center;
+        background-color: #e0f7fa;
+        font-family: roboto, arial;
         margin: 0;
         padding: 0;
-        font-family: roboto ,arial;
-        background-color: #e0f7fa;
     }
     html{
         scroll-behavior: smooth;
@@ -27,27 +25,24 @@
     *{
         box-sizing: border-box;
     }
+</style>
 
- </style>
-
- <link rel="stylesheet" href="weather.css">
+<link rel="stylesheet" href="weather2.css">
 </head>
 <body>
     
-
-    <h1>Weather App 🌤️</h1>
+    <h1>Weather App ⛅</h1>
 
     <div class="inputs">
-        <input type="text" class="input-ville" placeholder="Town name">
-        <button class="search-button">Search</button>
+        <input type="text" class="input-ville" placeholder="Enter city">
+        <button class="search-button">&#128269;</button>
+
     </div>
 
-    <div class="weather-msg"></div>
-    <div class="display-weather">
-         
-    </div>
+    <p class="weather-msg"></p>
 
+    <div class="display-weather"></div>
 
-    <script src="weather.js"></script>
+    <script src="weather2.js"></script>
 </body>
 </html>
