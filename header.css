@@ -4,42 +4,60 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    background-color: darkblue;
+    width : 100%;
+    background-color: #2d9cdb ;
+    top : 0;
+    position : fixed;
     height : 50px;
-    position: fixed;
-    top: 0;
+    box-shadow : 0px 2px 4px rgba(0,0,0,0.6);
 }
-
 .header-title{
-    font-size: 2em;
+    color: white;
+    margin-left : 10px;
+    font-weight: 900;
+}
+.humburger{
+    font-size: 35px;
     color: white;
     font-weight: 900;
-    margin-left : 5px;
+    margin-right : 10px;
+    cursor: pointer;
+    transition : opacity 0.2s;
+}
+.humburger:hover{
+    opacity : 0.7;
+}
+.humburger:active{
+    opacity: 0.4;
 }
 nav{
-    display: flex;
-    flex-direction: row;
+    display: none;
+    flex-direction : column;
     justify-content: center;
-    align-items: center;
-    gap : 15px;
-    margin-right : 5px;
+    position: absolute;
+    right : 10px;
+    top : 60px;
+    width : 130px;
+    background-color: #2d9cdb;
+    padding : 15px;
+    line-height: 30px;
+    border-radius : 5px;
 }
 .ff{
-    font-size: 15px;
-    color: white;
+    font-size: 17px;
     text-decoration: none;
-    font-weight : 500;
+    color: white;
+    font-weight: 550;
+    transition :opacity 0.2s;
 }
-@media(max-width : 420px){
+.ff:hover{
+    opacity : 0.7;
+}
+.ff:active{
+    opacity : 0.4;
+}
+@media(max-width : 500px){
     .header-title{
-        font-size: 1.7em;
-    }
-    .ff{
-        font-size: 13px;
-
-    }
-    nav{
-        gap : 13px;
+        font-size: 1.8em;
     }
 }
