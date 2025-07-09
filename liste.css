@@ -5,55 +5,67 @@
     justify-content: center;
     align-items: center;
     width : 100%;
-    background-color: white;
-}
-.todo-div{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width : 250px;
-    gap : 15px;
-    border : 2px solid darkblue;
-    border-radius : 5px;
-    padding: 10px;
-    font-size : 15px;
 }
 .display-content{
 
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap : 20px;
+    padding: 20px;
+    gap : 30px;
+    margin-top : 30px;
     margin-bottom : 90px;
 }
-.delete-button{
-    background-color: red;
+.watch-image{
+    height : 300px;
+    width : 200px;
+    object-fit: cover;
+    margin-bottom : 15px;
+}
+.watch-div{
+   width : 250px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: white;
+   align-items: center;
+   text-align: center;
+   height : 620px;
+   box-shadow : 1px 2px 3px black;
+   font-size : 17px;
+   gap : 8px;
+   font-weight : 500;
+   padding : 20px;
+}
+.add-button{
+    background-color: #bfa46f;
+    border : 1px solid lightgray;
+    padding : 7px 13px;
+    font-size: 15px;
+    font-weight : bold;
     color: white;
-    font-size : 15px;
-    font-weight: bold;
-    width : 85px;
-    height: 35px;
-    border: none;
-    transition: opacity 0.2s;
-    border-radius: 3px;
-    margin-top : 15px;
+    border-radius : 15px;
+    margin-top : 10px;
     cursor: pointer;
+    transition : color 0.2s,background-color 0.2s, opacity 0.2s;
 }
-.delete-button:hover{
-    opacity: 0.8;
+.add-button:hover{
+    background-color: white;
+    color: #bfa46f;
 }
-.delete-button:active{
+.add-button:active{
     opacity : 0.6;
 }
-.state-button{
-    font-size: 12px;
-    font-weight: bold;
-    border : 1px solid lightgray;
-    cursor: pointer;
-    height : 60px;
-    width : 60px;
-    border-radius: 50%;
+.add-msg,.cart-msg,.add-search,.filter-msg{
+    font-size: 20px;
+    font-weight : bold;
+    padding: 15px;
+    box-shadow : 1px 2px 3px black;
+    border-radius: 5px;
+    position : fixed;
+    background-color: white;
+    top : 300px;
+    width : 250px;
+    text-align: center;
 }
