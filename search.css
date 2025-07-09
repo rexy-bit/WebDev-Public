@@ -4,60 +4,45 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: white;
 }
 .search-inputs{
     display: grid;
-    grid-template-columns: 150px 90px;
+    grid-template-columns: 150px 80px;
     column-gap: 15px;
-    margin-top : 10px;
 }
-.search-code{
+.input-code{
     padding: 10px;
-    border : 1px solid lightgray;
-    border-radius: 3px;
-}
-
-.search-button{
     font-size: 15px;
+    border: 1px solid lightgray;
+    border-radius : 3px;
+}
+.search-button{
+    background-color: #2b9cdb;
     color: white;
-    background-color: #F3C623;
-    font-weight: bold;
-    border : 1px solid lightgray;
+    border: 1px solid lightgray;
     border-radius: 3px;
-    transition: color 0.2s, background-color 0.2s, opacity 0.2s;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
+    transition : opacity 0.2s;
+}
+.display-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom : 70px;
 }
 .search-button:hover{
-    background-color: white;
-    color: #F3C623;
+    opacity : 0.8;
 }
 .search-button:active{
     opacity: 0.6;
 }
-
 .search-msg{
-
     font-size: 20px;
-    font-weight: bold;
-    margin-top : 25px;
-    margin-bottom: 25px;
+    font-weight : bold;
+    margin-top: 25px;
+    margin-bottom : 30px;
     width: 250px;
-    text-align: center;
-}
-.display-search{
-    margin-bottom : 90px;
-}
-.searchM{
-
-    position : fixed;
-    top : 150px;
-    font-size : 20px;
-    padding : 20px;
-    border-radius : 5px;
-    box-shadow: 1px 2px 3px black;
-    background-color: white;
-    width :200px;
-    font-weight: bold;
     text-align: center;
 }
