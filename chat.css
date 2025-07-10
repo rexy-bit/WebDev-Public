@@ -1,0 +1,68 @@
+.chat-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap : 15px;
+    margin-top : 30px;
+}
+.input-prompt{
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    padding: 15px;
+    text-align: center;
+    font-size : 15px;
+}
+.analyze-button{
+    font-size: 15px;
+    color: white;
+    background-color: #E2001A;
+    width : 100px;
+    height : 40px;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s, opacity 0.2s;
+}
+.analyze-button:hover{
+    background-color: white;
+    color: #E2001A;
+}
+.analyze-button:active{
+    opacity: 0.6;
+}
+.msg{
+    font-size: 18px;
+    font-weight: bold;
+    width : 250px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.display-result{
+    width : 70%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+    margin-bottom : 90px;
+}
+.input-prompt{
+    width : 200px;
+}
+@media(max-width : 500px){
+    .display-result{
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
