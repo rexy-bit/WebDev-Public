@@ -3,148 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch.com</title>
+    <title>ChatBot.com</title>
 
-         <link rel="preconnect" href="https://fonts.googleapis.com">
+                 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
-<style>
-
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-        font-family: roboto, arial;
-        padding-top: 50px;
-        background-color: #F4F4F4;
-    }
-    *{
-        box-sizing : border-box;
-    }
-    html{
-        scroll-behavior: smooth;
-    }
-
-</style>
-
-<link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="header.css">
-<link rel="stylesheet" href="liste.css">
-<link rel="stylesheet" href="cart.css">
-<link rel="stylesheet" href="search.css">
-<link rel="stylesheet" href="filter.css">
-
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="chat.css">
+<link rel="stylesheet" href="hist.css">
 </head>
 <body>
-    
-    <header>
-        <h1 class="header-title">ChronoShop</h1>
 
-        <div class="humburger">&#9776;</div>
+    <header>
+        <h1 class="header-title">Assistant d'importation</h1>
 
         <nav>
-            <a href="#home" class="ff">- Home</a>
-            <a href="#liste" class="ff">- Liste</a>
-            <a href="#search" class="ff">- Search</a>
-            <a href="#filter" class="ff">- Filter</a>
-            <a href="#cart" class="ff">- Cart</a>
-            <a href="#stat" class="ff">- Statistics</a>
-        </nav>
+            <a href="#home" class="ff">Home</a>
+            <a href="#chat" class="ff">Assistant</a>
+            <a href="#historique" class="ff">Historique</a>
 
+        </nav>
     </header>
 
     <section class="home-section" id="home" style="display: none;">
-        <h1 class="home-section-title">
-            ChronoShop
-        </h1>
+
+        <h1 class="home-section-title">Home Page</h1>
 
         <div class="home-text">
-                                
-                    Bienvenue sur <strong>ChronoShop</strong>, votre destination en ligne dédiée à l’univers de l’<strong>horlogerie</strong>. 
-                    Nous vous invitons à découvrir une vaste collection de <strong>montres</strong> soigneusement sélectionnées, alliant 
-                    <strong>élégance</strong>, <strong>précision</strong> et <strong>style</strong>. Qu’il s’agisse de modèles 
-                    <strong>classiques</strong>, <strong>sportifs</strong>, <strong>connectés</strong> ou de <strong>montres de luxe</strong>, 
-                    chaque pièce reflète notre exigence en matière de <strong>qualité</strong>, de <strong>design</strong> et de 
-                    <strong>fiabilité</strong>. Chez <strong>WatchStore</strong>, nous croyons que chaque montre raconte une histoire 
-                    et révèle une <strong>personnalité</strong>. Grâce à une interface <strong>claire</strong>, des filtres 
-                    <strong>intuitifs</strong> et un <strong>panier intelligent</strong>, nous vous offrons une 
-                    <strong>expérience d’achat</strong> fluide, agréable et sécurisée. Explorez nos catégories, trouvez le modèle 
-                    qui vous ressemble, et laissez-vous séduire par l’art de <strong>porter le temps avec distinction</strong>.
-
-        </div>
-    </section>
-
-    <section class="liste-section" id="liste" style="display: none;">
-        <h1 class="home-section-title">Liste de Montres</h1>
-
-        <div class="add-msg" style="display: none;"></div>
-        <div class="display-content"></div>
-    </section>
-
-    <section class="cart-section" id="cart" style="display: none;">
-          <h1 class="home-section-title">Cart</h1>
-
-          <div class="cart-msg" style="display: none;"></div>
-          <div class="items-msg"></div>
-
-          <div class="display-cart"></div>
-
-          <div class="total-div">
-            <h1 class="home-section-title total-title">Facture Totale</h1>
-
-            <div class="display-total"></div>
-
-            <div class="total-buttons">
-                <button class="order-button">Commander</button>
-                <button class="reset-button">Reinitialiser</button>
-            </div>
-          </div>
-    </section>
-
-    <section class="search-section" id="search" style="display: none;">
-        <h1 class="home-section-title">Search</h1>
-
-        <div class="search-inputs">
-            <input type="text" class="input-code" placeholder="Code">
-            <button class="search-button">Search</button>
+                Cette plateforme intelligente permet d’analyser la <strong>conformité des produits à l’importation en Algérie</strong> grâce à <strong>l’intelligence artificielle</strong>. Elle utilise l’<strong>API Gemini</strong> de Google pour interpréter les <strong>descriptions de produits</strong> saisies par l’utilisateur et déterminer si leur importation est <strong>autorisée</strong> ou <strong>interdite</strong>, en se basant sur les <strong>lois algériennes</strong>. L’assistant fournit une <strong>réponse claire et concise</strong> accompagnée d’une justification. L’interface propose également un <strong>historique des requêtes</strong>, permettant de consulter les analyses précédentes enregistrées localement. L’objectif est d’offrir un outil <strong>simple</strong>, <strong>rapide</strong> et <strong>efficace</strong> aux professionnels de l’import/export.
         </div>
 
-        <div class="search-msg"></div>
-
-        <div class="add-search" style="display: none;"></div>
-        <div class="display-search"></div>
     </section>
 
-    <section class="filter-section" id="filter" style="display: none;">
-        <h1 class="home-section-title">Filter</h1>
+    <section class="chat-section" id="chat" style="display: none;">
+        <h1 class="home-section-title">Assistant</h1>
 
-        <div class="filter-inputs">
-            <select class="input-style">
-                <option value=""selectet option>Select style</option>
-                <option value="classique">classique</option>
-                <option value="sport">sport</option>
-                <option value="luxe">luxe</option>
-                <option value="connectée">connectée</option>
-            </select>
-
-            <button class="filter-button">Filtrer</button>
-
+        <div class="inputs">
+            <textarea class="input-prompt"  placeholder="Décrivez le produit à analyser..."></textarea>
+            <button class="analyze-button">Analyser</button>
         </div>
 
-        <div class="filter-msg" style="display: none;"></div>
+        <div class="msg"></div>
 
-         <div class="display-filter"></div>
+        <div class="display-result"></div>
     </section>
 
-    <script src="watch.js"></script>
-    <script src="ess.js"></script>
+
+    <section class="historique-section" id="historique" style="display: none;">
+        <h1 class="home-section-title htl">Historique des prompts</h1>
+
+        <div class="display-historique"></div>
+    </section>
+
+
+    <script src="router.js"></script>
+    <script src="chatBot.js"></script>
+
 </body>
 </html>
