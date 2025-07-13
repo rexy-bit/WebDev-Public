@@ -10,24 +10,35 @@
     font-weight: 900;
     text-decoration: underline;
     color: #E2001A;
-    margin-top: 70px;
+    margin-top : 60px;
 }
 .home-text{
+    width : 900px;
     font-size: 20px;
-    width : 80%;
-    line-height: 35px;
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 90px;
+    line-height: 35px;
+    margin-top : 40px;
+    margin-bottom : 90px;
 }
-@media(max-width : 500px){
-    .home-section-title{
-        font-size: 2.3em;
-
-    }
+@media(max-width : 1024px){
     .home-text{
-        width : 70%;
+        width : 600px;
+        font-size: 18px;
+        line-height: 35px;
+    }
+}
+@media(max-width : 800px){
+    .home-text{
+        width : 450px;
+    }
+}
+@media(max-width : 550px){
+    .home-text{
+        width : 280px;
         font-size: 15px;
-        line-height: 25px;
+        line-height: 30px;
+    }
+    .home-section-title{
+        font-size: 2.2em;
     }
 }
