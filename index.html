@@ -5,64 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatBot.com</title>
 
-                 <link rel="preconnect" href="https://fonts.googleapis.com">
+             <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="stylesheet" href="header.css">
-<link rel="stylesheet" href="home.css">
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        font-family: roboto, arial;
+        background-color: lightgray;
+    }
+
+    *{
+        box-sizing : border-box;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+
+
+</style>
+
 <link rel="stylesheet" href="chat.css">
-<link rel="stylesheet" href="hist.css">
 </head>
 <body>
 
-    <header>
-        <h1 class="header-title">Assistant d'importation</h1>
+    <div class="container">
 
-        <nav>
-            <a href="#home" class="ff">Home</a>
-            <a href="#chat" class="ff">Assistant</a>
-            <a href="#historique" class="ff">Historique</a>
+      <h1>Assistant d'importation</h1>
+        
+      
+       <div class="inputs">
+          <textarea class="input-prompt" placeholder="Décris le produit à analyser..."></textarea>
 
-        </nav>
-    </header>
+          <button class="analyze-button">Analyser</button>
+       </div>
 
-    <section class="home-section" id="home" style="display: none;">
+       <div class="msg"></div>
 
-        <h1 class="home-section-title">Home Page</h1>
+       <div class="result-div"></div>
 
-        <div class="home-text">
-                Cette plateforme intelligente permet d’analyser la <strong>conformité des produits à l’importation en Algérie</strong> grâce à <strong>l’intelligence artificielle</strong>. Elle utilise l’<strong>API Gemini</strong> de Google pour interpréter les <strong>descriptions de produits</strong> saisies par l’utilisateur et déterminer si leur importation est <strong>autorisée</strong> ou <strong>interdite</strong>, en se basant sur les <strong>lois algériennes</strong>. L’assistant fournit une <strong>réponse claire et concise</strong> accompagnée d’une justification. L’interface propose également un <strong>historique des requêtes</strong>, permettant de consulter les analyses précédentes enregistrées localement. L’objectif est d’offrir un outil <strong>simple</strong>, <strong>rapide</strong> et <strong>efficace</strong> aux professionnels de l’import/export.
-        </div>
-
-    </section>
-
-    <section class="chat-section" id="chat" style="display: none;">
-        <h1 class="home-section-title">Assistant</h1>
-
-        <div class="inputs">
-            <textarea class="input-prompt"  placeholder="Décrivez le produit à analyser..."></textarea>
-            <button class="analyze-button">Analyser</button>
-        </div>
-
-        <div class="msg"></div>
-
-        <div class="display-result"></div>
-    </section>
+    </div>
 
 
-    <section class="historique-section" id="historique" style="display: none;">
-        <h1 class="home-section-title htl">Historique des prompts</h1>
+    
 
-        <div class="display-historique"></div>
-    </section>
-
-
-    <script src="router.js"></script>
-    <script src="chatBot.js"></script>
-
+    
+    <script src="bot.js"></script>
 </body>
 </html>
