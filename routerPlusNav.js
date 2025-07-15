@@ -1,11 +1,11 @@
 const humburger = document.querySelector(".humburger");
 const nav = document.querySelector("nav");
 
-let display = JSON.parse(localStorage.getItem("display")) || "none";
-
+let display =  JSON.parse(localStorage.getItem('display')) || "none";
 nav.style.display = display;
 
 humburger.addEventListener("click", ()=>{
+
     if(nav.style.display === "none"){
         nav.style.display = "flex";
     }else{
@@ -13,14 +13,15 @@ humburger.addEventListener("click", ()=>{
     }
 
     display = nav.style.display;
-
-    localStorage.setItem('display', JSON.stringify(display));
+    localStorage.setItem("display", JSON.stringify(display));
 
 });
+
 
 function showPage(pageId){
 
     const sections = document.querySelectorAll("section");
+
     sections.forEach((section)=>{
         if(section.id === pageId){
             section.style.display = "flex";
@@ -29,6 +30,7 @@ function showPage(pageId){
         }
 
     });
+
 }
 
 function router(){
@@ -39,4 +41,3 @@ function router(){
 
 window.addEventListener("hashchange", router);
 window.addEventListener("DOMContentLoaded", router);
-
