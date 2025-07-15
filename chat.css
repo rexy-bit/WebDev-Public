@@ -1,9 +1,20 @@
-.chat-section{
+.container{
     display: flex;
-    flex-direction: column;
+    flex-direction : column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    background-color: white;
+    margin-top: 60px;
+    width : 70%;
+    border-radius : 15px;
+    margin-bottom : 50px;
+}
+h1{
+    color: #E2001A;
+    font-size : 3em;
+    text-decoration: underline;
+    margin-bottom: 50px;
+
 }
 .inputs{
     display: flex;
@@ -11,27 +22,28 @@
     justify-content: center;
     align-items: center;
     gap : 15px;
-    margin-top : 30px;
+    margin-bottom : 30px;
 }
 .input-prompt{
-    width: 300px;
     border: 1px solid gray;
-    border-radius: 30px;
-    padding: 15px;
-    text-align: center;
-    font-size : 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 300px;
+    padding: 10px;
+    border-radius : 3px;
 }
 .analyze-button{
-    font-size: 15px;
-    color: white;
-    background-color: #E2001A;
-    width : 100px;
     height : 40px;
+    width : 100px;
+    color: white;
+    font-size: 15px;
     font-weight: bold;
+    background-color: #E2001A;
     border: 1px solid lightgray;
-    border-radius: 5px;
+    border-radius : 3px;
     cursor: pointer;
-    transition: color 0.2s, background-color 0.2s, opacity 0.2s;
+    transition : color 0.2s, background-color 0.2s, opacity 0.2s;
 }
 .analyze-button:hover{
     background-color: white;
@@ -41,28 +53,52 @@
     opacity: 0.6;
 }
 .msg{
-    font-size: 18px;
-    font-weight: bold;
     width : 250px;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: bold;
+
 }
-.display-result{
+.result-div{
     width : 70%;
     text-align: center;
-    line-height: 35px;
-    font-size: 20px;
-    color: black;
-    font-weight: 500;
-    margin-bottom : 90px;
+    line-height : 25px;
+    margin-bottom : 60px;
 }
-.input-prompt{
-    width : 200px;
+@media(max-width : 1000px){
+    h1{
+        font-size: 2.3em;
+
+    }
+    .input-prompt{
+        width : 250px;
+    }
+    .result-div{
+        font-size: 18px;
+
+    }
 }
-@media(max-width : 500px){
-    .display-result{
-        font-size: 15px;
-        line-height: 25px;
+@media(max-width : 850px){
+    h1{
+        width : 200px;
+        
+        text-align: center;
+
+        font-size: 2em;
+        font-weight: 700;
+    }
+    .input-prompt{
+        width : 200px;
+    }
+    .result-div{
+        font-size: 17px;
+    }
+    .analyze-button{
+        width : 80px;
+        font-size: 13px;
+        height : 35px;
+    }
+    .container{
+        width : 90%;
     }
 }
