@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatBot.com</title>
+    <title>HyperTech.com</title>
 
              <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,53 +12,44 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-        font-family: roboto, arial;
-        background-color: lightgray;
-    }
 
-    *{
-        box-sizing : border-box;
-    }
-    html{
-        scroll-behavior: smooth;
-    }
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="home.css">
 
-
-</style>
-
-<link rel="stylesheet" href="chat.css">
 </head>
 <body>
 
-    <div class="container">
+    <header>
+        <h1 class="header-title">HyperTech</h1>
 
-      <h1>Assistant d'importation</h1>
+        <div class="humburger">&#9776;</div>
         
-      
-       <div class="inputs">
-          <textarea class="input-prompt" placeholder="Décris le produit à analyser..."></textarea>
-
-          <button class="analyze-button">Analyser</button>
-       </div>
-
-       <div class="msg"></div>
-
-       <div class="result-div"></div>
-
-    </div>
+        <nav>
+            <a href="#home" class="ff">- Home</a>
+            <a href="#store" class="ff">- Store </a>
+            <a href="#search" class="ff">- Search</a>
+            <a href="#filter" class="ff">- Filter</a>
+            <a href="#cart" class="ff">- Cart</a>
+        </nav>
+    </header>
 
 
-    
+    <section class="home-section" id="home" style="display: none;">
+        <h1 class="home-section-title">Home Page</h1>
 
-    
-    <script src="bot.js"></script>
+        <div class="home-text">
+            
+  <strong>HyperTech</strong> est une plateforme <strong>e-commerce moderne</strong> et intuitive, entièrement dédiée à l’univers de la <strong>technologie</strong> et des <strong>produits high-tech</strong>. Conçue pour répondre aux besoins des <strong>passionnés</strong> comme des <strong>utilisateurs occasionnels</strong>, elle offre une expérience de navigation fluide et agréable grâce à une interface claire, <strong>responsive</strong> et ergonomique. Que vous recherchiez un <strong>smartphone de dernière génération</strong>, un <strong>ordinateur portable performant</strong>, une <strong>montre connectée élégante</strong> ou des <strong>accessoires innovants</strong>, HyperTech met à votre disposition une large sélection de produits minutieusement décrits avec des caractéristiques détaillées, des <strong>évaluations étoilées</strong> et des visuels attractifs. Le site intègre des fonctionnalités avancées telles qu’un <strong>système de filtrage</strong> par catégorie, marque ou prix, une <strong>recherche intelligente</strong> par mot-clé, un <strong>panier interactif</strong>, ainsi qu’un <strong>système de commande virtuelle sécurisé</strong>, simplifié pour une expérience d’achat rapide et sans friction. Grâce à un <strong>design soigné</strong>, des <strong>couleurs harmonieuses</strong> et une structure <strong>optimisée pour tous les écrans</strong>, HyperTech se positionne comme la <strong>destination idéale</strong> pour explorer, comparer et acheter les dernières nouveautés technologiques en toute confiance.
+
+
+        </div>
+
+    </section>
+
+
+    <script src="data.js"></script>
+    <script src="nav&humb&router.js"></script>
+    <script src="main.js"></script>
+
 </body>
 </html>
