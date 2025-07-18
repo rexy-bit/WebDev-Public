@@ -1,0 +1,75 @@
+.display-store,.display-search{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap : 30px;
+    padding: 20px;
+    margin-bottom : 90px;
+    margin-top: 30px;
+}
+.description-title{
+    text-align : center;
+}
+
+.image{
+    padding: 10px;
+    /*background-color: #f0f0f0;*/
+    background-color: white;
+    height : 230px;
+    width: 230px;
+    object-fit: contain;
+    width : 100%;
+}
+.item-div{
+    height : 480px;
+    width : 250px;
+    padding: 10px;
+    box-shadow: 1px 2px 3px black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap : 10px;
+    font-size: 17px;
+    color: #1E293B;
+}
+.add-button{
+    font-size: 15px;
+    font-weight: bold;
+    width : 115px;
+    height : 35px;
+    color: white;
+    background-color: #1E293B;
+    border : 1px solid lightgray;
+    border-radius : 20px;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s, opacity 0.2s;
+    margin-top : 10px;
+}
+.add-button:hover{
+    background-color: white;
+    color: #1E293B;
+}
+.add-button:active{
+    opacity: 0.6;
+}
+i{
+    color: gold;
+}
+.star-div{
+    margin-left: 10px;
+}
+
+.add-msg,.cart-msg,.description-msg,.search-msg{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    box-shadow: 1px 2px 3px black;
+    border-radius: 5px;
+    background-color: white;
+    position : fixed;
+    top : 250px;
+    width : 250px;
+    text-align: center;
+}
