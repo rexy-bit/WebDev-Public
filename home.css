@@ -1,4 +1,4 @@
-.home-section{
+.home-section,.store-section,.cart-section,.description-section,.search-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
