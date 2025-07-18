@@ -15,6 +15,10 @@
 
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="store.css">
+<link rel="stylesheet" href="cart.css">
+<link rel="stylesheet" href="description.css">
+<link rel="stylesheet" href="search.css">
 
 </head>
 <body>
@@ -47,9 +51,70 @@
     </section>
 
 
-    <script src="data.js"></script>
+    <section class="store-section" id="store" style="display: none;">
+       
+        <h1 class="home-section-title">Store</h1>
+
+         <div class="add-msg" style="display: none;"></div>
+        <div class="display-store"></div>
+    </section>
+
+
+    <section class="cart-section" id="cart" style="display: none;">
+        <h1 class="home-section-title">Cart 🛍️</h1>
+
+        <div class="cart-msg" style="display: none;"></div>
+
+        <div class="display-cart"></div>
+
+        <div class="total-div">
+            <h1 class="home-section-title">Total🧾&Order📦</h1>
+
+            <div class="display-reciept" style="display: none;"></div>
+
+            <div class="total-buttons">
+                <a href="" class="order-button">Order</a>
+                <button class="reset-button">reset cart</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="description-section" id="description" style="display: none;">
+        <h1 class="home-section-title description-title"></h1>
+
+        <div class="description-msg" style="display: none;"></div>
+        <div class="display-description">
+            <div class="description-image">
+
+            </div>
+
+            <div class="other"></div>
+        </div>
+        
+    </section>
+
+
+    <section class="search-section" id="search" style="display: none;">
+        <h1 class="home-section-title">Search🔍</h1>
+
+        <div class="search-msg" style="display: none;"></div>
+
+        <div class="search-inputs">
+            <input type="text" class="input-search" placeholder="Enter key word">
+            <button class="search-button"><i class="fa-solid fa-magnifying-glass" style="color: white;" class="bb"></i></button>
+        </div>
+        <div class="display-search"></div>
+
+
+    </section>
+
+    
     <script src="nav&humb&router.js"></script>
+    <script src="data.js"></script>
     <script src="main.js"></script>
+    <script src="receipt.js"></script>
 
 </body>
 </html>
