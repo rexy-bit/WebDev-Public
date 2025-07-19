@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="cart.css">
 <link rel="stylesheet" href="description.css">
 <link rel="stylesheet" href="search.css">
+<link rel="stylesheet" href="order.css">
 
 </head>
 <body>
@@ -73,7 +74,7 @@
             <div class="display-reciept" style="display: none;"></div>
 
             <div class="total-buttons">
-                <a href="" class="order-button">Order</a>
+                <a href="#order" class="order-button">Order</a>
                 <button class="reset-button">reset cart</button>
             </div>
 
@@ -108,6 +109,50 @@
         <div class="display-search"></div>
 
 
+    </section>
+
+
+    <section class="filter-section" id="filter" style="display: none;">
+        <h1 class="home-section-title">Filter</h1>
+
+        <div class="filter-msg" style="display: none;"></div>
+        <div class="filter-inputs">
+            <select class="input-categorie">
+                <option value=""disabled selected>Select categorie</option>
+                <option value="pc">pc</option>
+                <option value="mobile">mobile</option>
+                <option value="watch">Smart Watch</option>
+                <option value="tv">TV</option>
+                <option value="headPhone">Head Phones</option>
+                
+            </select>
+
+            <button class="filter-button">Filter</button>
+        </div>
+
+        <div class="display-filter"></div>
+    </section>
+
+        <section class="order-section" id="order" style="display: none;">
+        <h1 class="home-section-title">Order📦</h1>
+
+        <div class="order-msg" style="display: none;"></div>
+        <div class="order-content">
+
+             <div class="order-inputs">
+                <input type="text" class="input-nom in" placeholder="Enter last name">
+                <input type="text" class="input-prenom in" placeholder="Enter First name">
+                <input type="number" class="input-number in" placeholder="Phone number">
+                <input type="text" class="input-adresse in" placeholder="adress">
+             </div>
+
+
+             <div class="display-reciept-order"></div>
+
+             <button class="confirm-button">Confirm</button>
+
+             <div class="order-result"></div>
+        </div>
     </section>
 
     
