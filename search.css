@@ -1,16 +1,16 @@
-.search-inputs{
+.search-inputs,.filter-inputs{
     display: grid;
     grid-template-columns: 190px 70px;
     column-gap: 10px;
     margin-top: 20px;
 }
-.input-search{
+.input-search,.input-categorie{
     padding: 10px;
     font-size: 15px;
     border: 1px solid lightgray;
     border-radius: 3px;
 }
-.search-button{
+.search-button,.filter-button{
     background-color: #0F172A;
     color: white;
     border : 1px solid lightgray;
@@ -20,9 +20,9 @@
     transition: opacity 0.2s;
     cursor: pointer;
 }
-.search-button:hover{
+.search-button:hover,.filter-button:hover{
     opacity: 0.7;
 }
-.search-button:active{
+.search-button:active,.filter-button:active{
     opacity: 0.5;
 }
