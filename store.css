@@ -1,4 +1,4 @@
-.display-store,.display-search{
+.display-store,.display-search,.display-filter{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -61,7 +61,7 @@ i{
     margin-left: 10px;
 }
 
-.add-msg,.cart-msg,.description-msg,.search-msg{
+.add-msg,.cart-msg,.description-msg,.search-msg,.filter-msg,.order-msg{
     font-size: 20px;
     font-weight: bold;
     padding: 10px;
@@ -72,4 +72,7 @@ i{
     top : 250px;
     width : 250px;
     text-align: center;
+}
+.search-msg,.filter-msg{
+    top : 300px;
 }
