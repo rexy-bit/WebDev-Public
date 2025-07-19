@@ -140,5 +140,100 @@ const defaultData = [
   "Galaxy S25 Plus",
   "mobile Samsung haut de gamme"]
 
+    },{
+        code:  7,
+        image : 'images/zflip.jpg',
+        nom: 'Samsung Galaxy Z Flip7 FE',
+        note : 3.5,
+        description : "Le Samsung Galaxy Z Flip7 FE est un smartphone Android 5G innovant qui allie élégance, performance et intelligence. Grâce à la technologie Galaxy AI intégrée, il transforme votre quotidien en optimisant vos tâches avec fluidité et intelligence. Son design pliable emblématique en fait un appareil à la fois compact et stylé, parfait pour allier mobilité et modernité. Avec 256 Go de stockage, vous disposez d’un vaste espace pour conserver vos photos, vidéos et applications. Déverrouillé et prêt à l’emploi, il est livré avec un chargeur secteur rapide 25W pour une recharge efficace à tout moment. Version française, en finition blanche, le Galaxy Z Flip7 FE est le compagnon idéal pour une expérience mobile intelligente, rapide et résolument unique.",
+        prix : 999,
+        stock : 5,
+        categorie : 'mobile',
+        keyWords :  [   "Samsung", "Galaxy", "Z Flip7", "Z Flip7 FE", "Flip", "Flip7", 
+  "Galaxy Z", "smartphone pliable", "téléphone pliable", "smartphone", 
+  "5G", "Galaxy AI", "téléphone Android", "Android", 
+  "256 Go", "stockage", "blanc", "version française", "chargeur rapide", 
+  "25W", "téléphone déverrouillé", "mobile", "design compact", 
+  "intelligence artificielle", "Galaxy Z Flip", "Samsung France", "Galaxy FE"]
+
+    },{
+        code:  8,
+        image : 'images/16promax.jpg',
+        nom: 'Apple iPhone 16 Pro Max (256 Go)',
+        note : 4.5,
+        description : "L’iPhone 16 Pro Max est le summum de l’innovation Apple, réunissant puissance, élégance et intelligence avancée. Équipé de la puce A18 Pro et d’un écran Super Retina XDR, il offre des performances exceptionnelles et une fluidité inégalée. Grâce à l’intelligence artificielle embarquée et aux fonctionnalités iOS les plus avancées, chaque interaction devient plus intuitive et performante. Son module photo professionnel permet des clichés époustouflants de jour comme de nuit, tandis que sa batterie longue durée et sa compatibilité avec la charge rapide assurent une utilisation prolongée au quotidien. Avec son design raffiné et ses finitions premium, l’iPhone 16 Pro Max s’impose comme l’appareil ultime pour les utilisateurs exigeants à la recherche d’excellence technologique.",
+        prix : 1299,
+        stock : 0,
+        categorie : 'mobile',
+        keyWords :  [ "Apple", "iPhone", "iPhone 16", "iPhone 16 Pro", "iPhone 16 Pro Max",
+  "iOS", "smartphone Apple", "iPhone nouvelle génération", 
+  "A18 Pro", "Super Retina XDR", "photographie mobile", 
+  "photo professionnelle", "téléphone haut de gamme", "charge rapide", 
+  "batterie longue durée", "design premium", "intelligence artificielle", 
+  "IA Apple", "iPhone déverrouillé", "mobile Apple", 
+  "performance iPhone", "iPhone 2025", "Apple France", 
+  "téléphone 5G", "smartphone iOS"]
+
+    },{
+        code:  9,
+        image : 'images/15plus.jpg',
+        nom: 'Apple iPhone 15 Plus (128 Go) - Rose',
+        note : 3,
+        description : "L’iPhone 15 Plus est un smartphone Apple 5G qui allie performance, élégance et simplicité d’utilisation. Doté d’un grand écran Super Retina XDR de 6,7 pouces, il offre une expérience visuelle immersive idéale pour le divertissement et la productivité. Grâce à la puce A16 Bionic, il garantit puissance, fluidité et efficacité énergétique au quotidien. Son double appareil photo avancé permet de capturer des clichés nets et lumineux, même en basse lumière. Avec ses 128 Go de stockage, il offre suffisamment d’espace pour vos applications, photos et vidéos. Son design en aluminium et verre teinté dans la masse lui confère un style moderne et résistant. Déverrouillé et prêt à l’emploi, l’iPhone 15 Plus est le compagnon idéal pour une expérience Apple complète et fluide",
+        prix : 999,
+        stock : 2,
+        categorie : 'mobile',
+        keyWords :  [  "Apple", "iPhone", "iPhone 15", "iPhone 15 Plus", 
+  "smartphone Apple", "iOS", "iPhone 128 Go", 
+  "A16 Bionic", "Super Retina XDR", "photo iPhone", 
+  "caméra double", "iPhone 2024", "téléphone Apple", 
+  "5G Apple", "design aluminium", "verre teinté", 
+  "batterie longue durée", "iPhone déverrouillé", 
+  "Apple France", "smartphone haut de gamme", 
+  "performance iPhone", "écran 6.7 pouces", 
+  "expérience fluide", "téléphone iOS", 
+  "stockage 128 Go"]
+
+    },{
+        code:  10,
+        image : 'images/asus.jpg',
+        nom: 'ASUS Zenbook 14 UM3406HA-QD048W',
+        note : 4,
+        description : "Le ASUS Zenbook 14 UM3406HA est un PC portable haut de gamme alliant puissance, finesse et élégance. Doté d’un superbe écran OLED 14 pouces WUXGA, il offre des couleurs éclatantes et un confort visuel optimal, idéal pour le travail comme pour le divertissement. Équipé du processeur AMD Ryzen 7 8840HS cadencé jusqu’à 5.1 GHz, de 16 Go de RAM DDR5X ultra-rapide et d’un SSD de 512 Go, il assure des performances fluides et réactives. Sa carte graphique AMD Radeon intégrée garantit une expérience visuelle fluide pour la bureautique avancée, la création de contenu et les loisirs numériques. Compact, léger, avec un clavier AZERTY confortable et Windows 11 Home préinstallé, ce Zenbook allie mobilité et productivité au quotidien. Son design noir raffiné complète parfaitement ses caractéristiques techniques de pointe.",
+        prix : 1299,
+        stock : 3,
+        categorie : 'pc',
+        keyWords :  [  "ASUS", "Zenbook", "Zenbook 14", "UM3406HA", 
+  "ordinateur portable", "PC portable ASUS", 
+  "écran OLED", "OLED 14 pouces", "WUXGA", 
+  "Ryzen 7 8840HS", "AMD Ryzen 7", "5.1 GHz", 
+  "16 Go RAM", "DDR5X", "512 Go SSD", 
+  "stockage SSD", "AMD Radeon Graphics", 
+  "graphismes intégrés", "Windows 11 Home", 
+  "PC Windows 11", "clavier AZERTY", 
+  "ordinateur noir", "PC compact", "laptop ASUS", 
+  "ordinateur performant", "ordinateur léger", 
+  "bureautique", "création de contenu", 
+  "mobilité", "écran haute qualité"]
+
+    },{
+        code:  11,
+        image : 'images/micro.jpg',
+        nom: 'Microsoft Surface Laptop 4 ',
+        note : 4.5,
+        description : "Le Microsoft Surface Laptop 4 allie élégance, performance et mobilité dans un format compact et raffiné. Doté d’un écran tactile de 13,5 pouces aux bords fins, il offre une expérience visuelle immersive et une navigation fluide. Son processeur Intel Core i5 assure une réactivité optimale, parfaitement adaptée aux tâches du quotidien et à la bureautique. Avec 8 Go de RAM et 512 Go de stockage SSD, il garantit rapidité et espace pour tous vos fichiers. Sa finition en métal couleur sable apporte une touche de sophistication, tandis que son clavier AZERTY français assure un confort de frappe idéal. Livré avec Windows 11, ce PC portable est conçu pour offrir une productivité fluide dans un design fin et léger, parfait pour les professionnels nomades comme pour un usage personnel exigeant.",
+        prix : 1573,
+        stock : 3,
+        categorie : 'pc',
+        keyWords :  [  "Microsoft", "Surface Laptop 4", "Surface", "ordinateur portable",
+  "PC portable", "Windows 11", "écran tactile", "13.5 pouces", 
+  "Intel Core i5", "Core i5", "processeur Intel", 
+  "8 Go RAM", "512 Go SSD", "SSD", "stockage rapide",
+  "clavier AZERTY", "clavier français", "ordinateur sable", 
+  "finition métal", "ultrabook", "design élégant", 
+  "PC léger", "mobilité", "bureautique", "étudiant", 
+  "travail", "multimédia", "ordinateur Windows", 
+  "Surface i5", "Surface 13 pouces"]
+
     }
 ];
