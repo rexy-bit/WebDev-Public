@@ -519,7 +519,18 @@ if(currentSearch !== null){
 function searchItem(search){
 
 
+     if(!search){
+               searchMsg.style.display = "block";
+            searchMsg.style.color = "red";
+            searchMsg.innerHTML = `Not found`;
+                clearTimeout(searchMsgTimeout);
 
+                searchMsgTimeout = setTimeout(()=>{
+                    searchMsg.style.display = "none";
+                }, 1500);
+        
+                return;
+     }
 
 
     const container = document.querySelector(".display-search");
@@ -620,4 +631,293 @@ searchButton.addEventListener('click', ()=>{
 
     localStorage.setItem('currentSearch', JSON.stringify(currentSearch));
     searchItem(search);
+});
+
+
+
+const filterMsg = document.querySelector(".filter-msg");
+let filterMsgTimeout;
+
+let currentCategorie = JSON.parse(localStorage.getItem('currentCategorie')) || null;
+
+if(currentCategorie !== null){
+    filterByCategorie(currentCategorie);
+}
+
+function filterByCategorie(categorie){
+
+    const container = document.querySelector(".display-filter");
+    container.innerHTML = '';
+
+    if(!categorie){
+
+        filterMsg.style.display = "block";
+        filterMsg.style.color = "red";
+        filterMsg.innerHTML = "Categorie not found";
+
+        clearTimeout(filterMsgTimeout);
+
+        filterMsgTimeout = setTimeout(()=>{
+            filterMsg.style.display = "none";
+        }, 1500);
+
+    }
+
+    let trouve = false;
+
+    data.forEach((item)=>{
+        if(item.categorie === categorie){
+
+            trouve = true;
+            let itemDiv = createItemDiv(item);
+
+            const addButton = document.createElement("button");
+            addButton.className = "add-button";
+            addButton.textContent = "add to cart";
+            addButton.addEventListener('click', ()=>{
+                addToCartFilter(item);
+                filterByCategorie(categorie);
+            });
+
+            itemDiv.appendChild(addButton);
+
+            container.appendChild(itemDiv);
+        }
+    });
+
+    if(!trouve){
+                filterMsg.style.display = "block";
+        filterMsg.style.color = "red";
+        filterMsg.innerHTML = "Categorie not found";
+
+        clearTimeout(filterMsgTimeout);
+
+        filterMsgTimeout = setTimeout(()=>{
+            filterMsg.style.display = "none";
+        }, 1500);
+    }
+
+}
+
+
+const filterButton = document.querySelector(".filter-button");
+filterButton.addEventListener('click', ()=>{
+    
+    let filterInput = document.querySelector(".input-categorie");
+    let categorie = filterInput.value;
+
+    currentCategorie = categorie;
+    localStorage.setItem('currentCategorie', JSON.stringify(currentCategorie));
+
+    filterByCategorie(categorie);
+
+});
+
+
+function addToCartFilter(item){
+    let trouve = cart.find((it)=> Number(it.code) === Number(item.code));
+
+    if(trouve){
+                   filterMsg.style.display = "block";
+            filterMsg.style.color = "red";
+            filterMsg.innerHTML = `The item : ${item.nom} is already in your cart`;
+                clearTimeout(filterMsgTimeout);
+
+                filterMsgTimeout = setTimeout(()=>{
+                    filterMsg.style.display = "none";
+                }, 1500);
+        
+    }else{
+
+        if(item.stock === 0){
+ 
+            filterMsg.style.display = "block";
+            filterMsg.style.color = "red";
+            filterMsg.innerHTML = `The item : ${item.nom} is out of stock`;
+                clearTimeout(filterMsgTimeout);
+
+                filterMsgTimeout = setTimeout(()=>{
+                    filterMsg.style.display = "none";
+                }, 1500);
+        }else{
+
+            cart.push(
+                {
+                    code : Number(item.code),
+                    image : item.image,
+                    nom : item.nom,
+                    prix : Number(item.prix),
+                    note : Number(item.note),
+                    categorie : item.categorie,
+                    quantite : 1,
+                    description : item.description
+                }
+            );
+
+            item.stock--;
+
+                        filterMsg.style.display = "block";
+            filterMsg.style.color = "green";
+            filterMsg.innerHTML = `item : ${item.nom} added with success`;
+                clearTimeout(filterMsgTimeout);
+
+                filterMsgTimeout = setTimeout(()=>{
+                    filterMsg.style.display = "none";
+                }, 1500);
+            
+            displayCart();
+            displayStore();
+
+
+        }
+
+    }
+
+}
+
+
+const orderMsg = document.querySelector(".order-msg");
+let orderMsgTimeout;
+
+let currentOrder = JSON.parse(localStorage.getItem('currentOrder')) || null;
+
+if(currentOrder !== null){
+
+    document.querySelector(".input-nom").value = currentOrder.nom;
+    document.querySelector(".input-prenom").value = currentOrder.prenom;
+    document.querySelector(".input-number").value = currentOrder.number;
+    document.querySelector(".input-adresse").value = currentOrder.adress;
+    document.querySelector(".order-result").innerHTML = currentOrder.msg;
+}
+function displayOrder(){
+
+    
+
+    if(cart.length === 0){
+
+        document.querySelector(".order-content").innerHTML = 'Your cart is empty';
+
+        return;
+
+    }
+
+        let nomInput = document.querySelector(".input-nom");
+        let prenomInput = document.querySelector(".input-prenom");
+        let numberInput = document.querySelector(".input-number");
+        let adressInput = document.querySelector(".input-adresse");
+
+        let nom = nomInput.value;
+        let prenom = prenomInput.value;
+        let number = numberInput.value;
+        let adress = adressInput.value;
+
+        let msg = 'Your order has been successfully placed!, 💰 Payment is made upon delivery (Cash on Delivery)';
+
+        displayReceiptOrder();
+
+
+        if(!nom || !prenom || !number || !adress){
+             
+            orderMsg.style.display = "block";
+            orderMsg.style.color = "red";
+            orderMsg.innerHTML = 'Please enter all the necessary information';
+
+            clearTimeout(orderMsgTimeout);
+
+            orderMsgTimeout =  setTimeout(()=>{
+                orderMsg.style.display = "none";
+            }, 1500);
+
+        }else if(isNaN(number) || number.length !== 10){
+            
+                        orderMsg.style.display = "block";
+            orderMsg.style.color = "red";
+            orderMsg.innerHTML = 'The number must be in correct formating';
+
+            clearTimeout(orderMsgTimeout);
+
+            orderMsgTimeout =  setTimeout(()=>{
+                orderMsg.style.display = "none";
+            }, 1500);   
+
+        }else{
+
+                                    orderMsg.style.display = "block";
+            orderMsg.style.color = "green";
+            orderMsg.innerHTML = 'Your order has been successfully placed!';
+
+            clearTimeout(orderMsgTimeout);
+
+            orderMsgTimeout =  setTimeout(()=>{
+                orderMsg.style.display = "none";
+            }, 1500);   
+
+
+            document.querySelector(".order-result").innerHTML = msg;
+
+            currentOrder = {
+                nom,
+                prenom,
+                number,
+                adress,
+                msg
+            };
+
+            localStorage.setItem('currentOrder', JSON.stringify(currentOrder));
+
+
+        }
+
+
+    
+}
+
+displayReceiptOrder();
+
+  function displayReceiptOrder(){
+
+    const container = document.querySelector(".display-reciept-order");
+    
+
+    if(cart.length !== 0){
+        container.style.display = "flex";
+        container.innerHTML = '';
+
+        let total = 0;
+
+        const receiptTitle = document.createElement("h2");
+        receiptTitle.textContent = "Reciept🧾";
+        container.appendChild(receiptTitle);
+
+        const recieptDivs = document.createElement("div");
+        recieptDivs.className = "reciepts-div"
+        cart.forEach((item)=>{
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "reciept-div";
+            itemDiv.textContent = `- Nom : ${item.nom} | Quantite : ${item.quantite} | prix unitaire : ${item.prix} | Total : ${Number(item.prix)*Number(item.quantite)}`;
+
+            recieptDivs.appendChild(itemDiv);
+
+            total += Number(item.prix)*Number(item.quantite);
+
+        })
+
+        container.appendChild(recieptDivs);
+
+        const totalDiv = document.createElement("div");
+        totalDiv.className = "total-price";
+        totalDiv.textContent = `Total à payer : ${total} €`;
+
+        container.appendChild(totalDiv);
+
+    }else{
+        container.style.display = "none";
+    }
+
+}
+
+
+const confirmButton = document.querySelector(".confirm-button");
+confirmButton.addEventListener('click', ()=>{
+    displayOrder();
 });
