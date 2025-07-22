@@ -1,104 +1,83 @@
-.container{
+body{
+  display: flex;    
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: roboto, arial;
+}
+
+.js-container{
     display: flex;
-    flex-direction : column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    margin-top: 60px;
-    width : 70%;
-    border-radius : 15px;
-    margin-bottom : 50px;
+    width : 100%;
 }
 h1{
-    color: #E2001A;
-    font-size : 3em;
+    color: green;
+    font-weight: 900;
     text-decoration: underline;
-    margin-bottom: 50px;
+    margin-top : 70px; 
+    font-size: 3em;
 
 }
+.functionalities{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
 .inputs{
+    display: grid;
+    grid-template-columns: 200px 90px;
+    gap : 10px;
+    position: fixed;
+    bottom : 0;
+    padding: 15px;
+}
+.input-msg{
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    border-radius: 20px;
+}
+.send-button{
+    background-color: rgb(60, 140, 60);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-radius: 20px;
+
+}
+.send-button:hover{
+    opacity: 0.8;
+}
+.send-button:active{
+    opacity: 0.6;
+}
+.chat-messages{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top : 30px;
+    gap: 15px;
+}
+.chat-message{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap : 15px;
-    margin-bottom : 30px;
-}
-.input-prompt{
-    border: 1px solid gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width : 300px;
-    padding: 10px;
-    border-radius : 3px;
-}
-.analyze-button{
-    height : 40px;
-    width : 100px;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    background-color: #E2001A;
-    border: 1px solid lightgray;
-    border-radius : 3px;
-    cursor: pointer;
-    transition : color 0.2s, background-color 0.2s, opacity 0.2s;
-}
-.analyze-button:hover{
-    background-color: white;
-    color: #E2001A;
-}
-.analyze-button:active{
-    opacity: 0.6;
-}
-.msg{
-    width : 250px;
-    margin-bottom: 40px;
-    font-size: 20px;
-    font-weight: bold;
-
-}
-.result-div{
-    width : 70%;
-    text-align: center;
-    line-height : 25px;
-    margin-bottom : 60px;
-}
-@media(max-width : 1000px){
-    h1{
-        font-size: 2.3em;
-
-    }
-    .input-prompt{
-        width : 250px;
-    }
-    .result-div{
-        font-size: 18px;
-
-    }
-}
-@media(max-width : 850px){
-    h1{
-        width : 200px;
-        
-        text-align: center;
-
-        font-size: 2em;
-        font-weight: 700;
-    }
-    .input-prompt{
-        width : 200px;
-    }
-    .result-div{
-        font-size: 17px;
-    }
-    .analyze-button{
-        width : 80px;
-        font-size: 13px;
-        height : 35px;
-    }
-    .container{
-        width : 90%;
-    }
+    gap : 20px;
 }
