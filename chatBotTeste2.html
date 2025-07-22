@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot2</title>
+
+
+    <link rel="stylesheet" href="chat.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    
+
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <div class="js-container"></div>
+    <script type="text/babel">
+
+
+        function ChatInput({chatMessages, setChatMessages}){
+
+            const [inputText, setInputText] = React.useState('');
+            const [isLoading, setIsLoading] = React.useState(false);
+
+            function saveInputText(event){
+                setInputText(event.target.value);
+            }
+
+            async function sendMessage(){
+
+                if(inputText === '' || isLoading){
+                    return;
+                }
+
+                setIsLoading(true);
+
+                const newChatMessages = [
+                    ...chatMessages,
+                    {
+                        message : inputText,
+                        sender : "user",
+                        id : crypto.randomUUID()
+                    }
+                ];
+
+                setChatMessages(newChatMessages);
+
+                setInputText('');
+
+                setChatMessages([
+                    ...newChatMessages,
+                    {
+                        message : 'Loading...',
+                        sender : 'robot',
+                        id : crypto.randomUUID()
+                    }
+                ]);
+
+                const response = await Chatbot.getResponseAsync(inputText);
+
+                setChatMessages([
+                    ...newChatMessages,
+                    {
+                        message : response,
+                        sender : 'robot',
+                        id : crypto.randomUUID()
+                    }
+                ]);
+             }
+
+             function handleKeyDown(event){
+
+                if(event.key === "Enter"){
+                    sendMessage();
+                }else if(event.key === "Escape"){
+                    setInputText('');
+                }
+             }
+
+             setIsLoading(false);
+
+             return (
+                <>
+                   
+                  <div  className="inputs">
+                       <input 
+                         type="text"
+                         placeholder="Enter message"
+                         onChange={saveInputText}
+                         value={inputText}
+                         onKeyDown={handleKeyDown}
+                         className="input-msg"
+                       />  
+
+                       <button 
+                       onClick={sendMessage}
+                       className="send-button"
+                       >send</button>
+                  </div>
+                </>
+             );
+        }
+
+        function ChatMessage({message, sender}){
+            
+
+            return (
+               <>
+                   <div className="chat-message">
+                   {sender === "robot" && (
+                    <img src="robot.png" width="50"/>
+                   )}
+                      {message}
+                
+                    {sender === "user" && (
+                        <img src="user.png" width="50"/>
+                    )}
+                   </div>
+                   
+               </>
+            );
+        }
+
+         function ChatMessages({chatMessages}){
+             
+            return(
+                <>
+
+                <div className="chat-messages">
+                  {chatMessages.map((chatMessage)=>{
+                    
+                      return(
+                        
+                          <ChatMessage
+                           message={chatMessage.message}
+                           sender={chatMessage.sender}
+                           key={chatMessage.id}
+                        />
+                        
+                      );
+
+                  })}
+
+                  </div>
+                </>
+            )
+         }
+
+
+        function App(){
+
+           const [chatMessages, setChatMessages] = React.useState(
+            [
+                    {
+                        message : 'Hello World',
+                        sender : 'user',
+                        id : 'id1'
+                    },{
+                        message : 'Hello! How can I help you?',
+                        sender : 'robot',
+                        id : 'id2'
+                    },{
+                        message : 'can you get me todays date?',
+                        sender : 'user',
+                        id : 'id3'
+                    },{
+                        message : "Today is september 27",
+                        sender : 'robot',
+                        id : 'id4'
+                    }
+                ]
+           );
+
+
+           return(
+            <>
+
+              <h1>React Application Chatbot</h1>
+
+              <div class="functionalities">
+                 <p>- Tell date</p>
+                 <p>- Roll a dice</p>
+                 <p>- Flip a coin</p>
+                </div>
+
+
+
+              <ChatMessages 
+                   chatMessages={chatMessages}
+                  
+              />
+                            <ChatInput
+                 chatMessages={chatMessages}
+                 setChatMessages={setChatMessages}
+              />
+            </>
+           )
+
+        }
+
+         const container = document.querySelector(".js-container");
+         ReactDOM.createRoot(container).render(<App />)
+    </script>
+</body>
+</html>
