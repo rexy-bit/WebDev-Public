@@ -3,27 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatBot2</title>
-
-
-    <link rel="stylesheet" href="chat.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>chatBot2Teste</title>
 </head>
-
-
 <body>
     
-
-        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
     <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
 
     <div class="js-container"></div>
+
     <script type="text/babel">
 
 
@@ -33,8 +24,10 @@
             const [isLoading, setIsLoading] = React.useState(false);
 
             function saveInputText(event){
+
                 setInputText(event.target.value);
             }
+
 
             async function sendMessage(){
 
@@ -48,7 +41,7 @@
                     ...chatMessages,
                     {
                         message : inputText,
-                        sender : "user",
+                        sender : 'user',
                         id : crypto.randomUUID()
                     }
                 ];
@@ -76,92 +69,88 @@
                         id : crypto.randomUUID()
                     }
                 ]);
-             }
 
-             function handleKeyDown(event){
+                setIsLoading(false);
 
-                if(event.key === "Enter"){
-                    sendMessage();
-                }else if(event.key === "Escape"){
-                    setInputText('');
+            }
+
+                function handleKeyDown(event){
+
+                    if(event.key === "Enter"){
+                        sendMessage();
+                    }else if(event.key === "Escape"){
+                        setInputText('');
+                    }
+
                 }
-             }
 
-             setIsLoading(false);
+                
 
-             return (
-                <>
-                   
-                  <div  className="inputs">
-                       <input 
-                         type="text"
-                         placeholder="Enter message"
-                         onChange={saveInputText}
-                         value={inputText}
-                         onKeyDown={handleKeyDown}
-                         className="input-msg"
-                       />  
+                return (
+                    <>
 
-                       <button 
-                       onClick={sendMessage}
-                       className="send-button"
-                       >send</button>
-                  </div>
-                </>
-             );
+                       
+                           <input 
+                           type="text"
+                            placeholder="Enter message"
+                            width = "30"
+                            value={inputText}
+                            onChange={saveInputText}
+                            onKeyDown={handleKeyDown}
+                           />
+
+                           <button onClick={sendMessage}>
+                              Send
+                            </button>
+                        
+                    </>
+                );
+            
         }
 
         function ChatMessage({message, sender}){
-            
 
             return (
-               <>
-                   <div className="chat-message">
-                   {sender === "robot" && (
-                    <img src="robot.png" width="50"/>
-                   )}
-                      {message}
-                
-                    {sender === "user" && (
-                        <img src="user.png" width="50"/>
-                    )}
-                   </div>
-                   
-               </>
-            );
-        }
 
-         function ChatMessages({chatMessages}){
-             
-            return(
                 <>
-
-                <div className="chat-messages">
-                  {chatMessages.map((chatMessage)=>{
-                    
-                      return(
-                        
-                          <ChatMessage
-                           message={chatMessage.message}
-                           sender={chatMessage.sender}
-                           key={chatMessage.id}
-                        />
-                        
-                      );
-
-                  })}
-
-                  </div>
+                  <div>
+                   {sender === "robot" && (
+                      <img src="robot.png" width="50"/>
+                   )}
+                   {message}
+                   {sender === "user" && (
+                     <img src="user.png" width="50"/>
+                   )}
+                   </div>
                 </>
             )
-         }
+        }
+
+
+        function ChatMessages({chatMessages}){
+
+            return (
+                <>
+
+                   {chatMessages.map((chatMessage)=>{
+
+                    return(
+                        <ChatMessage 
+                          message={chatMessage.message}
+                          sender={chatMessage.sender}
+                          key={chatMessage.id}
+                        />
+                    );
+                   })}
+                </>
+            )
+        }
 
 
         function App(){
 
-           const [chatMessages, setChatMessages] = React.useState(
-            [
-                    {
+            const [chatMessages, setChatMessages] = React.useState([
+                                    {
                         message : 'Hello World',
                         sender : 'user',
                         id : 'id1'
@@ -178,38 +167,28 @@
                         sender : 'robot',
                         id : 'id4'
                     }
-                ]
-           );
+            ]);
 
 
-           return(
-            <>
+            return (
 
-              <h1>React Application Chatbot</h1>
+               <>
 
-              <div class="functionalities">
-                 <p>- Tell date</p>
-                 <p>- Roll a dice</p>
-                 <p>- Flip a coin</p>
-                </div>
+                 <ChatInput 
+                    chatMessages={chatMessages}
+                    setChatMessages={setChatMessages}
+                 />
 
-
-
-              <ChatMessages 
+                 <ChatMessages 
                    chatMessages={chatMessages}
-                  
-              />
-                            <ChatInput
-                 chatMessages={chatMessages}
-                 setChatMessages={setChatMessages}
-              />
-            </>
-           )
+                 />
+               </>
+            );
 
         }
-
-         const container = document.querySelector(".js-container");
-         ReactDOM.createRoot(container).render(<App />)
+        
+        const container = document.querySelector(".js-container");
+        ReactDOM.createRoot(container).render(<App />);
     </script>
 </body>
 </html>
