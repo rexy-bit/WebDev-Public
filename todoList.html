@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="todoList.css">
+
+
+</head>
+<body>
+    
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    
+    <div class="js-container"></div>
+
+    <script type="text/babel">
+
+
+        function TodoInputs({todoList, setTodoList}){
+
+            let [inputText, setInputText] = React.useState('');
+            let [inputDate, setInputDate] = React.useState('');
+            
+
+            function saveInputText(event){
+                setInputText(event.target.value);
+            }
+
+            function saveInputDate(event){
+                setInputDate(event.target.value);
+            }
+
+            function addTodo(){
+
+                if(!inputText || !inputDate){
+
+
+
+                    return;
+                }
+
+                const newTodoList = [
+                    ...todoList,
+                    {
+                        name : inputText,
+                        date : inputDate,
+                        id : crypto.randomUUID()
+                    }
+                ];
+
+                setTodoList(newTodoList);
+
+                localStorage.setItem('todoList', JSON.stringify(newTodoList));
+
+                setInputText('');
+                setInputDate('');
+
+
+
+
+            }
+
+            function handleKeyDow(event){
+                if(event.key === 'Enter'){
+                    addTodo();
+                }else if(event.key === "Escape"){
+                    setInputText('');
+                }
+            }
+
+                            return (
+                    <>
+                     <div className="inputs">
+                        
+                        <input 
+                        type="text"
+                        placeholder="Enter todo name"
+                        value={inputText}
+                        onChange={saveInputText}
+                        className="input-name in"
+                        onKeyDown={handleKeyDow}
+                        />
+
+                        <input 
+                        type="date"
+                        value={inputDate}
+                        onChange={saveInputDate}
+                        className="input-date in"
+                        />
+
+                        <button 
+                        className="add-button"
+                        onClick={addTodo}
+                        >
+                          Add    
+                        </button>
+                    </div>
+
+                    </>
+                );
+        }
+
+
+        function TodoList({todoList, setTodoList}){
+
+                     function deleteTodo(todoId){
+                           const updatedTodo = todoList.filter((todo)=> todo.id !== todoId);
+                           setTodoList(updatedTodo);
+                           localStorage.setItem('todoList', JSON.stringify(updatedTodo));
+                        }
+
+            return (
+                <>
+
+                 <div className="display-todo">
+                   {todoList.map((todo, i)=>{
+
+                       
+                      return(
+                        <>
+                           <div className="todo">
+
+                              <div className="text">{todo.name}</div>
+                              <div className="text">{todo.date}</div>
+                              
+                              <button 
+                              className="delete-button"
+                              onClick={()=> deleteTodo(todo.id)}
+                              >
+                                Delete
+                             </button>
+                            </div>
+                        </>
+                      );
+                   })}
+                   </div>
+                </>
+            )
+        }
+        function App(){
+
+                const [todoList, setTodoList] = React.useState(() => {
+                        const saved = localStorage.getItem('todoList');
+                        return saved ? JSON.parse(saved) : [
+                        { name: 'Make dinner', date: '2025-07-23', id: '0' },
+                        { name: 'Go shower', date: '2025-07-24', id: '1' }
+                        ];
+                    });
+
+                
+
+            return(
+                <>
+                <h1>Todo List Application</h1>
+                  <TodoInputs 
+                  todoList={todoList}
+                  setTodoList={setTodoList}
+                  />
+ 
+                  
+                  <TodoList 
+                   todoList={todoList}
+                   setTodoList={setTodoList}
+                  />
+                </>
+            )
+
+        }
+
+        const container = document.querySelector(".js-container");
+        ReactDOM.createRoot(container).render(<App />);
+    </script>
+</body>
+</html>
