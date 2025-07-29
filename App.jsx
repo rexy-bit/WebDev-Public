@@ -1,11 +1,41 @@
-import React from 'react'
-import Todo from './Todo.jsx'
-function App() {
+import React from 'react';
 
+
+function Count({number}){
   return(
-    
-    <Todo/>
+    <h2>{number}</h2>
   )
 }
+function App() {
+    const [count , setCount] = React.useState(0);
 
-export default App
+
+    function increaseCount(){
+
+      setCount(prevCount=> prevCount + 1);
+    }
+
+    function decreaseCount(){
+      setCount(prevCount=> prevCount - 1);
+    }
+    return(
+
+      <main>
+        <div className="counter">
+          <button className="minus"
+           onClick={decreaseCount}
+          >-</button>
+          <Count
+           number={count}
+          />
+          <button className='plus'
+           onClick={increaseCount}
+          >
+            +
+          </button>
+        </div>
+      </main>
+    )
+}
+
+export default App;
