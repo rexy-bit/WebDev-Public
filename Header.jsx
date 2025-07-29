@@ -1,12 +1,13 @@
 import React from "react";
-import chefClaude from '../assets/chef-claude-icon.png'
+import chefGaston from "../assets/chef-claude-icon.png"
+
 
 function Header(){
 
     return(
         <header>
-           <img src={chefClaude} alt="chef claude image" className="chef-claude"/>
-           Chef Claude
+            <img src={chefGaston} alt="chef image" className="image" width="70"/>
+            <h1>Chef Gaston</h1>
         </header>
     );
 }
