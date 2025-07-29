@@ -1,117 +1,53 @@
-import React from "react";
-
-import IngredientsDisplay from "./IngredientsDisplay.jsx";
-import ReadyRecipe  from "./ReadyRecipe.jsx";
-import Recipe from "./Recipe.jsx";
-
-import { getRecipeFromGemini } from "../ai.js";
-
-
-function ChefClaudeAll({ingredients, setIngredients, recipeShown, setRecipeShow, recipe, setRecipe}){
-
-    
-   
-    
-
-    return(
-        <>
-
-        {ingredients.length !== 0 && (
-            <>
-            <section>
-
-           <IngredientsDisplay
-            ingredients={ingredients}
-            setIngredients={setIngredients}
-           />
-
-             
-             {ingredients.length >= 4 && <ReadyRecipe 
-              ingredients={ingredients}
-              recipeShown={recipeShown}
-              setReciepeShow={setRecipeShow}
-              recipe={recipe}
-              setRecipe={setRecipe}
-             />}
-          
-           </section>
-        
-           {recipe && <Recipe
-             recipe={recipe}
-             
-           />}
-                    </>
-                    )
-      }
-</>
-      );
-}
-
+import React from 'react'
+import IngredientsInputs from './IngredientsInputs.jsx';
+import IngredientsList from './IngredientsList.jsx';
+import ReadyRecipe  from './ReadyRecipe.jsx';
+import Recipe from './Recipe.jsx';
 function Main(){
 
-
     const [ingredients, setIngredients] = React.useState(()=>{
+     
         const saved = localStorage.getItem('ingredients');
 
         return saved ? JSON.parse(saved) : 
-            ['tomato', 'olives', 'eggs', 'olive oil'];
-    });
-   
+          
+        [
+        'Tomatoes',
+        'carrots',
+        'Cheese',
+        'Chiken',
+        'Bread'
+    ];
 
+});
 
-    const [recipeShown, setRecipeShow] = React.useState(false);
-
-    const [recipe, setRecipe] = React.useState(()=>{
-       const saved = localStorage.getItem('recipe');
-
-       return saved ? JSON.parse(saved) : 
-         ''
-    });
-
-    function addIngredient(formData){
-          const newIngredient = formData.get("ingredient");
-          if(!newIngredient){
-            return;
-          }
-
-          const newIngredients = [...ingredients, newIngredient];
-          setIngredients(newIngredients)
-
-          localStorage.setItem('ingredients', JSON.stringify(newIngredients));
-    }
-
-
+    const [recipe, setRecipe] = React.useState(false);
     return(
         <>
-        <div className="main">
-    
-        <form className="inputs" action={addIngredient}>
-            <input 
-            type="text" 
-            className="in" 
-            placeholder="e.g. oregano"
-            name="ingredient"
-            />
+          <IngredientsInputs
+           ingredients={ingredients}
+           setIngredients={setIngredients}
+          />
 
-            <button 
-            className="add-button">
-                + Add ingredient
-            </button>
-        </form>
+          <IngredientsList
+            ingredients={ingredients}
+            setIngredients={setIngredients}
+          />
 
-          <ChefClaudeAll
+          <ReadyRecipe
           ingredients={ingredients}
-          setIngredients={setIngredients}
-          recipeShown={recipeShown}
-          setReciepeShow={setRecipeShow}
           recipe={recipe}
           setRecipe={setRecipe}
           />
-    
-    </div>
+
+          <Recipe
+            recipe={recipe}
+            ingredients={ingredients}
+            
+          />
         </>
-    );
-    
+    )
 }
+
 
 export default Main
