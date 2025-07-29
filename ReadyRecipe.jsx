@@ -1,28 +1,36 @@
 import React from "react";
-import { getRecipeFromGemini} from "../ai.js";
-
+import { getRecipeFromGemini } from "../ai";
+import IngredientsInputs from "./IngredientsInputs";
 function ReadyRecipe(props){
 
-    async function getRecipe(){
-
+     const [isLoading, setIsLoading] = React.useState(false);
+     
+     async function getRecipe(){
+        setIsLoading(true);
         const generatedRecipe = await getRecipeFromGemini(props.ingredients);
-        console.log(generatedRecipe)
+        console.log(generatedRecipe);
         props.setRecipe(generatedRecipe);
-        localStorage.setItem('recipe', JSON.stringify(generatedRecipe));
-    }
+       setIsLoading(false);
+     }
 
     return(
-         <div className="ready-div">
-            <div className="ready-text">
-                <h3>Ready for a recipe?</h3>
-                <p className="generate">Generate a recipe from your list of ingredients</p>
+
+        props.ingredients.length > 3 && 
+        <>
+        <div className="ready-recipe">
+            <div className="div1">
+            <h3>Ready for a recipe?</h3>
+            <p className="generate">Generate a recipe from your list of ingredients</p>
             </div>
 
-            <button className="get-button"
-             onClick={()=>{getRecipe()}}
-            >Get a recipe</button>
-            
-           </div>
+            <button className="get-button" onClick={getRecipe}>
+                {isLoading ? "Loading..." : "Get a recipe"}
+            </button>
+        </div>
+
+        
+
+        </>
     );
 }
 
