@@ -1,129 +1,67 @@
+@import "tailwindcss";
+
+html{
+    scroll-behavior: smooth;
+    font-family: roboto, arial;
+}
+*{
+    box-sizing: border-box;
+}
 body{
-  padding: 0;
-  margin: 0;
-  font-family: roboto, arial;
-  width: 100%;
+    background-color: #DBEAFE;
+}
+@layer components{
+    .linkNav{
+        @apply text-[1em] font-bold text-white transition-opacity duration-200 hover:opacity-70 active:opacity-50
+    }
 }
 
-:root{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width : 100%;
+
+.smoothPulse {
+  display: inline-block;
+  animation: smoothPulse 2s infinite ease-in-out;
 }
-main{
-  width: 100%;
-}
-header{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap : 10px;
-  height : 110px;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
-  width: 100%;
-  top: 0;
-}
-h1{
-  font-weight: 500;
-}
-main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width : 100%;
-}
-form{
-  margin-top: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap : 10px;
-}
-.in{
-  padding: 10px 15px;
-  border : 1px solid lightgray;
-  border-radius : 20px;
-  z-index: 1;
-}
-.add-button{
-  background-color: black;
-  color: white;
-  padding: 10px 15px;
-  border: 1px solid lightgray;
-  border-radius : 20px;
-  margin-left : -45px;
-  z-index: 3;
-  transform: scale(1);
-  transition: opacity 0.2s ease, transform 0.2s ease-in-out;
-  cursor: pointer;
-}
-.add-button:hover{
-  transform: scale(1.05);
-}
-.ingredients-list{
-  margin-top: 40px;
-}
-.ingredients{
-  margin-left : 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap : 5px;
-}
-.ready-recipe{
-  padding: 5px 20px;
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap : 20px;
-  background-color: #F3E9DC;
-  border-radius : 10px;
-}
-.generate{
-  color: rgb(74, 74, 74);
-  font-size : 13px;
-  width : 150px;
-}
-.get-button{
-  height : 30px;
-  width : 110px;
-  background-color: #CA7842;
-  color: white;
-  border: 1px solid lightgray;
-  border-radius : 5px;
-  cursor: pointer;
-  font-weight: 550;
-  transition: opacity 0.2s ease;
-}
-.get-button:hover{
-  opacity : 0.8;
-}
-.get-button:active{
-  opacity: 0.6;
-}
-@media(max-width : 375px){
-  .ready-recipe{
-    width : 250px;
-    gap : 10px;
+
+@keyframes smoothPulse {
+  0% {
+    transform: scale(1);
   }
-  .generate{
-    width : 100px;
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
-.recipe{
-  width : 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top : 40px;
-  margin-bottom : 50px;
+
+
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(200px);
+    opacity : 0.5; /* commence hors écran à droite */
+  }
+  to {
+    transform: translateX(0); 
+    opacity : 1;/* revient à sa position normale */
+  }
+}
+
+.slideRight {
+  animation: slideInRight 1s ease-in-out 0.4s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-200px);
+    opacity : 0.5; /* commence hors écran à droite */
+  }
+  to {
+    transform: translateX(0); 
+    opacity : 1;/* revient à sa position normale */
+  }
+}
+
+.slideLeft {
+  animation: slideInLeft 1s ease-in-out 0.4s forwards;
 }
