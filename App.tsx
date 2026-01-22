@@ -8,6 +8,9 @@ import { ItemsProvider } from './Contexts/ItemsContexts'
 import Store from './Pages/Store'
 import { CartProvider } from './Contexts/CartContext'
 import Cart from './Pages/Cart'
+import { OrderProvider } from './Contexts/OrdersContext'
+import Orders from './Pages/Orders'
+import Track from './Pages/Track'
 
 function App() {
   
@@ -19,6 +22,7 @@ function App() {
     <AuthProvider>
       <ItemsProvider>
         <CartProvider>
+          <OrderProvider>
      <Routes>
       
 
@@ -51,8 +55,24 @@ function App() {
             <Cart/>
           </>
         }/>
+
+
+        <Route path='/orders' element={
+          <>
+            <Header/>
+            <Orders/>
+          </>
+        }/>
+
+        <Route  path='/track/:id' element={
+           <>
+              <Header/>
+               <Track/>
+               </>
+        }/>
      </Routes>
 
+              </OrderProvider>
            </CartProvider>
         </ItemsProvider>
      </AuthProvider>
