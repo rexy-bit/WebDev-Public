@@ -1,67 +1,54 @@
-import { memo, } from "react";
-import { useOrderContext } from "../Contexts/OrderContext";
-import { useAuthContext } from "../Contexts/AuthContext";
+
+import  { memo } from "react"
+import { useOrderContext } from "../Contexts/OrdersContext";
+import OrderCard from "../Components/OrderComponents/OrderCard";
 import { useNavigate } from "react-router-dom";
-import type { Orders } from "../Contexts/Types";
-import OrderComponent from "../Components/OrderComponents/OrderComponent";
-
-
-
-
 
 
 const Orders = () => {
 
-    const {orders, loadingOrders} = useOrderContext();
-    const {currentUser} = useAuthContext();
+    const {orders, loadingUserOrders} = useOrderContext();
     const navigate = useNavigate();
-
-    if(loadingOrders){
-        return(
-            <div className="flex justify-center items-center mt-15">
-                    <i className="fa-solid fa-spinner fa-spin text-[2em] font-bold text-blue-900"></i>
-                </div>
-        )
-    }
-
     return(
-        <section className="flex flex-col min-h-screen items-center w-full">
+        <section className="flex flex-col min-h-screen w-full items-center bg-gray-200">
+                
+                {orders.length === 0 
+                  ?
+                  <div className="w-[80%] bg-white flex flex-col justify-center items-center mt-5 shadow-2xl rounded-[5px] px-5 py-10 max-[500px]:w-[90%]">
+                             <img src="https://res.cloudinary.com/dub4fhabm/image/upload/v1769039978/orders_tjhce3.svg" alt="" 
+                             className="w-50"
+                             />
+                             <h1 className="text-[20px] font-bold mt-10">No Orders</h1>
+                             <p className="text-[16px] text-gray-700 mt-2 text-center">Browse our categories and discover our best deals!</p>
 
-            
-             {!currentUser
-               ?
-                  <div className="flex flex-col items-center mt-20 gap-3">
-                    <p className="text-[1.1em] font-bold w-[500px] max-[550px]:w-[300px] text-center">Sign in or create an account to add items to your cart and place orders.</p>
-                    <button onClick={()=>navigate("/profile")} className="px-3 py-1 bg-blue-900 text-white font-bold rounded-lg cursor-pointer transition-opacity duration-200 hover:opacity-70 active:opacity-50">Sign In</button>
-                    </div>
-
-                :
-                  currentUser && orders.length === 0 
-                   ?
-                   <div className="flex flex-col items-center gap-5 mt-20">
-                    <p className="text-[1.1em] font-bold w-[500px] max-[550px]:w-[300px] text-center">Browse Our store add Items to your cart and place orders</p>  
-                    <button className="bg-blue-900 text-white font-bold px-3 py-1 rounded-lg cursor-pointer transition-opacity duration-200 hover:opacity-80 active:opacity-60" onClick={()=>navigate("/store")}>Browse Store</button>
-                    </div>
-                    : 
-                      <div className="flex flex-col mt-20">
-                         <h1 className="text-[1.5em] font-bold">Your Orders</h1>
-
-                         <div className="flex flex-col items-center gap-5 mb-10">
-                            {orders.map((order)=>{
-                                return(
-                                    <OrderComponent
-                                    order={order}
-                                    key={order._id}
-                                    />
-                                )
-                            })}
+                             <button className="bg-amber-500 text-white px-5 py-2 rounded-[5px] mt-5 text-[15px] font-bold cursor-pointer transition-opacity duration-200 hover:opacity-80 active:opacity-60"
+                             onClick={()=>navigate('/store')}
+                             >Start your shopping now</button>
                          </div>
-                      </div>
-                    
+                         : 
+                           loadingUserOrders ?
+                             <i className="fa-solid fa-clock fa-flip text-[3em] mt-5"></i>
+                             : 
+                               
+                
+                
+               <div className="flex flex-col justify-center mt-10">
+                  <div className="text-[25px] font-bold flex justify-center">Orders</div>
 
-             }
+                 <div className="flex flex-col justify-center items-center gap-10 mb-20 mt-5">
+                    {orders.map((order)=>{
+                        return(
+                            <OrderCard
+                            order={order}
+                            key={order._id}
+                            />
+                        )
+                    })}
+                 </div>
+               </div>
+              }
         </section>
-    );
+    )
 }
 
 export default memo(Orders);
