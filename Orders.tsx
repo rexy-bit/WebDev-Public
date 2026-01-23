@@ -3,12 +3,15 @@ import  { memo } from "react"
 import { useOrderContext } from "../Contexts/OrdersContext";
 import OrderCard from "../Components/OrderComponents/OrderCard";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../Contexts/AuthContexts";
+import Recommendations from "../Components/StoreComponents/Recommendations";
 
 
 const Orders = () => {
 
     const {orders, loadingUserOrders} = useOrderContext();
     const navigate = useNavigate();
+    const {recommendations} = useAuthContext();
     return(
         <section className="flex flex-col min-h-screen w-full items-center bg-gray-200">
                 
@@ -47,6 +50,9 @@ const Orders = () => {
                  </div>
                </div>
               }
+
+              {recommendations.length !== 0 && <Recommendations/>}
+
         </section>
     )
 }
