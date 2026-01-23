@@ -5,11 +5,14 @@ import CartItemCard from "../Components/CartComponents/CartItemCard";
 import DeliveryComponent from "../Components/CartComponents/DeliveryComponent";
 import { useNavigate } from "react-router-dom";
 import Resume from "../Components/CartComponents/Resume";
+import { useAuthContext } from "../Contexts/AuthContexts";
+import Recommendations from "../Components/StoreComponents/Recommendations";
 
 const Cart = () => {
 
     const {cart, totalItems} = useCartContext();
     const navigate = useNavigate();
+    const {recommendations} = useAuthContext();
 
     return(
          <>
@@ -30,7 +33,7 @@ const Cart = () => {
                          </div>
 
                          :
-                            <div className="mt-10 flex flex-row gap-5  justify-center  max-[760px]:flex-col max-[760px]:items-center">
+                            <div className="mt-10 flex flex-row gap-5  justify-center items-start  max-[760px]:flex-col max-[760px]:items-center">
                                  <div className="flex flex-col bg-white  rounded-[2px] shadow-2xs w-[800px] max-[1100px]:w-[600px] max-[950px]:w-[400px] max-[500px]:w-[350px] order-1 max-[760px]:order-2 h-full">
                                      <div className="w-full border-b-1 border-gray-300">
                                         <p className="px-3 p-2 text-[1.2em] font-[500]">
@@ -59,7 +62,8 @@ const Cart = () => {
                                 
                             </div>
                       }
-               
+                      
+                     {recommendations.length !== 0 && <Recommendations/>}
 
            </section>
          </>
