@@ -1,0 +1,43 @@
+const "items" = [
+    {
+        "name" : "Casio MW-240-1EVEF",
+        "description" : "Casio MW-240-1EVEF is a classic and reliable analog watch designed for everyday use. It features a clean black dial with clear white hour markers, offering excellent readability at a glance. The durable resin case and band make it lightweight, comfortable, and resistant to daily wear.
+
+Powered by a precise quartz movement, this watch ensures accurate timekeeping with minimal maintenance. It is water resistant up to 50 meters, making it suitable for daily activities such as hand washing or light rain. With its minimalist design and long battery life, the Casio MW-240-1EVEF is a practical choice for those who appreciate simplicity, durability, and timeless style.",
+        "stock" : 7,
+        "rate" : 3.5,
+        "category" : "Unisex",
+        "type" : "Analog",
+        "images" : [
+            "https://res.cloudinary.com/dub4fhabm/image/upload/v1769125687/0e24b5a9-0389-4a3b-af96-1004f31f3800.png",
+            "https://res.cloudinary.com/dub4fhabm/image/upload/v1769125702/02a19db8-1428-46ba-b944-a05bba28cf0d.png",
+            "https://res.cloudinary.com/dub4fhabm/image/upload/v1769125738/b4958543-059b-42aa-a301-1463f571dbb7.png",
+            "https://res.cloudinary.com/dub4fhabm/image/upload/v1769125758/3e538fd4-75cf-43f8-ae63-d582001a99dd.png",
+            "https://res.cloudinary.com/dub4fhabm/image/upload/v1769125781/af297d8c-56e0-432e-be11-4ef13ecfdbf2.png",
+            "https://res.cloudinary.com/dub4fhabm/image/upload/v1769125799/4c9b03eb-1835-4608-8a84-75b05c655ed4.png",
+            "https://res.cloudinary.com/dub4fhabm/image/upload/v1769125821/a3994549-2146-4b8c-8d7b-b125c6e8dd9f.png"
+        ],
+        "price" : 6500,
+        "disprice" : 5500,
+        "recommendationScore" : 0,
+           "keyWords": [
+       "Casio",
+  "Casio watch",
+  "MW-240-1EVEF",
+  "Casio MW-240",
+  "analog watch",
+  "men watch",
+  "black dial watch",
+  "resin band watch",
+  "lightweight watch",
+  "quartz watch",
+  "50m water resistant",
+  "everyday watch",
+  "minimalist watch",
+  "durable watch",
+  "Casio analog watch",
+  "classic men watch",
+  "affordable watch"
+  ]
+    }
+]
