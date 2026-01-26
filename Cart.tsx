@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Resume from "../Components/CartComponents/Resume";
 import { useAuthContext } from "../Contexts/AuthContexts";
 import Recommendations from "../Components/StoreComponents/Recommendations";
+import OrdersValues from "../Components/OrderComponents/OrdersValues";
 
 const Cart = () => {
 
@@ -62,6 +63,8 @@ const Cart = () => {
                                 
                             </div>
                       }
+
+                      <OrdersValues/>
                       
                      {recommendations.length !== 0 && <Recommendations/>}
 
