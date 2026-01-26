@@ -13,6 +13,20 @@ import Orders from './Pages/Orders'
 import Track from './Pages/Track'
 import ItemDetails from './Pages/ItemDetails'
 import { FavoritesProvider } from './Contexts/FavoritesContext'
+import { SearchProvider } from './Contexts/SearchContext'
+import Search from './Pages/Search'
+import Favorites from './Pages/Favorites'
+import ScrollToTop from './ScrollToTop'
+import UserRoute from './Layouts/UserRoute'
+import PublicLayout from './Layouts/PublicLayout'
+import AdminRoute from './Layouts/AdminRoute'
+import AdminLayout from './Layouts/AdminLayout'
+import Dashboard from './AdminPages/Dashboard'
+import Users from './AdminPages/Users'
+import AdminOrders from './AdminPages/AdminOrders'
+import Items from './AdminPages/Items'
+import AdminProfile from './AdminPages/AdminProfile'
+import { ItemsAdminContextProvider } from './AdminContexts/ItemsAdminContext'
 
 function App() {
   
@@ -26,27 +40,36 @@ function App() {
         <CartProvider>
           <OrderProvider>
             <FavoritesProvider>
+              <SearchProvider>
+                <ItemsAdminContextProvider>
+
+                <ScrollToTop/>
      <Routes>
       
 
-          
-        <Route path='/' element={
+      <Route element={
+        <UserRoute>
+          <PublicLayout/>
+        </UserRoute>
+      }>
+
+            <Route path='/' element={
           <>
-          <Header/>
+          
           <Home/>
           </>
         }/>
 
         <Route path='/profile' element={
           <>
-            <Header/>
+            
             <Profile/>
           </>
         }/>
 
         <Route path='/store' element={
           <>
-          <Header/>
+          
           <Store/>
           </>
         }/>
@@ -54,7 +77,7 @@ function App() {
         <Route path='/cart' element={
 
           <>
-            <Header/>
+            
             <Cart/>
           </>
         }/>
@@ -62,26 +85,76 @@ function App() {
 
         <Route path='/orders' element={
           <>
-            <Header/>
+            
             <Orders/>
           </>
         }/>
 
         <Route  path='/track/:id' element={
            <>
-              <Header/>
+              
                <Track/>
                </>
         }/>
 
         <Route path='/details/:id' element={
           <>
-            <Header/>
+            
             <ItemDetails/>
           </>
         }/>
+
+        <Route path='/search' element={
+          <>
+            
+            <Search/>
+          </>
+        }/>
+
+        <Route path='/favorites' element={
+
+          <>
+            
+            <Favorites/>
+          </>
+        }/>
+      </Route>
+          
+
+        <Route path='/admin/*' element={
+
+           <AdminRoute>
+            <AdminLayout/>
+           </AdminRoute>
+
+        }>
+
+          <Route path='dashboard' element={
+            <Dashboard/>
+          }/>
+
+          <Route path='users' element={
+            <Users/>
+          }/>
+
+          <Route path='orders' element={
+            <AdminOrders/>
+          }/>
+
+          <Route path='items' element={
+            <Items/>
+          }/>
+
+          <Route path='profile' element={
+            <AdminProfile/>
+          }/>
+           
+        </Route>
+     
      </Routes>
 
+                         </ItemsAdminContextProvider>
+                   </SearchProvider>
                  </FavoritesProvider>
               </OrderProvider>
            </CartProvider>
