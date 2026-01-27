@@ -27,6 +27,7 @@ import AdminOrders from './AdminPages/AdminOrders'
 import Items from './AdminPages/Items'
 import AdminProfile from './AdminPages/AdminProfile'
 import { ItemsAdminContextProvider } from './AdminContexts/ItemsAdminContext'
+import { OrdersAdminProvider } from './AdminContexts/OrdersAdminContext'
 
 function App() {
   
@@ -42,6 +43,7 @@ function App() {
             <FavoritesProvider>
               <SearchProvider>
                 <ItemsAdminContextProvider>
+                  <OrdersAdminProvider>
 
                 <ScrollToTop/>
      <Routes>
@@ -153,6 +155,7 @@ function App() {
      
      </Routes>
 
+                              </OrdersAdminProvider>
                          </ItemsAdminContextProvider>
                    </SearchProvider>
                  </FavoritesProvider>
