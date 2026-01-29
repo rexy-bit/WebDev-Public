@@ -1,6 +1,6 @@
 import { memo, useEffect, useState , useRef} from "react"
 import { useItemsContext } from "../Contexts/ItemsContexts"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import StarsRating from "../Components/StoreComponents/StarsRating";
 import { useCartContext } from "../Contexts/CartContext";
 import { FaFacebookF, FaInstagram,  FaWhatsapp } from "react-icons/fa6";
@@ -307,6 +307,7 @@ const ItemDetails = () => {
         }
 
     const [currentImg, setCurrentImg] = useState<number>(0);
+    const navigate = useNavigate();
 
     const {id} = useParams();
    
@@ -434,7 +435,7 @@ const ItemDetails = () => {
 
             {recommendations.length !== 0 && <Recommendations/>}
 
-            
+            <button className="fixed left-5 top-33 bg-gray-800 text-white font-bold px-4 rounded-full py-2 z-10 cursor-pointer transition-opacity duration-200 hover:opacity-80 active:opacity-60" onClick={()=>navigate(-1)}>&#8592; Back</button>
         </section>
     )
 }
