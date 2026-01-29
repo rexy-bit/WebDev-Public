@@ -1,7 +1,6 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
-import Header from './Components/HomeComponents/Header'
 import Profile from './Pages/Profile'
 import { AuthProvider } from './Contexts/AuthContexts'
 import { ItemsProvider } from './Contexts/ItemsContexts'
@@ -28,6 +27,7 @@ import Items from './AdminPages/Items'
 import AdminProfile from './AdminPages/AdminProfile'
 import { ItemsAdminContextProvider } from './AdminContexts/ItemsAdminContext'
 import { OrdersAdminProvider } from './AdminContexts/OrdersAdminContext'
+import { UsersAdminProvider } from './AdminContexts/UsersAdminContext'
 
 function App() {
   
@@ -44,6 +44,7 @@ function App() {
               <SearchProvider>
                 <ItemsAdminContextProvider>
                   <OrdersAdminProvider>
+                    <UsersAdminProvider>
 
                 <ScrollToTop/>
      <Routes>
@@ -155,7 +156,9 @@ function App() {
      
      </Routes>
 
+                                 </UsersAdminProvider>
                               </OrdersAdminProvider>
+
                          </ItemsAdminContextProvider>
                    </SearchProvider>
                  </FavoritesProvider>
