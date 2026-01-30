@@ -5,6 +5,7 @@ import SignUp from "../Components/ProfileComponents/SignUp";
 import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../Contexts/CartContext";
 import Recommendations from "../Components/StoreComponents/Recommendations";
+import GeneralFooter from "../Components/HomeComponents/GeneralFooter";
 
 const Profile = () => {
 
@@ -142,7 +143,7 @@ const Profile = () => {
 
             {recommendations.length !== 0 && <Recommendations/>}
 
-
+            <GeneralFooter/>
         </section>
     );
 }
