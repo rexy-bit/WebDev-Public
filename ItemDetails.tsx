@@ -9,6 +9,7 @@ import { useFavoritesContext } from "../Contexts/FavoritesContext";
 import { div } from "framer-motion/client";
 import { useAuthContext } from "../Contexts/AuthContexts";
 import Recommendations from "../Components/StoreComponents/Recommendations";
+import GeneralFooter from "../Components/HomeComponents/GeneralFooter";
 
 
 const productUrl = window.location.href;
@@ -436,6 +437,8 @@ const ItemDetails = () => {
             {recommendations.length !== 0 && <Recommendations/>}
 
             <button className="fixed left-5 top-33 bg-gray-800 text-white font-bold px-4 rounded-full py-2 z-10 cursor-pointer transition-opacity duration-200 hover:opacity-80 active:opacity-60" onClick={()=>navigate(-1)}>&#8592; Back</button>
+
+            <GeneralFooter/>
         </section>
     )
 }
