@@ -4,6 +4,7 @@ import ItemCard from "../Components/StoreComponents/ItemCard";
 import { useAuthContext } from "../Contexts/AuthContexts";
 import Recommendations from "../Components/StoreComponents/Recommendations";
 import { useNavigate } from "react-router-dom";
+import GeneralFooter from "../Components/HomeComponents/GeneralFooter";
 
 
 
@@ -55,6 +56,8 @@ const Favorites = () => {
             </div>
 
             {recommendations.length !== 0 && <Recommendations/>}
+
+            <GeneralFooter/>
         </section>
     )
 }
