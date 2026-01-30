@@ -8,6 +8,7 @@ import Resume from "../Components/CartComponents/Resume";
 import { useAuthContext } from "../Contexts/AuthContexts";
 import Recommendations from "../Components/StoreComponents/Recommendations";
 import OrdersValues from "../Components/OrderComponents/OrdersValues";
+import GeneralFooter from "../Components/HomeComponents/GeneralFooter";
 
 const Cart = () => {
 
@@ -67,6 +68,8 @@ const Cart = () => {
                       <OrdersValues/>
                       
                      {recommendations.length !== 0 && <Recommendations/>}
+
+                     <GeneralFooter/>
 
            </section>
          </>
