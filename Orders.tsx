@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../Contexts/AuthContexts";
 import Recommendations from "../Components/StoreComponents/Recommendations";
 import OrdersValues from "../Components/OrderComponents/OrdersValues";
+import GeneralFooter from "../Components/HomeComponents/GeneralFooter";
 
 
 const Orders = () => {
@@ -55,7 +56,7 @@ const Orders = () => {
                <OrdersValues/>
               {recommendations.length !== 0 && <Recommendations/>}
               
-
+              <GeneralFooter/>
         </section>
     )
 }
